@@ -292,6 +292,8 @@ function App() {
               alt=""
               aria-hidden="true"
               draggable="false"
+              decoding="async"
+              fetchPriority="high"
             />
             <window.SilkRoadMap
               showRoutes={showRoutes}
