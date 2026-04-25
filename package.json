@@ -1,0 +1,13 @@
+{
+  "name": "silken-road",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The Silken Road — interactive atlas of the known world c. 900 A.D.",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}

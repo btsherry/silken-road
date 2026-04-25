@@ -7,6 +7,9 @@ Thumbs.db
 .idea/
 *.swp
 
+# Build tooling
+node_modules/
+
 # Working source material — not for publication
 uploads/
 
