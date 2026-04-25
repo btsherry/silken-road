@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Working source material — not for publication
+uploads/
+
+# Local notes / scratch
+*.local
