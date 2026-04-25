@@ -460,7 +460,11 @@ function ScrollPanel({ entity, onClose }) {
             <div className="scroll-divider-line"/>
           </div>
 
-          <div className="scroll-image">{imageLabel}</div>
+          <div className={`scroll-image ${item.image ? "has-image" : ""}`}>
+            {item.image
+              ? <img src={item.image} alt={item.name} className="scroll-image-img"/>
+              : imageLabel}
+          </div>
 
           <div className="scroll-body">
             <p className="drop-cap">{item.blurb}</p>

@@ -1040,6 +1040,23 @@ html, body {
   pointer-events: none;
 }
 
+/* When a real image is present, drop the placeholder hatch and inner border. */
+.scroll-image.has-image {
+  background: var(--parchment);
+  aspect-ratio: auto;
+  padding: 0;
+  overflow: hidden;
+}
+.scroll-image.has-image::before { display: none; }
+.scroll-image-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
 .scroll-body {
   font-family: 'Caudex', serif;
   font-size: 15px;
