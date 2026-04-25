@@ -404,7 +404,7 @@ window.SILKROAD_DATA = {
       image: "images/villains/vampires-shiraz.png",
       blurb: "Giovanni \"freed\" a slave he renamed Paul, mistaking a predator for a soul reborn. Paul led us to the silent house of the antiquarian Kerdir in Shiraz, where his \"sister\" opened Giovanni's throat in one swipe. Both fled as whirlwinds of dust. The sister appeared again in Constantinople wearing the face of \"Helena,\" sister to a man called Michael — they came nearer to taking us a second time, and went again into the night." },
     { id: "feaster", name: "The Feaster from Afar", faction: "Cosmic horror",
-      image: "images/villains/feaster.png",
+      image: "images/villains/feaster_v2_1.png",
       blurb: "Released by Abu-Rayhan's possessed chant beneath Ikhmindi when the Khem-Sethi summoning took his tongue. A hollow talon drove through Isaac's temple and drank his mind; we saw it for an instant before we ran. The witchfire pulse it left under the temple has not stopped. We do not know what it eats now that we have left." },
     { id: "bishop-paulus", name: "Bishop Paulus of Venice", faction: "The Church (Venice)",
       image: "images/villains/bishop-paulus.png",
