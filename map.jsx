@@ -145,10 +145,10 @@ window.SilkRoadMap = function SilkRoadMap({
       </defs>
 
       {/* === BASE MAP: rendered as HTML <img> in app.jsx, positioned behind this SVG.
-           We only paint the letterbox bands top & bottom here, since the image is
-           21:9 but our viewBox is 2:1. === */}
-      <rect x="0" y="0" width="2400" height="85" fill="oklch(0.18 0.04 255)"/>
-      <rect x="0" y="1115" width="2400" height="85" fill="oklch(0.18 0.04 255)"/>
+           Letterbox bands top & bottom are parchment-toned so the painted map's
+           edges blend into the frame interior rather than dropping into a dark band. === */}
+      <rect x="0" y="0" width="2400" height="85" fill="oklch(0.88 0.045 85)"/>
+      <rect x="0" y="1115" width="2400" height="85" fill="oklch(0.88 0.045 85)"/>
       {/* Hide the old hand-drawn land that follows until we delete it */}
       <g style={{display:'none'}}>
 
