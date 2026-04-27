@@ -13,10 +13,24 @@ window.GlobeInset = function GlobeInset({ focusPoint }) {
 
   return (
     <div className="astrolabe-stack">
-      {/* MATER — fixed back plate with horizon arc, hour curves, almucantar
-          circles, and the equator/tropic lines. Suggests latitude/longitude
-          beneath the rotating rete. */}
+      {/* MATER — fixed back plate with brass outer ring, indigo inner field,
+          horizon arc, hour curves, almucantar circles, and the equator/tropic
+          lines. Suggests latitude/longitude beneath the rotating rete. */}
       <svg className="astrolabe-mater" viewBox="0 0 200 200">
+        <defs>
+          <radialGradient id="materField" cx="40%" cy="35%" r="65%">
+            <stop offset="0%"  stopColor="oklch(0.36 0.08 265)"/>
+            <stop offset="65%" stopColor="oklch(0.22 0.08 265)"/>
+            <stop offset="100%" stopColor="oklch(0.14 0.05 265)"/>
+          </radialGradient>
+        </defs>
+        {/* Brass outer rim */}
+        <circle cx="100" cy="100" r="95" fill="oklch(0.62 0.14 75)"
+                stroke="oklch(0.42 0.12 65)" strokeWidth="1.2"/>
+        <circle cx="100" cy="100" r="92" fill="none"
+                stroke="oklch(0.45 0.10 65)" strokeWidth="0.5"/>
+        {/* Inner indigo field */}
+        <circle cx="100" cy="100" r="86" fill="url(#materField)"/>
         {/* Tropic of Cancer/Capricorn (faint) */}
         <circle cx="100" cy="100" r="60" fill="none"
                 stroke="oklch(0.65 0.10 75 / 0.30)" strokeWidth="0.5"/>
