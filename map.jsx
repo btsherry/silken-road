@@ -575,11 +575,6 @@ window.SilkRoadMap = function SilkRoadMap({
         </text>
       </g>
 
-      {/* Frame */}
-      <rect x="18" y="18" width="2364" height="1164" fill="none"
-            stroke="oklch(0.45 0.09 40)" strokeWidth="3"/>
-      <rect x="28" y="28" width="2344" height="1144" fill="none"
-            stroke="oklch(0.45 0.09 40 / 0.5)" strokeWidth="0.8"/>
     </svg>
   );
 };
