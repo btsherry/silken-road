@@ -286,16 +286,20 @@ html, body {
   height: 1440px;
 }
 
-/* Painted base map — sits behind the SVG overlay. Shifted right by 180px
-   inside the wider wrap so it's horizontally centered. */
+/* Painted base map — sits behind the SVG overlay. Now cropped to remove
+   the painted gold-and-parchment frame; its CSS position compensates so
+   the geographic content still lines up with where pins are drawn (the
+   pins were calibrated against the framed original).
+   Original PNG was 1584×672, content area was approximately x=24..1556
+   y=19..654; that range now maps to 0..1532 × 0..632 in the cropped PNG.
+   Wrap-pixel position of original content: x≈224..3008 (width 2784),
+   y≈137..1304 (height 1167). */
 .base-map-img {
   position: absolute;
-  left: 180px;
-  /* 85/1200 of 1440 ≈ 102px — matches the y="85" offset in SVG. */
-  top: 102px;
-  width: 2880px;
-  /* 1029/1200 of 1440 ≈ 1235px — matches height="1029" in SVG. */
-  height: 1235px;
+  left: 224px;
+  top: 137px;
+  width: 2784px;
+  height: 1167px;
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
