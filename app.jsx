@@ -102,7 +102,7 @@ function App() {
   useEffect(() => {
     if (!playingJourney) return;
     setShowJourney(true);
-    const dur = 44000;
+    const dur = 88000;
     const startProgress = journeyProgressRef.current >= 1 ? 0 : journeyProgressRef.current;
     journeyProgressRef.current = startProgress;
     const startTime = performance.now();
