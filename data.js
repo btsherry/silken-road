@@ -479,7 +479,7 @@ window.SILKROAD_DATA = {
       followers: [],
       placeIds: ["altai-home", "samarkand"],
       portraits: [
-        { src: "images/portraits/gan-dog-attack.png", caption: "Night in the Naiman camp — with Lüèduó" },
+        { src: "images/portraits/gan.png", caption: "Naiman beastmaster, on the road from the Altai" },
       ],
       quote: null,
     },
@@ -525,14 +525,6 @@ window.SILKROAD_DATA = {
       region: "Saaremaa, then everywhere Eskil rides",
       image: "images/npcs/leif.png",
       blurb: "Eskil's rune-casting brother, who read the omens against the night the priestesses chose Eskil for the Black Goat. At the bog he scratched a binding rune in the dirt and took the killing onto himself, exchanging his life for his brother's. A fragment of his voice rides now in an iron skull at Eskil's belt and warns him, very quietly, when he has spoken too much.",
-    },
-    {
-      id: "gan",
-      name: "Gan",
-      role: "Steppe huntress",
-      region: "The Ghuzz and Karluk frontier",
-      image: "images/npcs/gan.png",
-      blurb: "She joined Hind's caravan with a falcon on her wrist and a wolfhound at her heel. She speaks little. Her arrows took the chittering bird-thing in the eye beneath the Iron Gates; her hound Dog has tried to bite Lüèduó twice and survived both. We do not know where her people are. We have stopped asking.",
     },
     {
       id: "tabiri",
