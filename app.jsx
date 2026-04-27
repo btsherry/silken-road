@@ -460,14 +460,32 @@ function ScrollPanel({ entity, onClose }) {
             <div className="scroll-divider-line"/>
           </div>
 
-          <div className={`scroll-image ${item.image ? "has-image" : ""}`}>
-            {item.image
-              ? <img src={item.image} alt={item.name} className="scroll-image-img"/>
-              : imageLabel}
-          </div>
+          {section !== "journal" && (
+            <div className={`scroll-image ${item.image ? "has-image" : ""}`}>
+              {item.image
+                ? <img src={item.image} alt={item.name} className="scroll-image-img"/>
+                : imageLabel}
+            </div>
+          )}
 
           <div className="scroll-body">
             <p className="drop-cap">{item.blurb}</p>
+            {item.beats && item.beats.length > 0 && (
+              <>
+                <h3 className="scroll-subhead">Key beats</h3>
+                <ul className="scroll-beats">
+                  {item.beats.map((b, i) => <li key={i}>{b}</li>)}
+                </ul>
+              </>
+            )}
+            {item.quotes && item.quotes.length > 0 && (
+              <>
+                <h3 className="scroll-subhead">Quoted</h3>
+                {item.quotes.map((q, i) => (
+                  <blockquote key={i} className="scroll-quote">{q}</blockquote>
+                ))}
+              </>
+            )}
           </div>
 
           {meta.length > 0 && (

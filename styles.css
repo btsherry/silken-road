@@ -1067,6 +1067,47 @@ html, body {
 
 .scroll-body p { margin: 0 0 14px; }
 
+.scroll-subhead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin: 22px 0 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid oklch(0.55 0.06 65 / 0.35);
+}
+
+.scroll-beats {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  list-style: none;
+}
+.scroll-beats li {
+  position: relative;
+  margin: 0 0 8px;
+  padding-left: 0;
+}
+.scroll-beats li::before {
+  content: "✦";
+  color: var(--gold-deep);
+  position: absolute;
+  left: -22px;
+  top: 0;
+  font-size: 11px;
+}
+
+.scroll-quote {
+  margin: 10px 16px 14px;
+  padding: 6px 14px;
+  border-left: 2px solid var(--gold-deep);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink);
+}
+
 .scroll-body .drop-cap::first-letter {
   font-family: 'Cormorant Garamond', serif;
   font-size: 56px;
