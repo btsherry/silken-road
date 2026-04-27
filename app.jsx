@@ -188,7 +188,7 @@ function App() {
       <aside className="sidebar">
         <div className="sidebar-header">
           <div className="title-eyebrow">A Chronicle of</div>
-          <h1 className="title-main">The Silk <em>Road</em></h1>
+          <h1 className="title-main">Seal <em>Unbroken</em>, Seal <em>Unmade</em></h1>
           <div className="title-sub">— being an Atlas of the Known World, 900 A.D. —</div>
         </div>
 
