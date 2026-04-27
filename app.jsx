@@ -17,9 +17,9 @@ function App() {
 
   // Layer toggles (persisted via tweak keys)
   const T = window.TWEAKS || {};
-  const [showRoutes, setShowRoutes] = useState(T.showRoutes ?? true);
-  const [showBorders, setShowBorders] = useState(T.showBorders ?? false);
-  const [showCharacters, setShowCharacters] = useState(T.showCharacters ?? false);
+  const [showRoutes, setShowRoutes] = useState(true);
+  const [showBorders, setShowBorders] = useState(false);
+  const [showCharacters, setShowCharacters] = useState(false);
   const [showJourney, setShowJourney] = useState(T.showJourney ?? false);
 
   const [journeyProgress, setJourneyProgress] = useState(T.showJourney ? 1 : 0);
