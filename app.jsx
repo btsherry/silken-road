@@ -40,7 +40,7 @@ function App() {
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
   // Nav accordion — which section is expanded. Default: first section open.
-  const [openSection, setOpenSection] = useState(SECTION_DEFS[0].id);
+  const [openSection, setOpenSection] = useState(null);
 
   // Edit mode
   const [tweaksOpen, setTweaksOpen] = useState(false);
