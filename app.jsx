@@ -326,7 +326,7 @@ function App() {
             <div className="globe-inset">
               <window.GlobeInset focusPoint={focusPoint}/>
             </div>
-            <div className="globe-label">Orbis Terrarum</div>
+            <div className="globe-label">Astrolabium</div>
           </div>
 
           <div style={{display: "flex", gap: 10, alignItems: "flex-end"}}>
