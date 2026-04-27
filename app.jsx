@@ -19,7 +19,6 @@ function App() {
   const T = window.TWEAKS || {};
   const [showRoutes, setShowRoutes] = useState(T.showRoutes ?? true);
   const [showBorders, setShowBorders] = useState(T.showBorders ?? true);
-  const [showEvents, setShowEvents] = useState(T.showEvents ?? true);
   const [showCharacters, setShowCharacters] = useState(T.showCharacters ?? true);
   const [showJourney, setShowJourney] = useState(T.showJourney ?? false);
 
@@ -262,10 +261,6 @@ function App() {
                     onClick={() => toggleLayer("showBorders", setShowBorders, showBorders)}>
               Borders
             </button>
-            <button className={`layer-toggle ${showEvents ? "on" : ""}`}
-                    onClick={() => toggleLayer("showEvents", setShowEvents, showEvents)}>
-              Events
-            </button>
             <button className={`layer-toggle ${showCharacters ? "on" : ""}`}
                     onClick={() => toggleLayer("showCharacters", setShowCharacters, showCharacters)}>
               Monsters
@@ -304,7 +299,6 @@ function App() {
             <window.SilkRoadMap
               showRoutes={showRoutes}
               showBorders={showBorders}
-              showEvents={showEvents && showCharacters}
               showJourney={showJourney}
               journeyProgress={journeyProgress}
               onPointClick={onPointClick}
@@ -390,7 +384,6 @@ function App() {
           {[
             { key: "showRoutes", label: "Trade Routes", on: showRoutes, set: setShowRoutes, sw: "var(--crimson)" },
             { key: "showBorders", label: "Political Borders", on: showBorders, set: setShowBorders, sw: "oklch(0.35 0.05 55)" },
-            { key: "showEvents", label: "Campaign Events", on: showEvents, set: setShowEvents, sw: "var(--crimson)" },
             { key: "showCharacters", label: "Monsters & Edges", on: showCharacters, set: setShowCharacters, sw: "var(--gold)" },
             { key: "showJourney", label: "Our Journey", on: showJourney, set: setShowJourney, sw: "var(--crimson)" },
           ].map(row => (

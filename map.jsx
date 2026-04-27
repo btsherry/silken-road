@@ -6,7 +6,6 @@
 window.SilkRoadMap = function SilkRoadMap({
   showRoutes = true,
   showBorders = true,
-  showEvents = true,
   showJourney = false,
   journeyProgress = 1,
   onPointClick,
@@ -467,18 +466,6 @@ window.SilkRoadMap = function SilkRoadMap({
         <g>
           <path d={routePath(principal.points)} className="route-principal-halo"/>
           <path d={routePath(principal.points)} className="route-principal"/>
-        </g>
-      )}
-
-      {/* Events */}
-      {showEvents && (
-        <g>
-          {data.places.filter(p => p.kind === "ruin").map(p => (
-            <g key={`ev-${p.id}`} transform={`translate(${p.x}, ${p.y})`}>
-              <circle r="22" fill="none" stroke="var(--crimson)" strokeWidth="1.3" strokeDasharray="3 2" opacity="0.75"/>
-              <text y="-28" textAnchor="middle" className="map-label-monster">⚔ Talas, 751</text>
-            </g>
-          ))}
         </g>
       )}
 
