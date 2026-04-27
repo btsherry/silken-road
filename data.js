@@ -319,7 +319,19 @@ window.SILKROAD_DATA = {
       points: ["mecca","medina","aden"] },
   ],
 
-  journey: ["baghdad","merv","bukhara","samarkand","kashgar","khotan","dunhuang","changan"],
+  journey: [
+    // Book 1 (Episodes I–VII): party converges at Samarkand and rides west.
+    "samarkand", "iron-gates", "merv", "merv-kurgan", "merv",
+    "shiraz", "cairo", "aidhab", "ikhmindi", "constantinople",
+    "itil", "cathedral-of-bones",
+    // Continuation (Episodes 8–23): the wider arc through Italy, Africa,
+    // Yemen, India, Kashmir, the steppe, and back to Samarkand.
+    "montegranaro", "bari", "ravenna", "constantinople", "aquileia",
+    "san-floriano", "susa", "shrine-of-storms", "tyre", "aden",
+    "iram", "quilon", "satyavati-shrine", "jayashri-palace", "srinagar",
+    "talas", "taklamakan-home", "khotan", "gol-goroth-pillar", "issyk-kul",
+    "samarkand",
+  ],
 
   characters: [
     {
