@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Astrolabe — variant preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --indigo-deep: oklch(0.22 0.08 265);
+      --indigo: oklch(0.28 0.09 265);
+      --parchment: oklch(0.88 0.045 85);
+      --gold: oklch(0.78 0.13 82);
+      --gold-deep: oklch(0.66 0.14 72);
+      --gold-bright: oklch(0.86 0.12 88);
+      --crimson: oklch(0.52 0.16 25);
+    }
+    body {
+      margin: 0; padding: 60px 40px;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--parchment);
+      background:
+        radial-gradient(ellipse at top, oklch(0.32 0.1 265) 0%, var(--indigo-deep) 70%),
+        var(--indigo-deep);
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; font-size: 18px; color: var(--gold);
+      margin: 0 0 6px;
+    }
+    .subhead {
+      text-align: center; opacity: 0.7; font-style: italic; font-size: 14px;
+      margin: 0 0 50px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .variant {
+      text-align: center;
+    }
+    .variant-label {
+      margin-top: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .variant-note {
+      margin-top: 6px;
+      font-size: 13px;
+      font-style: italic;
+      opacity: 0.65;
+    }
+
+    /* Astrolabe stack */
+    .astrolabe {
+      position: relative;
+      width: 280px; height: 280px;
+      margin: 0 auto;
+    }
+    .astrolabe > * {
+      position: absolute; inset: 0;
+    }
+    .rete-img {
+      width: 100%; height: 100%;
+      animation: spin 90s linear infinite;
+      filter: drop-shadow(0 2px 4px oklch(0.05 0.02 265 / 0.6));
+    }
+    .alidade {
+      animation: spin-slow 240s linear infinite reverse;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 70px;
+      font-style: italic;
+      opacity: 0.5;
+      font-size: 13px;
+    }
+    .footer code {
+      font-family: 'Menlo', monospace;
+      font-style: normal;
+      background: oklch(0.14 0.05 265 / 0.6);
+      padding: 2px 8px;
+      border-radius: 3px;
+      color: var(--gold-bright);
+    }
+  </style>
+</head>
+<body>
+
+<h1>Astrolabe — three rete variants</h1>
+<div class="subhead">SVG mater + alidade are identical across all three; the rete carries the style</div>
+
+<div class="grid">
+
+  <!-- Variant A: Persian brass -->
+  <div class="variant">
+    <div class="astrolabe">
+      <!-- MATER: back plate with horizon, hour curves, almucantars -->
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="materA" cx="40%" cy="35%" r="65%">
+            <stop offset="0%"  stop-color="oklch(0.36 0.08 265)"/>
+            <stop offset="65%" stop-color="oklch(0.22 0.08 265)"/>
+            <stop offset="100%" stop-color="oklch(0.14 0.05 265)"/>
+          </radialGradient>
+        </defs>
+        <!-- Brass outer rim -->
+        <circle cx="100" cy="100" r="95" fill="oklch(0.62 0.14 75)" stroke="oklch(0.42 0.12 65)" stroke-width="1.2"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="oklch(0.45 0.10 65)" stroke-width="0.5"/>
+        <!-- Inner field -->
+        <circle cx="100" cy="100" r="86" fill="url(#materA)"/>
+        <!-- Tropic of Cancer/Capricorn (faint) -->
+        <circle cx="100" cy="100" r="60" fill="none" stroke="oklch(0.65 0.10 75 / 0.25)" stroke-width="0.5"/>
+        <circle cx="100" cy="100" r="34" fill="none" stroke="oklch(0.65 0.10 75 / 0.25)" stroke-width="0.5"/>
+        <!-- Equator -->
+        <circle cx="100" cy="100" r="48" fill="none" stroke="oklch(0.65 0.10 75 / 0.4)" stroke-width="0.6"/>
+        <!-- Horizon arc -->
+        <path d="M 14 100 A 200 200 0 0 1 186 100" fill="none" stroke="oklch(0.78 0.13 82 / 0.7)" stroke-width="0.8"/>
+        <!-- Almucantar arcs above horizon -->
+        <path d="M 30 92 A 120 120 0 0 1 170 92" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <path d="M 50 80 A 90 90 0 0 1 150 80" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <path d="M 70 65 A 60 60 0 0 1 130 65" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <!-- Hour curves -->
+        <g fill="none" stroke="oklch(0.65 0.10 75 / 0.3)" stroke-width="0.4">
+          <path d="M 100 14 Q 70 100 100 186"/>
+          <path d="M 100 14 Q 50 100 100 186"/>
+          <path d="M 100 14 Q 30 100 100 186"/>
+          <path d="M 100 14 Q 130 100 100 186"/>
+          <path d="M 100 14 Q 150 100 100 186"/>
+          <path d="M 100 14 Q 170 100 100 186"/>
+        </g>
+      </svg>
+      <!-- RETE: rotating star map -->
+      <img src="images/astrolabe/rete-brass.png" class="rete-img" alt="">
+      <!-- ALIDADE: rotating pointer -->
+      <svg class="alidade" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <line x1="100" y1="100" x2="100" y2="14"
+              stroke="oklch(0.42 0.12 65)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="100" y1="100" x2="100" y2="14"
+              stroke="oklch(0.78 0.13 82)" stroke-width="1" stroke-linecap="round"/>
+        <polygon points="100,10 96,18 104,18" fill="oklch(0.86 0.12 88)"/>
+        <line x1="100" y1="100" x2="100" y2="186"
+              stroke="oklch(0.42 0.12 65 / 0.5)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <!-- CENTER PIN -->
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="4" fill="oklch(0.42 0.12 65)" stroke="oklch(0.86 0.12 88)" stroke-width="0.6"/>
+        <circle cx="100" cy="100" r="1.5" fill="oklch(0.86 0.12 88)"/>
+      </svg>
+    </div>
+    <div class="variant-label">A — Persian Brass</div>
+    <div class="variant-note">Engraved-brass rete with named-star labels</div>
+  </div>
+
+  <!-- Variant B: Charcoal-on-parchment -->
+  <div class="variant">
+    <div class="astrolabe">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="materB" cx="40%" cy="35%" r="65%">
+            <stop offset="0%"  stop-color="oklch(0.36 0.08 265)"/>
+            <stop offset="65%" stop-color="oklch(0.22 0.08 265)"/>
+            <stop offset="100%" stop-color="oklch(0.14 0.05 265)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="95" fill="oklch(0.62 0.14 75)" stroke="oklch(0.42 0.12 65)" stroke-width="1.2"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="oklch(0.45 0.10 65)" stroke-width="0.5"/>
+        <circle cx="100" cy="100" r="86" fill="url(#materB)"/>
+        <circle cx="100" cy="100" r="60" fill="none" stroke="oklch(0.65 0.10 75 / 0.25)" stroke-width="0.5"/>
+        <circle cx="100" cy="100" r="34" fill="none" stroke="oklch(0.65 0.10 75 / 0.25)" stroke-width="0.5"/>
+        <circle cx="100" cy="100" r="48" fill="none" stroke="oklch(0.65 0.10 75 / 0.4)" stroke-width="0.6"/>
+        <path d="M 14 100 A 200 200 0 0 1 186 100" fill="none" stroke="oklch(0.78 0.13 82 / 0.7)" stroke-width="0.8"/>
+        <path d="M 30 92 A 120 120 0 0 1 170 92" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <path d="M 50 80 A 90 90 0 0 1 150 80" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <path d="M 70 65 A 60 60 0 0 1 130 65" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <g fill="none" stroke="oklch(0.65 0.10 75 / 0.3)" stroke-width="0.4">
+          <path d="M 100 14 Q 70 100 100 186"/>
+          <path d="M 100 14 Q 50 100 100 186"/>
+          <path d="M 100 14 Q 30 100 100 186"/>
+          <path d="M 100 14 Q 130 100 100 186"/>
+          <path d="M 100 14 Q 150 100 100 186"/>
+          <path d="M 100 14 Q 170 100 100 186"/>
+        </g>
+      </svg>
+      <img src="images/astrolabe/rete-charcoal.png" class="rete-img" alt="">
+      <svg class="alidade" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <line x1="100" y1="100" x2="100" y2="14"
+              stroke="oklch(0.42 0.12 65)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="100" y1="100" x2="100" y2="14"
+              stroke="oklch(0.78 0.13 82)" stroke-width="1" stroke-linecap="round"/>
+        <polygon points="100,10 96,18 104,18" fill="oklch(0.86 0.12 88)"/>
+        <line x1="100" y1="100" x2="100" y2="186"
+              stroke="oklch(0.42 0.12 65 / 0.5)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="4" fill="oklch(0.42 0.12 65)" stroke="oklch(0.86 0.12 88)" stroke-width="0.6"/>
+        <circle cx="100" cy="100" r="1.5" fill="oklch(0.86 0.12 88)"/>
+      </svg>
+    </div>
+    <div class="variant-label">B — Charcoal &amp; Parchment</div>
+    <div class="variant-note">Matches the existing site illustration style</div>
+  </div>
+
+  <!-- Variant C: Illuminated manuscript -->
+  <div class="variant">
+    <div class="astrolabe">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="materC" cx="40%" cy="35%" r="65%">
+            <stop offset="0%"  stop-color="oklch(0.36 0.08 265)"/>
+            <stop offset="65%" stop-color="oklch(0.22 0.08 265)"/>
+            <stop offset="100%" stop-color="oklch(0.14 0.05 265)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="95" fill="oklch(0.62 0.14 75)" stroke="oklch(0.42 0.12 65)" stroke-width="1.2"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="oklch(0.45 0.10 65)" stroke-width="0.5"/>
+        <circle cx="100" cy="100" r="86" fill="url(#materC)"/>
+        <circle cx="100" cy="100" r="60" fill="none" stroke="oklch(0.65 0.10 75 / 0.25)" stroke-width="0.5"/>
+        <circle cx="100" cy="100" r="34" fill="none" stroke="oklch(0.65 0.10 75 / 0.25)" stroke-width="0.5"/>
+        <circle cx="100" cy="100" r="48" fill="none" stroke="oklch(0.65 0.10 75 / 0.4)" stroke-width="0.6"/>
+        <path d="M 14 100 A 200 200 0 0 1 186 100" fill="none" stroke="oklch(0.78 0.13 82 / 0.7)" stroke-width="0.8"/>
+        <path d="M 30 92 A 120 120 0 0 1 170 92" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <path d="M 50 80 A 90 90 0 0 1 150 80" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <path d="M 70 65 A 60 60 0 0 1 130 65" fill="none" stroke="oklch(0.65 0.10 75 / 0.35)" stroke-width="0.4"/>
+        <g fill="none" stroke="oklch(0.65 0.10 75 / 0.3)" stroke-width="0.4">
+          <path d="M 100 14 Q 70 100 100 186"/>
+          <path d="M 100 14 Q 50 100 100 186"/>
+          <path d="M 100 14 Q 30 100 100 186"/>
+          <path d="M 100 14 Q 130 100 100 186"/>
+          <path d="M 100 14 Q 150 100 100 186"/>
+          <path d="M 100 14 Q 170 100 100 186"/>
+        </g>
+      </svg>
+      <img src="images/astrolabe/rete-illuminated.png" class="rete-img" alt="">
+      <svg class="alidade" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <line x1="100" y1="100" x2="100" y2="14"
+              stroke="oklch(0.42 0.12 65)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="100" y1="100" x2="100" y2="14"
+              stroke="oklch(0.78 0.13 82)" stroke-width="1" stroke-linecap="round"/>
+        <polygon points="100,10 96,18 104,18" fill="oklch(0.86 0.12 88)"/>
+        <line x1="100" y1="100" x2="100" y2="186"
+              stroke="oklch(0.42 0.12 65 / 0.5)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="4" fill="oklch(0.42 0.12 65)" stroke="oklch(0.86 0.12 88)" stroke-width="0.6"/>
+        <circle cx="100" cy="100" r="1.5" fill="oklch(0.86 0.12 88)"/>
+      </svg>
+    </div>
+    <div class="variant-label">C — Illuminated</div>
+    <div class="variant-note">Gold leaf and lapis-lazuli, Latin-manuscript style</div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Each astrolabe layers an SVG mater (back plate) with a transparent-PNG rete (rotating ring)
+  and an SVG alidade (pointer). Rete: <code>90s</code> per turn. Alidade: <code>240s</code>, opposite direction.
+</div>
+
+</body>
+</html>
