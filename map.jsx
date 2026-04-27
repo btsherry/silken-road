@@ -588,7 +588,9 @@ function RulerPortrait({ x, y, label, src, small = false }) {
   const w = small ? 113 : 150;
   const h = w; // square
   return (
-    <g transform={`translate(${x - w/2}, ${y - h/2})`}>
+    <g transform={`translate(${x - w/2}, ${y - h/2})`}
+       opacity="0.9"
+       style={{mixBlendMode: 'multiply'}}>
       {/* Portrait frame */}
       <rect x="0" y="0" width={w} height={h + 26}
             fill="oklch(0.88 0.06 72)" stroke="oklch(0.35 0.09 35)" strokeWidth="1.5"/>
