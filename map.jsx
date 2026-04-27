@@ -504,12 +504,6 @@ window.SilkRoadMap = function SilkRoadMap({
       <SeaMonster x={1920} y={1050} w={200} src="images/sea-monster-whale.png"      rotate={5}/>
       <SeaMonster x={1600} y={170}  w={170} src="images/sea-monster-hyperborean.png" rotate={-3}/>
 
-      {/* Compass rose (generated illumination) */}
-      <g transform="translate(2160, 140)">
-        <image href="images/compass-rose.png" x={-130} y={-130} width={260} height={260}
-               preserveAspectRatio="xMidYMid meet"/>
-      </g>
-
       {/* City points */}
       <g>
         {data.places.map(p => {
@@ -550,22 +544,6 @@ window.SilkRoadMap = function SilkRoadMap({
             </g>
           );
         })}
-      </g>
-
-      {/* Bottom-right title cartouche */}
-      <g transform="translate(1760, 1080)">
-        <rect x="0" y="0" width="560" height="90" fill="oklch(0.88 0.07 70 / 0.95)"
-              stroke="oklch(0.38 0.08 35)" strokeWidth="1.4"/>
-        <rect x="5" y="5" width="550" height="80" fill="none"
-              stroke="oklch(0.38 0.08 35 / 0.6)" strokeWidth="0.6"/>
-        <circle cx="38" cy="44" r="20" fill="var(--crimson)" opacity="0.9"/>
-        <path d="M 22 44 h 32" stroke="var(--gold-bright)" strokeWidth="3"/>
-        <text x="76" y="38" fill="oklch(0.25 0.05 35)" fontFamily="Cormorant Garamond"
-              fontSize="18" fontWeight="600">Principal Silk Routes' Network</text>
-        <text x="76" y="56" fill="oklch(0.35 0.06 35)" fontFamily="Cormorant Garamond"
-              fontSize="13" fontStyle="italic">Chang'an to Baghdad: c. 7,500 km (4,700 miles)</text>
-        <text x="76" y="74" fill="oklch(0.35 0.06 35)" fontFamily="Cormorant Garamond"
-              fontSize="13" fontStyle="italic">A caravan took from a few months to over a year.</text>
       </g>
 
       {/* Top title cartouche */}

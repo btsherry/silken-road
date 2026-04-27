@@ -279,18 +279,18 @@ html, body {
   top: 50%; left: 50%;
   transform-origin: center;
   transition: transform 0.08s linear;
-  /* The wrap is 180px wider than the SVG intrinsic size so the gold
-     border around the map ends up with even indigo padding on every
-     side instead of being flush against the wrap on left/right. */
-  width: 3060px;
+  /* The wrap is 360px wider than the SVG intrinsic size so the gold
+     border around the map ends up with comfortable indigo padding on
+     every side instead of being flush against the wrap on left/right. */
+  width: 3240px;
   height: 1440px;
 }
 
-/* Painted base map — sits behind the SVG overlay. Shifted right by 90px
+/* Painted base map — sits behind the SVG overlay. Shifted right by 180px
    inside the wider wrap so it's horizontally centered. */
 .base-map-img {
   position: absolute;
-  left: 90px;
+  left: 180px;
   /* 85/1200 of 1440 ≈ 102px — matches the y="85" offset in SVG. */
   top: 102px;
   width: 2880px;
@@ -305,7 +305,7 @@ html, body {
   display: block;
   position: absolute;
   /* Match the base-map shift so pins line up with the painted content. */
-  left: 90px;
+  left: 180px;
   top: 0;
   z-index: 1;
 }
