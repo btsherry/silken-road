@@ -493,9 +493,9 @@ window.SilkRoadMap = function SilkRoadMap({
       <RulerPortrait x={1573} y={196} label="QAGHAN"   src="images/ruler-qaghan.png"  small/>
 
       {/* Sea monsters / naturalist insets. Same hand-tune session. */}
-      <SeaMonster x={1245} y={970}  w={135} src="images/sea-monster-drake.png"      rotate={-8}/>
-      <SeaMonster x={2244} y={756}  w={150} src="images/sea-monster-whale.png"      rotate={5}/>
-      <SeaMonster x={174}  y={173}  w={128} src="images/sea-monster-hyperborean.png" rotate={-3}/>
+      <SeaMonster x={1245} y={970}  w={90}  src="images/sea-monster-drake.png"      rotate={-8}/>
+      <SeaMonster x={2244} y={756}  w={100} src="images/sea-monster-whale.png"      rotate={5}/>
+      <SeaMonster x={174}  y={173}  w={85}  src="images/sea-monster-hyperborean.png" rotate={-3}/>
 
       {/* Polity boundary polygons — toggleable via showBorders. Rendered
           before pins so pins remain clickable on top, but after the other
@@ -585,7 +585,7 @@ window.SilkRoadMap = function SilkRoadMap({
 };
 
 function RulerPortrait({ x, y, label, src, small = false }) {
-  const w = small ? 113 : 150;
+  const w = small ? 75 : 100;
   const h = w; // square
   return (
     <g transform={`translate(${x - w/2}, ${y - h/2})`}
