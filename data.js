@@ -12,7 +12,7 @@ window.SILKROAD_DATA = {
     { id: "byz",      label: "BYZANTIUM",         x: 970,  y: 440, size: 30, sub: "Ῥωμανία" },
     { id: "abbasid",  label: "ABBASID CALIPHATE", x: 1220, y: 560, size: 36, sub: null },
     { id: "fatimid",  label: "FĀṬIMID IFRĪQIYA",  x: 870,  y: 600, size: 22, sub: null },
-    { id: "andalus",  label: "AL-ANDALUS",        x: 490,  y: 540, size: 24, sub: null },
+    { id: "andalus",  label: "AL-ANDALUS",        x: 220,  y: 500, size: 24, sub: null },
     { id: "ghuzz",    label: "GHUZZ",             x: 1440, y: 500, size: 30, sub: "the Oghuz steppe" },
     { id: "turgesh",  label: "TÜRGESH",           x: 1560, y: 450, size: 28, sub: null },
     { id: "karluks",  label: "KARLUKS",           x: 1660, y: 420, size: 28, sub: null },
@@ -182,7 +182,7 @@ window.SILKROAD_DATA = {
 
   // Mountain ranges (stylized hatched zones + italicized labels)
   mountains: [
-    { id: "alps",    label: "Alps",         path: "M 820 500 Q 900 490 980 510" },
+    { id: "alps",    label: "Alps",         path: "M 440 405 Q 490 390 540 410" },
     { id: "caucasus",label: "Caucasus mts.", path: "M 1220 450 Q 1280 445 1340 455" },
     { id: "zagros", label: "Zagros mts.", path: "M 1240 580 Q 1300 610 1340 650" },
     { id: "pamir",  label: "Pamir mts.", path: "M 1640 570 Q 1680 580 1720 600" },
@@ -197,7 +197,7 @@ window.SILKROAD_DATA = {
 
   // Rivers (thin blue lines)
   rivers: [
-    { id: "rhine",   path: "M 820 430 Q 830 490 840 560", label: "Rhine",    lx: 830,  ly: 460 },
+    { id: "rhine",   path: "M 410 380 Q 420 430 430 480", label: "Rhine",    lx: 420,  ly: 420 },
     { id: "danube",  path: "M 870 480 Q 960 490 1080 470", label: "Danube",  lx: 980,  ly: 480 },
     { id: "dnieper", path: "M 1120 280 Q 1100 360 1110 430", label: "Dnieper", lx: 1095, ly: 360 },
     { id: "volga",   path: "M 1350 280 Q 1320 370 1310 450", label: "Volga",  lx: 1320, ly: 370 },
