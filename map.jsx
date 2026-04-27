@@ -493,7 +493,7 @@ window.SilkRoadMap = function SilkRoadMap({
       <RulerPortrait x={1573} y={196} label="QAGHAN"   src="images/ruler-qaghan.png"  small/>
 
       {/* Sea monsters / naturalist insets. Same hand-tune session. */}
-      <SeaMonster x={1245} y={1051} w={135} src="images/sea-monster-drake.png"      rotate={-8}/>
+      <SeaMonster x={1245} y={970}  w={135} src="images/sea-monster-drake.png"      rotate={-8}/>
       <SeaMonster x={2244} y={756}  w={150} src="images/sea-monster-whale.png"      rotate={5}/>
       <SeaMonster x={174}  y={173}  w={128} src="images/sea-monster-hyperborean.png" rotate={-3}/>
 
@@ -591,11 +591,8 @@ function RulerPortrait({ x, y, label, src, small = false }) {
     <g transform={`translate(${x - w/2}, ${y - h/2})`}
        opacity="0.9"
        style={{mixBlendMode: 'multiply'}}>
-      {/* Portrait frame */}
-      <rect x="0" y="0" width={w} height={h + 26}
-            fill="oklch(0.88 0.06 72)" stroke="oklch(0.35 0.09 35)" strokeWidth="1.5"/>
-      <rect x="3" y="3" width={w - 6} height={h + 20} fill="none"
-            stroke="oklch(0.35 0.09 35 / 0.5)" strokeWidth="0.6"/>
+      {/* Portrait frame — borderless; just a cream parchment backing */}
+      <rect x="0" y="0" width={w} height={h + 26} fill="oklch(0.88 0.06 72)"/>
       <image href={src} x="4" y="4" width={w - 8} height={h - 8}
              preserveAspectRatio="xMidYMid slice"/>
       <text x={w / 2} y={h + 18} textAnchor="middle"

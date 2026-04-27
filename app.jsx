@@ -32,6 +32,16 @@ function App() {
   const dragStart = useRef(null);
   const viewportRef = useRef(null);
 
+  // Journey audio (Temple Run Overture). Plays when the journey starts;
+  // the button acts as transport: tapping again pauses both audio and
+  // animation. The audio keeps playing past the animation's end and
+  // stops only on a second tap or when the song ends naturally.
+  const journeyAudio = useRef(null);
+  if (journeyAudio.current === null && typeof Audio !== "undefined") {
+    journeyAudio.current = new Audio("audio/journey.mp3");
+    journeyAudio.current.preload = "auto";
+  }
+
   // Selection + hover
   const [selected, setSelected] = useState(null); // {section, id}
   const [hovered, setHovered] = useState(null);   // place for tooltip
@@ -84,16 +94,23 @@ function App() {
     return () => clearTimeout(t);
   }, [selected && selected.section, selected && selected.id]);
 
-  // Journey animation
+  // Journey animation — supports pause/resume by capturing progress in
+  // a ref. When the animation reaches 1 it stops itself but does NOT
+  // pause the audio; the song keeps playing through to its end.
+  const journeyProgressRef = useRef(0);
+  const [audioOn, setAudioOn] = useState(false);
   useEffect(() => {
     if (!playingJourney) return;
-    setJourneyProgress(0);
     setShowJourney(true);
-    const start = performance.now();
-    const dur = 5500;
+    const dur = 44000;
+    const startProgress = journeyProgressRef.current >= 1 ? 0 : journeyProgressRef.current;
+    journeyProgressRef.current = startProgress;
+    const startTime = performance.now();
     let raf;
     const step = (t) => {
-      const p = Math.min(1, (t - start) / dur);
+      const elapsed = t - startTime;
+      const p = Math.min(1, startProgress + elapsed / dur);
+      journeyProgressRef.current = p;
       setJourneyProgress(p);
       if (p < 1) raf = requestAnimationFrame(step);
       else setPlayingJourney(false);
@@ -101,6 +118,24 @@ function App() {
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
   }, [playingJourney]);
+
+  // Wire audio events so the button label tracks audio state even when
+  // the animation has finished but the song is still playing.
+  useEffect(() => {
+    const a = journeyAudio.current;
+    if (!a) return;
+    const onPlay  = () => setAudioOn(true);
+    const onPause = () => setAudioOn(false);
+    const onEnd   = () => setAudioOn(false);
+    a.addEventListener("play", onPlay);
+    a.addEventListener("pause", onPause);
+    a.addEventListener("ended", onEnd);
+    return () => {
+      a.removeEventListener("play", onPlay);
+      a.removeEventListener("pause", onPause);
+      a.removeEventListener("ended", onEnd);
+    };
+  }, []);
 
   // Pan handlers
   const onMouseDown = (e) => {
@@ -334,23 +369,35 @@ function App() {
 
           <div style={{display: "flex", gap: 10, alignItems: "flex-end"}}>
             <button
-              className={`journey-control ${showJourney ? "on" : ""}`}
+              className={`journey-control ${(showJourney || audioOn) ? "on" : ""}`}
               onClick={() => {
-                if (playingJourney) return;
-                if (showJourney && journeyProgress >= 1) {
-                  setShowJourney(false);
-                  setJourneyProgress(0);
-                  persistTweak({ showJourney: false });
-                } else {
-                  setPlayingJourney(true);
-                  persistTweak({ showJourney: true });
+                const a = journeyAudio.current;
+                const audioPlaying = a && !a.paused;
+                if (playingJourney || audioPlaying) {
+                  // Pause both
+                  if (a) a.pause();
+                  setPlayingJourney(false);
+                  return;
                 }
+                // Start (or resume if mid-progress, restart if at end)
+                if (a) {
+                  if (a.ended || (a.duration && a.currentTime >= a.duration - 0.1)) {
+                    a.currentTime = 0;
+                  }
+                  a.play().catch(() => {});
+                }
+                if (journeyProgressRef.current >= 1) journeyProgressRef.current = 0;
+                setPlayingJourney(true);
+                persistTweak({ showJourney: true });
               }}
             >
               <span className="journey-icon">
-                {playingJourney ? "❚❚" : showJourney ? "↻" : "▶"}
+                {(playingJourney || audioOn) ? "❚❚" : showJourney ? "↻" : "▶"}
               </span>
-              {playingJourney ? "Riding…" : showJourney ? "Hide Our Journey" : "Ride Our Journey"}
+              {playingJourney ? "Riding…"
+                : audioOn ? "Pause"
+                : showJourney ? "Ride Again"
+                : "Ride Our Journey"}
             </button>
           </div>
 

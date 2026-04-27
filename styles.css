@@ -286,20 +286,16 @@ html, body {
   height: 1440px;
 }
 
-/* Painted base map — sits behind the SVG overlay. Now cropped to remove
-   the painted gold-and-parchment frame; its CSS position compensates so
-   the geographic content still lines up with where pins are drawn (the
-   pins were calibrated against the framed original).
-   Original PNG was 1584×672, content area was approximately x=24..1556
-   y=19..654; that range now maps to 0..1532 × 0..632 in the cropped PNG.
-   Wrap-pixel position of original content: x≈224..3008 (width 2784),
-   y≈137..1304 (height 1167). */
+/* Painted base map — original 1584x672 PNG with flood-filled torn edges
+   (chips/dings transparent so the indigo shows through them). Positioned
+   inside the 3240px wrap with 180px of indigo padding on each horizontal
+   side, vertically anchored at top=102 to leave letterbox above and below. */
 .base-map-img {
   position: absolute;
-  left: 224px;
-  top: 137px;
-  width: 2784px;
-  height: 1167px;
+  left: 180px;
+  top: 102px;
+  width: 2880px;
+  height: 1235px;
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
@@ -473,6 +469,9 @@ html, body {
 .astrolabe-stack > * {
   position: absolute; inset: 0;
   pointer-events: none;
+}
+.astrolabe-mater {
+  width: 100%; height: 100%;
 }
 .astrolabe-rete {
   width: 100%; height: 100%;
