@@ -145,10 +145,8 @@ window.SilkRoadMap = function SilkRoadMap({
       </defs>
 
       {/* === BASE MAP: rendered as HTML <img> in app.jsx, positioned behind this SVG.
-           Letterbox bands top & bottom are parchment-toned so the painted map's
-           edges blend into the frame interior rather than dropping into a dark band. === */}
-      <rect x="0" y="0" width="2400" height="85" fill="oklch(0.88 0.045 85)"/>
-      <rect x="0" y="1115" width="2400" height="85" fill="oklch(0.88 0.045 85)"/>
+           Letterbox bands top & bottom are now transparent so the indigo stage
+           shows through the cleaned-up PNG's torn-edge transparencies. === */}
       {/* Hide the old hand-drawn land that follows until we delete it */}
       <g style={{display:'none'}}>
 
