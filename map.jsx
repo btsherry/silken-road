@@ -494,15 +494,15 @@ window.SilkRoadMap = function SilkRoadMap({
       )}
 
       {/* Ruler portrait illuminations at edges (generated, Catalan-Atlas style) */}
-      <RulerPortrait x={80}   y={560} label="CALIPH"   src="images/ruler-caliph.png"/>
+      <RulerPortrait x={200}  y={560} label="CALIPH"   src="images/ruler-caliph.png"/>
       <RulerPortrait x={2140} y={560} label="EMPEROR"  src="images/ruler-emperor.png"/>
-      <RulerPortrait x={80}   y={280} label="BASILEUS" src="images/ruler-basileus.png" small/>
+      <RulerPortrait x={200}  y={280} label="BASILEUS" src="images/ruler-basileus.png" small/>
       <RulerPortrait x={2140} y={280} label="QAGHAN"   src="images/ruler-qaghan.png"  small/>
 
       {/* Sea monsters in the empty oceans */}
-      <SeaMonster x={380}  y={960}  w={180} src="images/sea-monster-drake.png"      rotate={-8}/>
+      <SeaMonster x={240}  y={720}  w={180} src="images/sea-monster-drake.png"      rotate={-8}/>
       <SeaMonster x={1920} y={1050} w={200} src="images/sea-monster-whale.png"      rotate={5}/>
-      <SeaMonster x={1600} y={170}  w={170} src="images/sea-monster-hyperborean.png" rotate={-3}/>
+      <SeaMonster x={1340} y={470}  w={170} src="images/sea-monster-hyperborean.png" rotate={-3}/>
 
       {/* City points */}
       <g>
