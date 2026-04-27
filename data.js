@@ -474,7 +474,6 @@ window.SILKROAD_DATA = {
       followers: [],
       placeIds: ["saaremaa", "kyiv", "constantinople", "samarkand"],
       portraits: [
-        { src: "images/portraits/eskil-sackcloth.png", caption: "Sackcloth over the runes, entering a city" },
         { src: "images/portraits/eskil-ritual.png", caption: "Blood on the sigil, the hand that pays" },
         { src: "images/portraits/eskil-market.png", caption: "The rain market — revealed" },
       ],
