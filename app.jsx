@@ -317,6 +317,9 @@ function App() {
             className="map-svg-wrap"
             style={{ transform: `translate(calc(-50% + ${pan.x}px), calc(-50% + ${pan.y}px)) scale(${zoom})` }}
           >
+            {/* Brown double-line frame box, drawn at 30px out from the painted
+                map on all four sides. Indigo space between box and map. */}
+            <div className="map-frame"/>
             {/* Painted base map rendered as HTML <img> behind the SVG overlay.
                 SVG <image> fails to render this PNG reliably in Chromium (known issue
                 with certain PNG encodings in SVG image contexts). HTML <img> is

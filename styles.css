@@ -300,6 +300,20 @@ html, body {
   -webkit-user-drag: none;
 }
 
+/* Brown double-line frame box, 30px outside the painted map on all
+   four sides; indigo gap visible between the frame and the map. */
+.map-frame {
+  position: absolute;
+  left: 70px;       /* PNG left (100) - 30 */
+  top: 70px;        /* PNG top  (100) - 30 */
+  width: 2940px;    /* PNG width (2880) + 60 */
+  height: 1295px;   /* PNG height (1235) + 60 */
+  border: 6px double oklch(0.45 0.09 40);
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
 /* SVG overlay — pins are in viewBox 0..2400 x 0..1200, but the painted
    PNG content covers viewBox y=85..1114 (a 1029-unit window). To make
    pin y=85 land at wrap-pixel 100 (the painted PNG's top edge), the SVG
