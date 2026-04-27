@@ -387,13 +387,15 @@ window.SILKROAD_DATA = {
 
   routes: [
     { id: "silk-principal", name: "Principal Silk Road", color: "crimson", bold: true,
-      points: ["baghdad","rey","nishapur","merv","bukhara","samarkand","dunhuang","changan"] },
+      points: ["constantinople","baghdad","rey","nishapur","merv","bukhara","samarkand","dunhuang","changan"] },
     { id: "silk-south", name: "Southern Road", color: "gold",
       points: ["baghdad","nishapur","balkh","kashgar","khotan","dunhuang"] },
+    { id: "levant-road", name: "Levantine Branch", color: "gold",
+      points: ["baghdad","damascus","tyre","cairo"] },
     { id: "sea-route", name: "Indian Ocean Route", color: "teal",
       points: ["aden","quilon"] },
     { id: "varangian", name: "Varangian Way", color: "violet",
-      points: ["kyiv","constantinople","baghdad"] },
+      points: ["kyiv","constantinople"] },
   ],
 
   journey: [
