@@ -107,17 +107,23 @@ function App() {
     return () => cancelAnimationFrame(raf);
   }, [playingJourney]);
 
-  // Pan handlers
+  // Pan handlers — disabled while in stamp-edit mode so they don't fight
+  // with the per-stamp drag handlers.
   const onMouseDown = (e) => {
+    if (editStamps) return;
     if (e.button !== 0) return;
     setDragging(true);
     dragStart.current = { x: e.clientX - pan.x, y: e.clientY - pan.y };
   };
   const onMouseMove = (e) => {
+    if (editStamps) return;
     if (!dragging || !dragStart.current) return;
     setPan({ x: e.clientX - dragStart.current.x, y: e.clientY - dragStart.current.y });
   };
-  const onMouseUp = () => { setDragging(false); dragStart.current = null; };
+  const onMouseUp = () => {
+    if (editStamps) return;
+    setDragging(false); dragStart.current = null;
+  };
 
   const onWheel = (e) => {
     e.preventDefault();

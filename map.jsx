@@ -629,37 +629,53 @@ window.SilkRoadMap = function SilkRoadMap({
   );
 };
 
-// SVG-space drag helper. Returns onMouseDown handler that drives onDrag(id,x,y)
-// callbacks while the user moves the mouse. Uses the SVG's screen CTM inverse
-// to convert clientX/Y back to viewBox coordinates.
-function useStampDrag(stampId, onDrag, enabled) {
+// SVG-space drag helper. Drag-by-delta: capture both the mouse's start
+// viewBox coord and the stamp's start coord at mousedown, then on each move
+// add the delta. CTM is recomputed every move so panning during the drag
+// (if it ever leaks through) doesn't desync the stamp from the cursor.
+function useStampDrag(stampId, currentX, currentY, onDrag, enabled) {
   if (!enabled) return null;
   return (e) => {
     e.stopPropagation();
     e.preventDefault();
+    if (e.nativeEvent && e.nativeEvent.stopImmediatePropagation) {
+      e.nativeEvent.stopImmediatePropagation();
+    }
     const svg = e.currentTarget.ownerSVGElement;
-    const ctm = svg.getScreenCTM();
-    if (!ctm) return;
-    const inv = ctm.inverse();
+    const ctm0 = svg.getScreenCTM();
+    if (!ctm0) return;
+    const pt0 = svg.createSVGPoint();
+    pt0.x = e.clientX; pt0.y = e.clientY;
+    const local0 = pt0.matrixTransform(ctm0.inverse());
+    const startX = currentX;
+    const startY = currentY;
+
     const move = (ev) => {
+      ev.preventDefault();
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return;
       const pt = svg.createSVGPoint();
       pt.x = ev.clientX; pt.y = ev.clientY;
-      const local = pt.matrixTransform(inv);
-      onDrag(stampId, local.x, local.y);
+      const local = pt.matrixTransform(ctm.inverse());
+      const dx = local.x - local0.x;
+      const dy = local.y - local0.y;
+      onDrag(stampId, startX + dx, startY + dy);
     };
-    const up = () => {
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("mouseup", up);
+    const up = (ev) => {
+      ev.preventDefault();
+      window.removeEventListener("mousemove", move, true);
+      window.removeEventListener("mouseup", up, true);
     };
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mouseup", up);
+    // Use capture phase so we beat any other handler that might be listening.
+    window.addEventListener("mousemove", move, true);
+    window.addEventListener("mouseup", up, true);
   };
 }
 
 function RulerPortrait({ stampId, x, y, label, src, small = false, editStamps = false, onDrag }) {
   const w = small ? 150 : 200;
   const h = w; // square
-  const onMouseDown = useStampDrag(stampId, onDrag, editStamps);
+  const onMouseDown = useStampDrag(stampId, x, y, onDrag, editStamps);
   return (
     <g transform={`translate(${x - w/2}, ${y - h/2})`}
        onMouseDown={onMouseDown}
@@ -685,7 +701,7 @@ function RulerPortrait({ stampId, x, y, label, src, small = false, editStamps = 
 }
 
 function SeaMonster({ stampId, x, y, w, src, rotate = 0, editStamps = false, onDrag }) {
-  const onMouseDown = useStampDrag(stampId, onDrag, editStamps);
+  const onMouseDown = useStampDrag(stampId, x, y, onDrag, editStamps);
   return (
     <g transform={`translate(${x}, ${y}) rotate(${rotate})`}
        opacity="0.9"
