@@ -303,6 +303,25 @@ html, body {
 /* Brown two-line frame:
      - inner: thin, 1px onto the painted map (sits on its outer edge)
      - outer: heavier, 30px outside the map all the way around. */
+/* "+N more" tile that appears in the portrait thumbnail grid when a
+   character has more than 2 portraits. Click takes the user into the
+   lightbox where prev/next cycles through the whole gallery. */
+.char-portrait-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--gold);
+  background: oklch(0.16 0.06 265 / 0.6);
+  border: 1px dashed oklch(0.55 0.10 75 / 0.5);
+}
+.char-portrait-more:hover {
+  background: oklch(0.20 0.07 265 / 0.7);
+  border-color: var(--gold);
+}
+
 .map-frame-inner {
   position: absolute;
   left: 103px;      /* 3px inside the painted map's left edge */

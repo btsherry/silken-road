@@ -89,7 +89,9 @@ function CharacterPanel({ entity, onClose }) {
               <div className="char-portraits">
                 <div className="char-aside-heading">Portraits</div>
                 <div className="char-portrait-grid">
-                  {portraits.map((p, i) => (
+                  {/* Show only first 2 as thumbnails; the lightbox lets the
+                      user navigate through all portraits via prev/next. */}
+                  {portraits.slice(0, 2).map((p, i) => (
                     <button
                       key={i}
                       className="char-portrait-thumb"
@@ -99,6 +101,15 @@ function CharacterPanel({ entity, onClose }) {
                       <img src={p.src} alt={p.caption || ''} loading="lazy"/>
                     </button>
                   ))}
+                  {portraits.length > 2 && (
+                    <button
+                      className="char-portrait-thumb char-portrait-more"
+                      onClick={() => openPortrait(0)}
+                      title={`${portraits.length - 2} more`}
+                    >
+                      <span>+{portraits.length - 2}</span>
+                    </button>
+                  )}
                 </div>
               </div>
             )}
