@@ -279,21 +279,20 @@ html, body {
   top: 50%; left: 50%;
   transform-origin: center;
   transition: transform 0.08s linear;
-  /* The wrap is 360px wider than the SVG intrinsic size so the gold
-     border around the map ends up with comfortable indigo padding on
-     every side instead of being flush against the wrap on left/right. */
-  width: 3240px;
-  height: 1440px;
+  /* Wrap sized exactly to give a uniform 100px indigo gutter on every
+     side of the painted map content (which is 2880x1235 at display
+     resolution). Wrap = content + 2*gutter. */
+  width: 3080px;
+  height: 1435px;
 }
 
-/* Painted base map — original 1584x672 PNG with flood-filled torn edges
-   (chips/dings transparent so the indigo shows through them). Positioned
-   inside the 3240px wrap with 180px of indigo padding on each horizontal
-   side, vertically anchored at top=102 to leave letterbox above and below. */
+/* Painted base map — 1584x672 PNG with flood-filled torn edges (chips
+   transparent so indigo shows through them). Positioned with a uniform
+   100px gutter to all wrap edges. */
 .base-map-img {
   position: absolute;
-  left: 180px;
-  top: 102px;
+  left: 100px;
+  top: 100px;
   width: 2880px;
   height: 1235px;
   pointer-events: none;
@@ -301,12 +300,15 @@ html, body {
   -webkit-user-drag: none;
 }
 
+/* SVG overlay — pins are in viewBox 0..2400 x 0..1200, but the painted
+   PNG content covers viewBox y=85..1114 (a 1029-unit window). To make
+   pin y=85 land at wrap-pixel 100 (the painted PNG's top edge), the SVG
+   has to start 2px above the wrap top: 100 - 85*1.2 = -2. */
 .map-svg {
   display: block;
   position: absolute;
-  /* Match the base-map shift so pins line up with the painted content. */
-  left: 180px;
-  top: 0;
+  left: 100px;
+  top: -2px;
   z-index: 1;
 }
 
