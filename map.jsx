@@ -589,9 +589,6 @@ function RulerPortrait({ x, y, label, src, small = false }) {
   const h = w; // square
   return (
     <g transform={`translate(${x - w/2}, ${y - h/2})`}>
-      {/* Subtle shadow */}
-      <rect x="4" y="6" width={w} height={h + 26}
-            fill="oklch(0.12 0.02 40 / 0.45)"/>
       {/* Portrait frame */}
       <rect x="0" y="0" width={w} height={h + 26}
             fill="oklch(0.88 0.06 72)" stroke="oklch(0.35 0.09 35)" strokeWidth="1.5"/>
