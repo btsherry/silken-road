@@ -176,7 +176,13 @@ function App() {
     ? data.places.find(p => p.id === selected.id)
     : null;
 
-  const currentRegion = focusPoint ? focusPoint.region : "Dar al-Islam";
+  // Polity hover state — drives the region cartouche in the top bar.
+  const [hoveredPolity, setHoveredPolity] = useState(null);
+
+  // Cartouche text precedence: hovered polity > selected place's region > default.
+  const currentRegion = hoveredPolity
+    ? hoveredPolity.name
+    : focusPoint ? focusPoint.region : "Dar al-Islam";
 
   const toggleLayer = (key, setter, current) => {
     setter(!current);
@@ -304,7 +310,10 @@ function App() {
               onPointClick={onPointClick}
               onPointHover={(p) => setHovered(p)}
               onPointLeave={() => setHovered(null)}
+              onPolityHover={(p) => setHoveredPolity(p)}
+              onPolityLeave={() => setHoveredPolity(null)}
               hoveredId={hovered && hovered.id}
+              hoveredPolityId={hoveredPolity && hoveredPolity.id}
               activeId={selected && selected.section === "places" ? selected.id : null}
             />
           </div>

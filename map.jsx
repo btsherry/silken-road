@@ -12,11 +12,16 @@ window.SilkRoadMap = function SilkRoadMap({
   onPointClick,
   onPointHover,
   onPointLeave,
+  onPolityHover,
+  onPolityLeave,
+  onPolityClick,
   hoveredId,
   activeId,
+  hoveredPolityId,
 }) {
   const data = window.SILKROAD_DATA || {};
   data.regions = data.regions || [];
+  data.polities = data.polities || [];
   data.seas = data.seas || [];
   data.deserts = data.deserts || [];
   data.mountains = data.mountains || [];
@@ -503,6 +508,27 @@ window.SilkRoadMap = function SilkRoadMap({
       <SeaMonster x={240}  y={720}  w={180} src="images/sea-monster-drake.png"      rotate={-8}/>
       <SeaMonster x={1920} y={1050} w={200} src="images/sea-monster-whale.png"      rotate={5}/>
       <SeaMonster x={1340} y={470}  w={170} src="images/sea-monster-hyperborean.png" rotate={-3}/>
+
+      {/* Polity boundary polygons — toggleable via showBorders. Rendered
+          before pins so pins remain clickable on top, but after the other
+          decorative elements so the dashed boundaries draw above them. */}
+      {showBorders && data.polities.length > 0 && (
+        <g className="polity-layer">
+          {data.polities.map(p => {
+            const isHovered = hoveredPolityId === p.id;
+            return (
+              <path
+                key={p.id}
+                d={p.path}
+                className={`polity-region ${isHovered ? "hovered" : ""}`}
+                onMouseEnter={() => onPolityHover && onPolityHover(p)}
+                onMouseLeave={() => onPolityLeave && onPolityLeave(p)}
+                onClick={(e) => { e.stopPropagation(); onPolityClick && onPolityClick(p); }}
+              />
+            );
+          })}
+        </g>
+      )}
 
       {/* City points */}
       <g>

@@ -779,6 +779,24 @@ html, body {
 
 /* Journey trail */
 
+/* Polity boundary polygons — schematic, dashed, indigo. */
+.polity-region {
+  fill: oklch(0.30 0.11 265 / 0.08);
+  stroke: oklch(0.30 0.13 265 / 0.85);
+  stroke-width: 2.2;
+  stroke-dasharray: 7 5;
+  stroke-linejoin: round;
+  cursor: pointer;
+  pointer-events: all;
+  transition: fill 0.16s ease-out, stroke 0.16s ease-out;
+}
+.polity-region.hovered {
+  fill: oklch(0.78 0.13 82 / 0.14);
+  stroke: oklch(0.62 0.16 32 / 0.95);
+  stroke-width: 2.8;
+  stroke-dasharray: 8 4;
+}
+
 .journey-trail {
   fill: none;
   stroke: var(--crimson);

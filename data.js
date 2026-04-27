@@ -25,8 +25,46 @@ window.SILKROAD_DATA = {
     { id: "tufan",    label: "PRATĪHĀRAS",        x: 1640, y: 780, size: 24, sub: null },
     { id: "palas",    label: "PĀLAS",             x: 1820, y: 780, size: 22, sub: null },
     { id: "rashtra",  label: "RĀṢṬRAKŪṬA",        x: 1620, y: 900, size: 22, sub: null },
-    { id: "kabul",    label: "KĀBUL-SHĀHĪ",       x: 1530, y: 640, size: 22, sub: null,
-      image: "images/places/kabul.png" },
+    { id: "kabul",    label: "KĀBUL-SHĀHĪ",       x: 1530, y: 640, size: 22, sub: null },
+  ],
+
+  // Polity boundary polygons for the showBorders overlay. ca. 900 AD.
+  // Schematic, hand-researched per polity, then projected from real lat/lon
+  // through a thin-plate spline anchored on ~22 known place pins.
+  // Phase 1 test set: Abbasid, Byzantine, Tang, Samanid.
+  polities: [
+    {
+      id: "abbasid-realm",
+      name: "Abbasid Caliphate",
+      ruler: "Caliph al-Muktafī (recently succeeded al-Muʿtaḍid)",
+      capital: "Baghdad",
+      blurb: "The caliph in Baghdad — al-Muktafī as of this year — has just consolidated what's left of his direct authority: Iraq, the Jazīra, the Jibāl, Khūzistān, Fārs, and the upper Euphrates. Egypt is still Tūlūnid; Khorasan has just slipped to the Sāmānids; Ifrīqiya pays no tribute. This is the briefly-restored maximum before fragmentation resumes.",
+      path: "M 1199 509 Q 1199 509 1221 506 Q 1243 504 1258 507 Q 1273 511 1281 521 Q 1288 532 1296 540 Q 1303 548 1310 553 Q 1318 558 1324 571 Q 1331 584 1333 610 Q 1335 635 1330 661 Q 1325 687 1317 696 Q 1309 706 1303 703 Q 1296 700 1291 686 Q 1287 672 1284 665 Q 1281 657 1277 645 Q 1273 634 1268 614 Q 1263 594 1245 580 Q 1228 566 1219 554 Q 1210 541 1201 531 Q 1192 520 1195 515 Z",
+    },
+    {
+      id: "byzantine-realm",
+      name: "Byzantine Empire",
+      ruler: "Leo VI the Wise",
+      capital: "Constantinople",
+      blurb: "Under Leo VI, Romanía holds Anatolia west of the Taurus, Greece and Thrace to a Bulgarian frontier along the Haemus, the Aegean isles, and the southern Italian themes of Calabria and Longobardia. Sicily is nearly lost — Taormina will fall in 902. Crete is Arab. Cyprus is a condominium of two faiths.",
+      path: "M 1061 441 Q 1061 441 1057 445 Q 1052 449 1030 457 Q 1009 466 999 471 Q 989 477 987 484 Q 984 490 981 498 Q 977 505 972 519 Q 967 533 971 541 Q 974 550 995 550 Q 1016 550 1064 555 Q 1111 560 1132 551 Q 1153 542 1163 530 Q 1173 517 1191 506 Q 1209 494 1231 484 Q 1253 474 1259 468 Q 1264 461 1249 458 Q 1234 454 1130 473 Q 1027 491 1010 491 Q 993 490 963 513 Q 933 535 919 535 Q 906 536 911 529 Q 916 522 925 516 Q 934 511 997 476 Z",
+    },
+    {
+      id: "tang-realm",
+      name: "Tang Dynasty",
+      ruler: "Emperor Zhāozōng (puppet of warring jiédùshǐ)",
+      capital: "Cháng'ān (Luòyáng next year)",
+      blurb: "The dynasty's last lull. Real authority has long since passed to the regional military governors — Wáng Jiàn in Sìchuān, Qián Liú in Wúyuè, Zhū Wēn at Biàn, Lǐ Kèyòng at Héḏōng. Court control is the Wèi valley, central Hénán, the middle Yangtze, and the Sìchuān basin in name. Seven years remain before abdication.",
+      path: "M 2147 555 Q 2147 555 2154 531 Q 2162 508 2169 498 Q 2176 488 2180 486 Q 2184 485 2186 488 Q 2189 491 2191 501 Q 2194 511 2196 525 Q 2198 540 2198 554 Q 2199 568 2200 585 Q 2202 601 2204 628 Q 2207 655 2204 684 Q 2200 713 2192 724 Q 2183 735 2171 742 Q 2158 749 2147 747 Q 2136 746 2133 729 Q 2130 713 2137 695 Q 2144 678 2147 660 Q 2150 643 2150 627 Q 2150 611 2148 583 Z",
+    },
+    {
+      id: "samanid-realm",
+      name: "Sāmānid Emirate",
+      ruler: "Ismāʿīl Sāmānī",
+      capital: "Bukhārā",
+      blurb: "At its zenith. The Battle of Balkh in spring of this year destroyed the Saffārids; the caliph invested Ismāʿīl with Khorāsān, Tabaristān, Rayy, and the western Iranian frontier. Bukhārā is the new intellectual capital of the Persianate world. The Tālās frontier with the Karluks holds; Khwārazm pays tribute.",
+      path: "M 1312 552 Q 1312 552 1331 553 Q 1351 554 1365 534 Q 1378 515 1412 497 Q 1445 478 1483 465 Q 1521 451 1551 462 Q 1580 472 1621 483 Q 1661 495 1695 499 Q 1729 502 1734 521 Q 1740 540 1731 560 Q 1722 580 1698 600 Q 1675 621 1645 640 Q 1615 659 1596 667 Q 1576 675 1531 690 Q 1486 704 1462 716 Q 1437 727 1424 734 Q 1410 740 1395 725 Q 1379 710 1367 688 Q 1355 666 1343 639 Q 1332 612 1323 594 Q 1313 575 1313 563 Z",
+    },
   ],
 
   // Water labels
