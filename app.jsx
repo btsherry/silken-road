@@ -15,6 +15,10 @@ const SECTION_DEFS = [
 function App() {
   const data = window.SILKROAD_DATA;
 
+  // Edit mode for repositioning stamps. Activate with ?edit=stamps in the URL.
+  const editStamps = typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("edit") === "stamps";
+
   // Layer toggles (persisted via tweak keys)
   const T = window.TWEAKS || {};
   const [showRoutes, setShowRoutes] = useState(T.showRoutes ?? true);
@@ -315,7 +319,9 @@ function App() {
               hoveredId={hovered && hovered.id}
               hoveredPolityId={hoveredPolity && hoveredPolity.id}
               activeId={selected && selected.section === "places" ? selected.id : null}
+              editStamps={editStamps}
             />
+            {editStamps && <StampEditorPanel/>}
           </div>
 
           {hovered && (
@@ -404,6 +410,49 @@ function App() {
           ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+// ——— Stamp editor panel — visible only when ?edit=stamps is set ———
+
+function StampEditorPanel() {
+  const [snapshot, setSnapshot] = useState({});
+  useEffect(() => {
+    const tick = () => {
+      try { setSnapshot(window.__getStamps ? window.__getStamps() : {}); } catch {}
+    };
+    const id = setInterval(tick, 200);
+    tick();
+    return () => clearInterval(id);
+  }, []);
+  const copyJSX = () => {
+    const lines = [];
+    lines.push("// Paste this into map.jsx DEFAULT_STAMPS to lock these positions:");
+    for (const [k, v] of Object.entries(snapshot)) {
+      lines.push(`  ${k}:  x: ${v.x}, y: ${v.y}`);
+    }
+    const text = lines.join("\n");
+    navigator.clipboard.writeText(text).then(
+      () => alert("Positions copied to clipboard"),
+      (e) => alert("Copy failed: " + e)
+    );
+  };
+  return (
+    <div className="stamp-editor-panel">
+      <div className="stamp-editor-title">Stamp Editor (drag to move)</div>
+      <table className="stamp-editor-table">
+        <tbody>
+          {Object.entries(snapshot).map(([k, v]) => (
+            <tr key={k}>
+              <td className="stamp-editor-key">{k}</td>
+              <td className="stamp-editor-val">{v.x}, {v.y}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <button className="stamp-editor-copy" onClick={copyJSX}>Copy positions as JSX</button>
+      <div className="stamp-editor-hint">When happy, paste back to Thoth and edit mode comes off.</div>
     </div>
   );
 }

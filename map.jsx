@@ -3,6 +3,17 @@
 // ViewBox 0..2400 W × 0..1200 H. This is a stylized medieval cartography — NOT a real
 // projection. Shapes are hand-built to evoke the reference image's feel.
 
+// Default stamp positions (rulers + sea monsters). Edit-mode overrides these.
+const DEFAULT_STAMPS = {
+  caliph:       { x: 200,  y: 560, kind: "ruler", label: "CALIPH",   src: "images/ruler-caliph.png",   small: false },
+  emperor:      { x: 2140, y: 560, kind: "ruler", label: "EMPEROR",  src: "images/ruler-emperor.png",  small: false },
+  basileus:     { x: 200,  y: 280, kind: "ruler", label: "BASILEUS", src: "images/ruler-basileus.png", small: true  },
+  qaghan:       { x: 2140, y: 280, kind: "ruler", label: "QAGHAN",   src: "images/ruler-qaghan.png",   small: true  },
+  drake:        { x: 240,  y: 720, w: 180, kind: "monster", src: "images/sea-monster-drake.png",       rotate: -8 },
+  whale:        { x: 1920, y: 1050, w: 200, kind: "monster", src: "images/sea-monster-whale.png",      rotate:  5 },
+  hyperborean:  { x: 1340, y: 470, w: 170, kind: "monster", src: "images/sea-monster-hyperborean.png", rotate: -3 },
+};
+
 window.SilkRoadMap = function SilkRoadMap({
   showRoutes = true,
   showBorders = true,
@@ -18,7 +29,23 @@ window.SilkRoadMap = function SilkRoadMap({
   hoveredId,
   activeId,
   hoveredPolityId,
+  editStamps = false,
 }) {
+  // Live stamp positions; only mutable while editStamps is true.
+  const [stampPositions, setStampPositions] = React.useState({});
+  const dragStamp = (id, x, y) => setStampPositions(s => ({ ...s, [id]: { x, y } }));
+  // Expose snapshot to the window so the floating panel can read it.
+  React.useEffect(() => {
+    window.__getStamps = () => {
+      const out = {};
+      for (const k of Object.keys(DEFAULT_STAMPS)) {
+        const p = stampPositions[k] || DEFAULT_STAMPS[k];
+        out[k] = { x: Math.round(p.x), y: Math.round(p.y) };
+      }
+      return out;
+    };
+  }, [stampPositions]);
+
   const data = window.SILKROAD_DATA || {};
   data.regions = data.regions || [];
   data.polities = data.polities || [];
@@ -498,16 +525,22 @@ window.SilkRoadMap = function SilkRoadMap({
         </g>
       )}
 
-      {/* Ruler portrait illuminations at edges (generated, Catalan-Atlas style) */}
-      <RulerPortrait x={200}  y={560} label="CALIPH"   src="images/ruler-caliph.png"/>
-      <RulerPortrait x={2140} y={560} label="EMPEROR"  src="images/ruler-emperor.png"/>
-      <RulerPortrait x={200}  y={280} label="BASILEUS" src="images/ruler-basileus.png" small/>
-      <RulerPortrait x={2140} y={280} label="QAGHAN"   src="images/ruler-qaghan.png"  small/>
-
-      {/* Sea monsters in the empty oceans */}
-      <SeaMonster x={240}  y={720}  w={180} src="images/sea-monster-drake.png"      rotate={-8}/>
-      <SeaMonster x={1920} y={1050} w={200} src="images/sea-monster-whale.png"      rotate={5}/>
-      <SeaMonster x={1340} y={470}  w={170} src="images/sea-monster-hyperborean.png" rotate={-3}/>
+      {/* Stamps (rulers + sea monsters). When ?edit=stamps is set, these are
+          draggable; the parent app keeps live positions so you can copy them. */}
+      {Object.entries(DEFAULT_STAMPS).map(([id, s]) => {
+        const pos = stampPositions[id] || { x: s.x, y: s.y };
+        if (s.kind === "ruler") {
+          return (
+            <RulerPortrait key={id} stampId={id} x={pos.x} y={pos.y} label={s.label}
+                           src={s.src} small={s.small} editStamps={editStamps}
+                           onDrag={dragStamp}/>
+          );
+        }
+        return (
+          <SeaMonster key={id} stampId={id} x={pos.x} y={pos.y} w={s.w} src={s.src}
+                      rotate={s.rotate} editStamps={editStamps} onDrag={dragStamp}/>
+        );
+      })}
 
       {/* Polity boundary polygons — toggleable via showBorders. Rendered
           before pins so pins remain clickable on top, but after the other
@@ -596,17 +629,47 @@ window.SilkRoadMap = function SilkRoadMap({
   );
 };
 
-function RulerPortrait({ x, y, label, src, small = false }) {
+// SVG-space drag helper. Returns onMouseDown handler that drives onDrag(id,x,y)
+// callbacks while the user moves the mouse. Uses the SVG's screen CTM inverse
+// to convert clientX/Y back to viewBox coordinates.
+function useStampDrag(stampId, onDrag, enabled) {
+  if (!enabled) return null;
+  return (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const svg = e.currentTarget.ownerSVGElement;
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return;
+    const inv = ctm.inverse();
+    const move = (ev) => {
+      const pt = svg.createSVGPoint();
+      pt.x = ev.clientX; pt.y = ev.clientY;
+      const local = pt.matrixTransform(inv);
+      onDrag(stampId, local.x, local.y);
+    };
+    const up = () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", up);
+    };
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", up);
+  };
+}
+
+function RulerPortrait({ stampId, x, y, label, src, small = false, editStamps = false, onDrag }) {
   const w = small ? 150 : 200;
   const h = w; // square
+  const onMouseDown = useStampDrag(stampId, onDrag, editStamps);
   return (
-    <g transform={`translate(${x - w/2}, ${y - h/2})`}>
+    <g transform={`translate(${x - w/2}, ${y - h/2})`}
+       onMouseDown={onMouseDown}
+       style={editStamps ? { cursor: "grab" } : undefined}>
       {/* Subtle shadow */}
       <rect x="4" y="6" width={w} height={h + 26}
             fill="oklch(0.12 0.02 40 / 0.45)"/>
       {/* Portrait frame */}
       <rect x="0" y="0" width={w} height={h + 26}
-            fill="oklch(0.88 0.06 72)" stroke="oklch(0.35 0.09 35)" strokeWidth="1.5"/>
+            fill="oklch(0.88 0.06 72)" stroke={editStamps ? "var(--gold-bright)" : "oklch(0.35 0.09 35)"} strokeWidth={editStamps ? 3 : 1.5}/>
       <rect x="3" y="3" width={w - 6} height={h + 20} fill="none"
             stroke="oklch(0.35 0.09 35 / 0.5)" strokeWidth="0.6"/>
       <image href={src} x="4" y="4" width={w - 8} height={h - 8}
@@ -621,10 +684,20 @@ function RulerPortrait({ x, y, label, src, small = false }) {
   );
 }
 
-function SeaMonster({ x, y, w, src, rotate = 0 }) {
+function SeaMonster({ stampId, x, y, w, src, rotate = 0, editStamps = false, onDrag }) {
+  const onMouseDown = useStampDrag(stampId, onDrag, editStamps);
   return (
-    <g transform={`translate(${x}, ${y}) rotate(${rotate})`} opacity="0.9"
-       style={{mixBlendMode: 'multiply'}}>
+    <g transform={`translate(${x}, ${y}) rotate(${rotate})`}
+       opacity="0.9"
+       onMouseDown={onMouseDown}
+       style={{
+         mixBlendMode: editStamps ? 'normal' : 'multiply',
+         cursor: editStamps ? "grab" : undefined,
+       }}>
+      {editStamps && (
+        <rect x={-w/2 - 4} y={-w/2 - 4} width={w + 8} height={w + 8}
+              fill="none" stroke="var(--gold-bright)" strokeWidth="3"/>
+      )}
       <image href={src} x={-w/2} y={-w/2} width={w} height={w}
              preserveAspectRatio="xMidYMid meet"/>
     </g>
