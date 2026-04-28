@@ -220,7 +220,7 @@ window.SILKROAD_DATA = {
       kind: "great-city",
       blurb: "The Queen of Cities. Byzantine bulwark of the West, golden domes crowning the Bosphorus. Greek merchants trade silks from the East for Frankish silver; eunuchs and patriarchs whisper of a relic lost beyond the Oxus.",
       image: "images/places/constantinople.png" },
-    { id: "baghdad", name: "Baghdad", region: "Abbasid Caliphate", x: 991, y: 654,
+    { id: "baghdad", name: "Baghdad", region: "Abbasid Caliphate", x: 964, y: 622,
       kind: "great-city",
       blurb: "The Round City of Peace, seat of the Abbasid Caliphate. The House of Wisdom glows through the night with astronomers, poets, and translators.",
       image: "images/places/baghdad.png" },
