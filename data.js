@@ -376,7 +376,7 @@ window.SILKROAD_DATA = {
     { id: "cathedral-of-bones", name: "The Cathedral of Bones (Nightwolf Stronghold)", region: "Forest north of Itil", x: 965, y: 309, kind: "ruin",
       blurb: "Deep in the northern forests, we found the Nightwolf's stronghold, a fortress of mortared bone and skull-palisades. In the cathedral of ribs and pelvises, we faced Karishkir and his court. We beheaded the sorcerer and left his throne of bones to the fire.",
       image: "images/places/cathedral-of-bones.png" },
-    { id: "serpents-rest", name: "The Serpent's Rest", region: "Deep Taklamakan", x: 1900, y: 600, kind: "ruin",
+    { id: "serpents-rest", name: "The Serpent's Rest", region: "Deep Taklamakan", x: 1533, y: 512, kind: "ruin",
       blurb: "The desert of death hides cities swallowed by sand. One such place, of pre-human design, called to the serpent in Lüèduó's blood. Beneath its impossible architecture, the Nagini claimed him and set her mark upon his wrist.",
       image: "images/places/serpents-rest.png" },
     { id: "penjikent", name: "Penjikent", region: "Sogdian foothills", x: 1525, y: 560, kind: "city",
