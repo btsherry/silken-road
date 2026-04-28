@@ -373,7 +373,7 @@ window.SILKROAD_DATA = {
     { id: "chapel-of-bones", name: "The Chapel of Bones (beneath Merv)", region: "Catacombs beneath Merv's great mosque", x: 1420, y: 570, kind: "ruin",
       blurb: "Beneath the great mosque of Merv lies a cult chapel of bone — the walls and altars built from human ribs and skulls, inverted icons set into mortared flesh. We descended through Karishkir's portal and faced her, Drekhlo, and Nizack on the altar; Isaac's holy light tore the chamber open and Karishkir and Drekhlo escaped through Nizack's shadow-door. The chapel burned behind us. The cult rebuilt it later, larger and grander, on the Volga.",
       image: "images/places/chapel-of-bones.png" },
-    { id: "cathedral-of-bones", name: "The Cathedral of Bones (Nightwolf Stronghold)", region: "Forest north of Itil", x: 995, y: 235, kind: "ruin",
+    { id: "cathedral-of-bones", name: "The Cathedral of Bones (Nightwolf Stronghold)", region: "Forest north of Itil", x: 965, y: 309, kind: "ruin",
       blurb: "Deep in the northern forests, we found the Nightwolf's stronghold, a fortress of mortared bone and skull-palisades. In the cathedral of ribs and pelvises, we faced Karishkir and his court. We beheaded the sorcerer and left his throne of bones to the fire.",
       image: "images/places/cathedral-of-bones.png" },
     { id: "serpents-rest", name: "The Serpent's Rest", region: "Deep Taklamakan", x: 1900, y: 600, kind: "ruin",
