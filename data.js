@@ -337,7 +337,7 @@ window.SILKROAD_DATA = {
     { id: "tyre", name: "Tyre", region: "Phoenician coast", x: 1140, y: 600, kind: "city",
       blurb: "An island-port of corsairs, straddling the Caliphate and the Sea. Below the fighting pits we found caverns of an older faith and slew the fish-demon child of Dagon. We left Lod buried in the collapse.",
       image: "images/places/tyre.png" },
-    { id: "aidhab", name: "Aidhab", region: "Red Sea (Sudanese coast)", x: 1133, y: 781, kind: "city",
+    { id: "aidhab", name: "Aidhab", region: "Red Sea (Sudanese coast)", x: 912, y: 914, kind: "city",
       blurb: "The Red Sea port where pilgrims and merchants cross to Arabia. Here we landed on Soleman's ships and saw the Emperor's agent Fashian put his hooks into Lüèduó. It was in Aidhab that we hired Tabiri of Shendi as our guide into the desert.",
       image: "images/places/aidhab.png" },
     { id: "ikhmindi", name: "Ikhmindi & the Khem-Sethi Temple", region: "Nubia, west bank Nile", x: 1071, y: 793, kind: "ruin",
