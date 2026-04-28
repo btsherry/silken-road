@@ -279,7 +279,7 @@ window.SILKROAD_DATA = {
     { id: "itil",        name: "Itil",        region: "Khazars", x: 1017, y: 385, kind: "city",
       blurb: "The capital of the Khazars at the Volga's mouth, a city of many gods and one ruler. Here we felt the stirrings of outer hunters, and Giovanni met an assassin from Alexandria praying in one of its churches.",
       image: "images/places/itil.png"  },
-    { id: "talas",       name: "Talas",       region: "Türgesh", x: 1680, y: 500, kind: "ruin",
+    { id: "talas",       name: "Talas",       region: "Türgesh", x: 1365, y: 445, kind: "ruin",
       blurb: "A generation ago, Abbasid and Tang armies met here and the world changed. Papermakers went west; something else went east. The battlefield still hums when lightning is near.",
       image: "images/places/talas.png" },
     { id: "rome",        name: "Roma",        region: "Papal States", x: 540, y: 495, kind: "city",
