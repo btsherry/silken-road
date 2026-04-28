@@ -249,7 +249,7 @@ window.SILKROAD_DATA = {
     { id: "merv",        name: "Merv",        region: "Khorasan", x: 1420, y: 570, kind: "city",
       blurb: "Mother of Cities. Walled oasis where Zoroastrian fire-keepers, Nestorian priests and Sufi wanderers share the same well.",
       image: "images/places/merv.png" },
-    { id: "balkh",       name: "Balkh",       region: "Khorasan", x: 1520, y: 620, kind: "city",
+    { id: "balkh",       name: "Balkh",       region: "Khorasan", x: 1277, y: 544, kind: "city",
       blurb: "Umm al-Bilad. Ruins of Nawbahar, greatest Buddhist temple west of the Pamirs, lie quiet under the snow. Something beneath them is not quiet.",
       image: "images/places/balkh.png" },
     { id: "nishapur",    name: "Nishapur",    region: "Khorasan", x: 1400, y: 610, kind: "city",
