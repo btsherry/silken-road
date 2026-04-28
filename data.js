@@ -258,7 +258,7 @@ window.SILKROAD_DATA = {
     { id: "rey",         name: "Rey",         region: "Jibāl", x: 1320, y: 580, kind: "city",
       blurb: "One of the great frontier cities between empires, known for its theologians and coppersmiths. It stands as a bulwark and a crossroads, ever watchful.",
       image: "images/places/rey.png"  },
-    { id: "shiraz",      name: "Shiraz",      region: "Fārs", x: 1320, y: 700, kind: "city",
+    { id: "shiraz",      name: "Shiraz",      region: "Fārs", x: 1089, y: 678, kind: "city",
       blurb: "Famed for its poets and gardens, a paradise city of the Buyid emirs. We sought rest here after Merv, but found our own purposes: a master's scimitar for Bansi, and a dark cult purged by Eskil. Even so, the vampire Paul found Giovanni's throat in a silent house of old things.",
       image: "images/places/shiraz.png"  },
     { id: "damascus",    name: "Damascus",    region: "al-Shām", x: 1150, y: 580, kind: "city",
