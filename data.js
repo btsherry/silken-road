@@ -285,7 +285,7 @@ window.SILKROAD_DATA = {
     { id: "rome",        name: "Roma",        region: "Papal States", x: 509, y: 474, kind: "city",
       blurb: "A city of ghosts and ruins, where the Pope holds power amid the squabbles of Lombard and Frankish lords. It is a shadow of its former glory, but the center of the western faith.",
       image: "images/places/rome.png"  },
-    { id: "venice",      name: "Venezia",     region: "Lombardy", x: 490, y: 430, kind: "city",
+    { id: "venice",      name: "Venezia",     region: "Lombardy", x: 501, y: 403, kind: "city",
       blurb: "The lagoon-city, built on water and trade. It was here Giovanni was taken from his farm and made into what he is. The city bows to the Emperor in Constantinople but serves its own coin.",
       image: "images/places/venice.png"  },
 
