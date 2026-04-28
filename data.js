@@ -637,6 +637,14 @@ window.SILKROAD_DATA = {
       blurb: "Eskil's rune-casting brother, who read the omens against the night the priestesses chose Eskil for the Black Goat. At the bog he scratched a binding rune in the dirt and took the killing onto himself, exchanging his life for his brother's. A fragment of his voice rides now in an iron skull at Eskil's belt and warns him, very quietly, when he has spoken too much.",
     },
     {
+      id: "nagini",
+      name: "The Nagini",
+      role: "Pre-human serpent matriarch; Lüèduó's keeper",
+      region: "The Serpent's Rest, and the new chamber she has made of his mind",
+      image: "images/npcs/nagini.png",
+      blurb: "A goddess older than empires, scattered through a thinning bloodline and waking whenever one of her children comes near her resting place. Lüèduó went west feverish — slit pupils flickering, scales surfacing under a bug-bite — and a Khotanese wisewoman's expulsion-draught only provoked the thing in his blood. In the impossible chamber beneath the Serpent's Rest she claimed him by name, bit his wrist, and unmade the ruin around them; he woke in empty desert with her coiled in a new room of his mind. She speaks in serpent-sibilants and old, careful Persian, and once she has named a debt she does not forget it.",
+    },
+    {
       id: "tabiri",
       name: "Tabiri of Shendi",
       role: "Nubian guide",
