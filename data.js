@@ -440,6 +440,9 @@ window.SILKROAD_DATA = {
     // Episodes XVII–XIX — Quilon, Satyavati's shrine, Jayashri's palace,
     // Srinagar.
     "quilon", "satyavati-shrine", "jayashri-palace", "srinagar",
+    // Episode XX — over the Himalayas to Nagalokaguha, the cave gateway
+    // to Nagaloka.
+    "nagalokaguha",
     // Episodes XXI–XXII — Taklamakan crossing, Khotan, the Pillar of Gol-Goroth,
     // return to Khotan, flight to Samarkand.
     "taklamakan-home", "khotan", "gol-goroth-pillar", "khotan", "samarkand",
