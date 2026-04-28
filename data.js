@@ -295,7 +295,7 @@ window.SILKROAD_DATA = {
     { id: "srinagar",    name: "Srinagar",    region: "Kashmir", x: 1707, y: 669, kind: "city",
       blurb: "Valley-city of lakes and houseboats, set among pines and peaks. Iksha Bhima — known to the caravans as Bansi — slipped out of her father's palace here, disguised as a servant boy, and never came back. Giovanni keeps ten followers in a chapel on the city's edge.",
       image: "images/places/srinagar.png" },
-    { id: "saaremaa",    name: "Saaremaa",    region: "Eysysla (Baltic)", x: 640, y: 160, kind: "ruin",
+    { id: "saaremaa",    name: "Saaremaa",    region: "Eysysla (Baltic)", x: 650, y: 148, kind: "ruin",
       blurb: "An island in the Baltic, north-west of the Rus' rivers. Eskil's village stood here until the void opened at its center and swallowed it whole. He alone escaped — pulling himself from the surf while a strange fire ate the last of the houses.",
       image: "images/places/saaremaa.png" },
     { id: "taklamakan-home", name: "Taklamakan Tribe", region: "Uyghur steppe", x: 1860, y: 550, kind: "tribal",
