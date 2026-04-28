@@ -1607,6 +1607,25 @@ html, body {
   line-height: 1.1;
 }
 
+/* Careers group — labels are multi-word ("Stygian Scholar",
+   "Runesmith (Magician)", "Sailor (Sea Rogue)"), so allow wrapping
+   and tighten letter-spacing to fit the fixed-width cells. */
+.char-stats-group.is-careers .char-stat-k {
+  letter-spacing: 0.06em;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-height: 1.2;
+  min-height: 22px;
+  padding: 0 2px;
+}
+.char-stats-group.is-careers .char-stat-cell {
+  padding: 5px 0 6px;
+}
+.char-stats-group.is-careers .char-stat-v {
+  margin-top: 2px;
+}
+
 /* ═══════════════ Character lightbox ═══════════════ */
 
 .char-lightbox {

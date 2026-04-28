@@ -107,10 +107,6 @@ function CharacterPanel({ entity, onClose }) {
 
             {item.origin && <CharFact label="Origin" value={item.origin}/>}
 
-            {item.arcCareers && item.arcCareers.length > 0 && (
-              <CharFact label="Careers" value={item.arcCareers.join(' → ')}/>
-            )}
-
             {item.languages && item.languages.length > 0 && (
               <CharFact label="Tongues" value={item.languages.join(', ')}/>
             )}
@@ -157,7 +153,7 @@ function CharacterPanel({ entity, onClose }) {
               </div>
             )}
 
-            {item.stats && <CharStatsBlock stats={item.stats}/>}
+            {item.stats && <CharStatsBlock stats={item.stats} careers={item.arcCareers}/>}
           </aside>
         </div>
       </div>
@@ -184,8 +180,8 @@ function CharFact({ label, value }) {
   );
 }
 
-function CharStatsBlock({ stats }) {
-  // Grouped: attributes | combat | vitals
+function CharStatsBlock({ stats, careers }) {
+  // Grouped: attributes | combat | vitals | careers
   const attrRows = [
     ["STR", stats.str], ["AGI", stats.agi], ["MIND", stats.mind], ["APPEAL", stats.appeal],
   ].filter(([, v]) => v !== undefined);
@@ -195,13 +191,21 @@ function CharStatsBlock({ stats }) {
   const vitalRows = [
     ["Lifeblood", stats.lifeblood], ["Hero Pts.", stats.hero], ["Arcane Pts.", stats.arcane], ["Fate Pts.", stats.fate],
   ].filter(([, v]) => v !== undefined);
+  const careerRows = careers && typeof careers === 'object' && !Array.isArray(careers)
+    ? Object.entries(careers)
+    : [];
 
   return (
     <div className="char-stats">
       <div className="char-aside-heading">Stats (Barbarians of Lemuria)</div>
-      {[["Attributes", attrRows], ["Combat", combatRows], ["Vitals", vitalRows]].map(([label, rows]) =>
+      {[
+        ["Attributes", attrRows, ""],
+        ["Combat", combatRows, ""],
+        ["Vitals", vitalRows, ""],
+        ["Careers", careerRows, "is-careers"],
+      ].map(([label, rows, mod]) =>
         rows.length > 0 && (
-          <div className="char-stats-group" key={label}>
+          <div className={`char-stats-group ${mod}`} key={label}>
             <div className="char-stats-label">{label}</div>
             <div className="char-stats-grid">
               {rows.map(([k, v]) => (
