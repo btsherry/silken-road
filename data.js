@@ -252,7 +252,7 @@ window.SILKROAD_DATA = {
     { id: "balkh",       name: "Balkh",       region: "Khorasan", x: 1282, y: 559, kind: "city",
       blurb: "Umm al-Bilad. Ruins of Nawbahar, greatest Buddhist temple west of the Pamirs, lie quiet under the snow. Something beneath them is not quiet.",
       image: "images/places/balkh.png" },
-    { id: "nishapur",    name: "Nishapur",    region: "Khorasan", x: 1400, y: 610, kind: "city",
+    { id: "nishapur",    name: "Nishapur",    region: "Khorasan", x: 1173, y: 569, kind: "city",
       blurb: "A great Khorasanian city of libraries under Sāmānid rule. We found it a necessary stop on the road east, its turquoise domes a welcome sight after the steppe.",
       image: "images/places/nishapur.png"  },
     { id: "rey",         name: "Rey",         region: "Jibāl", x: 1320, y: 580, kind: "city",
