@@ -334,7 +334,7 @@ window.SILKROAD_DATA = {
     { id: "shrine-of-storms", name: "Shrine of Storms", region: "Saharan deep desert", x: 1080, y: 620, kind: "ruin",
       blurb: "In the deep desert stand tombs older than the Pharaohs. We sought one such place, a cliff-shrine to an Atlantean queen, past wards and guardians of inhuman shape. From her sarcophagus we took the storm-tiara that could banish the Feaster from Afar.",
       image: "images/places/shrine-of-storms.png" },
-    { id: "tyre", name: "Tyre", region: "Phoenician coast", x: 1140, y: 600, kind: "city",
+    { id: "tyre", name: "Tyre", region: "Phoenician coast", x: 833, y: 628, kind: "city",
       blurb: "An island-port of corsairs, straddling the Caliphate and the Sea. Below the fighting pits we found caverns of an older faith and slew the fish-demon child of Dagon. We left Lod buried in the collapse.",
       image: "images/places/tyre.png" },
     { id: "aidhab", name: "Aidhab", region: "Red Sea (Sudanese coast)", x: 851, y: 797, kind: "city",
