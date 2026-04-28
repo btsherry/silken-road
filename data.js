@@ -296,7 +296,7 @@ window.SILKROAD_DATA = {
       blurb: "Valley-city of lakes and houseboats, set among pines and snowed peaks. From the Bhima Rajas' palace here, the princess Iksha Bhima slipped out disguised as a servant boy and never came back — the road west took her to the caravans, the caravans to Samarkand, and Samarkand to us. A small Latin-rite chapel stands now in the city, raised by people who took Giovanni for a holy man.",
       image: "images/places/srinagar.png" },
     { id: "saaremaa",    name: "Saaremaa",    region: "Eysýsla (Baltic)", x: 650, y: 148, kind: "ruin",
-      blurb: "An island in the Baltic the old sagas called Eysýsla. The Black Goat's cult ruled here from the Undercroft. Eskil was to be their sacrifice; his brother Leif took his place by a rune cut in the dirt. The compact broke. A purple wound opened above the island and swallowed fortress, bog, and forest. He alone walked out, the vigor of his murdered people pressed into him by the priestesses' interrupted rite. The Goat took her due.",
+      blurb: "An island in the Baltic the old sagas called Eysýsla. The Black Goat's cult ruled here from the Undercroft. Eskil was to be their sacrifice; he scratched a transmogrifying rune in the dirt and his protective wards swapped their places, putting his brother Leif on the altar instead. The compact broke. A purple wound opened above the island and swallowed fortress, bog, and forest. He alone walked out, the vigor of his murdered people pressed into him by the priestesses' interrupted rite. The Goat took her due.",
       image: "images/places/saaremaa.png" },
     { id: "taklamakan-home", name: "Taklamakan Tribe", region: "Tian Shan foothills", x: 1460, y: 491, kind: "nomadic",
       blurb: "Black tents of the Uyghur horse-clans, where the desert met the foothills. The boy Quzghun danced his people's histories around the fires and was apprenticed to a shaman. When a Tang officer demanded hostages from the chiefs, Quzghun stood and was sent east in a wagon — toward the Dragon Throne and the new name they would give him.",
@@ -662,7 +662,7 @@ window.SILKROAD_DATA = {
       role: "Hind's oud-player turned warrior; now Brianna",
       region: "From Rey, west and east again",
       image: "images/npcs/rahzalahn.png",
-      blurb: "Persian — born to a Caspian fishing village that Norse-Rus raiders burned when she was a child; she hid in an overturned boat, walked south through the Alborz to Rey, and was found on the road by Hind's caravan. She raised an oud against Eskil over those same Varangians, and drove her silver hair-comb into Nizack's neck from behind in the bone chapel — though it was Lüèduó and Bansi who finished him. After Sadia's curse and Iram, she renounced her slave-name and gave her oud to Bansi for safekeeping. Eskil forged her *Vengeance* from Nightwolf shards that would not melt — a serrated short blade — and she rides now under the name Brianna with it on her hip, though in Samarkand she has begun to play again.",
+      blurb: "Persian — born to a Caspian fishing village that Norse-Rus raiders burned when she was a child. She hid in an overturned boat, walked south through the Alborz to Rey, and was taken there by slavers; she was bought and sold and bought again across the years before Hind bought her into the caravan as its oud-player. *Rahzalahn* was the name a master had given her. She raised an oud against Eskil over those same Varangians, and drove her silver hair-comb into Nizack's neck from behind in the bone chapel — though it was Lüèduó and Bansi who finished him. After Sadia's curse and Iram she shed the slave-name and gave her oud to Bansi for safekeeping. Eskil forged her *Vengeance* from Nightwolf shards that would not melt — a serrated short blade — and she rides now under the name Brianna with it on her hip, though in Samarkand she has begun to play again.",
     },
     {
       id: "leif",
@@ -670,7 +670,7 @@ window.SILKROAD_DATA = {
       role: "Eskil's brother; voice in the iron skull",
       region: "Saaremaa, then everywhere Eskil rides",
       image: "images/npcs/leif.png",
-      blurb: "Eskil's rune-casting brother, who read the omens against the night the priestesses of the Black Goat chose him for the Messenger. At the bog he scratched a binding rune in the dirt and took the killing onto himself, exchanging his life for his brother's. A fragment of his voice rides now in an iron skull at Eskil's belt and warns him, very quietly, when he has spoken too much.",
+      blurb: "Eskil's rune-casting brother, who read the omens against the priestesses of the Black Goat. At the bog Eskil scratched a transmogrifying rune in the dirt and his protective wards swapped their places, exchanging his life for his brother's. A fragment of him rides now in an iron skull at Eskil's belt and keeps his counsel, or perhaps Eskil just hears voices.",
     },
     {
       id: "nagini",
