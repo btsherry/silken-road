@@ -132,7 +132,7 @@
       const STAMPS = [
         { id: 'caliph',      name: 'CALIPH',      kind: 'ruler', x: 960,  y: 726, w: 100, src: 'images/ruler-caliph.png' },
         { id: 'emperor',     name: 'EMPEROR',     kind: 'ruler', x: 1927, y: 445, w: 100, src: 'images/ruler-emperor.png' },
-        { id: 'basileus',    name: 'BASILEUS',    kind: 'ruler', x: 568,  y: 321, w: 75,  src: 'images/ruler-basileus.png',    small: true },
+        { id: 'basileus',    name: 'BASILEUS',    kind: 'ruler', x: 568,  y: 321, w: 75,  src: 'images/ruler-basileus.png',    small: true, labelFontSize: 11 },
         { id: 'qaghan',      name: 'QAGHAN',      kind: 'ruler', x: 1276, y: 202, w: 75,  src: 'images/ruler-qaghan.png',      small: true },
         { id: 'drake',       name: 'Sea drake',   kind: 'sea',   x: 1250, y: 991, w: 90,  src: 'images/sea-monster-drake.png',      rotate: -8 },
         { id: 'whale',       name: 'Sea whale',   kind: 'sea',   x: 2244, y: 756, w: 100, src: 'images/sea-monster-whale.png',      rotate: 5 },
@@ -226,7 +226,7 @@
           text.setAttribute('text-anchor', 'middle');
           text.setAttribute('fill', 'oklch(0.28 0.07 35)');
           text.setAttribute('font-family', 'Cormorant Garamond');
-          text.setAttribute('font-size', s.small ? 13 : 16);
+          text.setAttribute('font-size', s.labelFontSize ?? (s.small ? 13 : 16));
           text.setAttribute('font-weight', '700');
           text.setAttribute('letter-spacing', '0.18em');
           text.textContent = s.name;

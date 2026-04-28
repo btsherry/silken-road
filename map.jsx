@@ -489,7 +489,7 @@ window.SilkRoadMap = function SilkRoadMap({
           (now-retired) ?edit=stamps drag editor on 2026-04-27. */}
       <RulerPortrait x={960}  y={726} label="CALIPH"   src="images/ruler-caliph.png"/>
       <RulerPortrait x={1927} y={445} label="EMPEROR"  src="images/ruler-emperor.png"/>
-      <RulerPortrait x={568}  y={321} label="BASILEUS" src="images/ruler-basileus.png" small/>
+      <RulerPortrait x={568}  y={321} label="BASILEUS" src="images/ruler-basileus.png" small labelFontSize={11}/>
       <RulerPortrait x={1276} y={202} label="QAGHAN"   src="images/ruler-qaghan.png"  small/>
 
       {/* Sea monsters / naturalist insets. Same hand-tune session. */}
@@ -579,9 +579,10 @@ window.SilkRoadMap = function SilkRoadMap({
   );
 };
 
-function RulerPortrait({ x, y, label, src, small = false }) {
+function RulerPortrait({ x, y, label, src, small = false, labelFontSize }) {
   const w = small ? 75 : 100;
   const h = w; // square
+  const fontSize = labelFontSize ?? (small ? 13 : 16);
   return (
     <g transform={`translate(${x - w/2}, ${y - h/2})`}
        opacity="0.9"
@@ -593,7 +594,7 @@ function RulerPortrait({ x, y, label, src, small = false }) {
       <text x={w / 2} y={h + 18} textAnchor="middle"
             fill="oklch(0.28 0.07 35)"
             fontFamily="Cormorant Garamond"
-            fontSize={small ? 13 : 16}
+            fontSize={fontSize}
             fontWeight="700"
             letterSpacing="0.18em">{label}</text>
     </g>
