@@ -304,7 +304,7 @@ window.SILKROAD_DATA = {
 
     // Fantastical edge markers
     // ══════════ Campaign sites (Book 1 + session notes) ══════════
-    { id: "saint-severus", name: "Monastery of Saint Severus", region: "Apennines (Lombardy)", x: 540, y: 490, kind: "ruin",
+    { id: "saint-severus", name: "Monastery of Saint Severus", region: "Apennines (Lombardy)", x: 503, y: 444, kind: "ruin",
       blurb: "In a high Apennine monastery, we found Brother Aldric's sealed crypt. By liturgy, he had thinned the world's skin; Father Matthias's hands passed through stone, while Father Clement was undone by the floor's geometry. Giovanni alone escaped that place — the hidden engine of his whole story.",
       image: "images/places/saint-severus.png" },
     { id: "aquileia", name: "Aquileia", region: "Adriatic, Friuli", x: 495, y: 420, kind: "city",
