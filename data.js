@@ -370,7 +370,7 @@ window.SILKROAD_DATA = {
     { id: "merv-kurgan", name: "The Kurgan above Merv", region: "Steppe east of Merv", x: 1165, y: 494, kind: "ruin",
       blurb: "The steppe is dotted with ancient burial mounds, which the Turks see as doors to other worlds. Above Merv, we found one ringed with flayed skins, its peak a portal to a hidden library. Beneath it lay the grave of a warrior-king, awaiting a dark summons.",
       image: "images/places/merv-kurgan.png" },
-    { id: "chapel-of-bones", name: "The Chapel of Bones (beneath Merv)", region: "Catacombs beneath Merv's great mosque", x: 1215, y: 583, kind: "ruin",
+    { id: "chapel-of-bones", name: "The Chapel of Bones (beneath Merv)", region: "Catacombs beneath Merv's great mosque", x: 1215, y: 567, kind: "ruin",
       blurb: "Beneath the great mosque of Merv lies a cult chapel of bone — the walls and altars built from human ribs and skulls, inverted icons set into mortared flesh. We descended through Karishkir's portal and faced her, Drekhlo, and Nizack on the altar; Isaac's holy light tore the chamber open and Karishkir and Drekhlo escaped through Nizack's shadow-door. The chapel burned behind us. The cult rebuilt it later, larger and grander, on the Volga.",
       image: "images/places/chapel-of-bones.png" },
     { id: "cathedral-of-bones", name: "The Cathedral of Bones (Nightwolf Stronghold)", region: "Forest north of Itil", x: 965, y: 309, kind: "ruin",
