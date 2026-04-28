@@ -216,7 +216,7 @@ window.SILKROAD_DATA = {
   // Cities
   places: [
     // Great cities
-    { id: "constantinople", name: "Constantinople", region: "Byzantium", x: 1060, y: 460,
+    { id: "constantinople", name: "Constantinople", region: "Byzantium", x: 741, y: 483,
       kind: "great-city",
       blurb: "The Queen of Cities. Byzantine bulwark of the West, golden domes crowning the Bosphorus. Greek merchants trade silks from the East for Frankish silver; eunuchs and patriarchs whisper of a relic lost beyond the Oxus.",
       image: "images/places/constantinople.png" },
