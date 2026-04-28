@@ -636,9 +636,9 @@ window.SILKROAD_DATA = {
       id: "sadia",
       name: "Sadia",
       role: "Hind's warrior-lieutenant, freed of the wolf",
-      region: "From Samarkand to a cremation ground in southern India",
+      region: "From Aden to a cremation ground in southern India",
       image: "images/npcs/sadia.png",
-      blurb: "Hind's right hand from Samarkand onward, loud in a fight and unsubtle out of one — she yells, draws the eye on purpose, and is the first into the room. She drank past sense in Arazu's wine-shop in Merv on the night Earmack rode into camp; she carved werewolves apart in the bone chapel; she fell to the wine of the black lotus in Anufred's quarry tower below Spoleto, and woke whispering Harag-Kolath until Abu-Rayhan inked scripture on her face. Lüèduó's spirit-blade severed her finally from that chain in Satyavati's cremation ground.",
+      blurb: "Hind's right hand out of Aden long before Hind hired us in Samarkand. Loud in a fight and unsubtle out of one — she yells, draws the eye on purpose, and is the first into the room. She drank past sense in Arazu's wine-shop in Merv on the night Earmack rode into camp; she carved werewolves apart in the bone chapel; she fell to the wine of the black lotus in Anufrid's quarry tower below Spoleto, and woke whispering Harag-Kolath until we dragged her into the Elder Ward Eskil had cut and the trance broke. Lüèduó's spirit-blade severed her finally from that chain in Satyavati's cremation ground. She rides closest to Brianna and will eat mangos until her hands run yellow.",
     },
     {
       id: "hind",
