@@ -307,7 +307,7 @@ window.SILKROAD_DATA = {
     { id: "saint-severus", name: "Monastery of Saint Severus", region: "Apennines (Lombardy)", x: 454, y: 413, kind: "ruin",
       blurb: "In a high Apennine monastery, we found Brother Aldric's sealed crypt. By liturgy, he had thinned the world's skin; Father Matthias's hands passed through stone, while Father Clement was undone by the floor's geometry. Giovanni alone escaped that place — the hidden engine of his whole story.",
       image: "images/places/saint-severus.png" },
-    { id: "aquileia", name: "Aquileia", region: "Adriatic, Friuli", x: 481, y: 412, kind: "city",
+    { id: "aquileia", name: "Aquileia", region: "Adriatic, Friuli", x: 481, y: 425, kind: "city",
       blurb: "The seat of the Patriarch Ursus, a key frontier city of the Lombards. It was from here that Giovanni first fled east, and here we later gained our standing after burning the corruption from San Floriano.",
       image: "images/places/aquileia.png" },
     { id: "ravenna", name: "Ravenna", region: "Romagna", x: 515, y: 452, kind: "city",
