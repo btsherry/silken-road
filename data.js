@@ -292,7 +292,7 @@ window.SILKROAD_DATA = {
     // Route-critical Silk Road cities (restored — referenced by the trade routes below)
 
     // ══════════ Homelands of the party ══════════
-    { id: "srinagar",    name: "Srinagar",    region: "Kashmir", x: 1707, y: 669, kind: "city",
+    { id: "srinagar",    name: "Srinagar",    region: "Kashmir", x: 1379, y: 622, kind: "city",
       blurb: "Valley-city of lakes and houseboats, set among pines and peaks. Iksha Bhima — known to the caravans as Bansi — slipped out of her father's palace here, disguised as a servant boy, and never came back. Giovanni keeps ten followers in a chapel on the city's edge.",
       image: "images/places/srinagar.png" },
     { id: "saaremaa",    name: "Saaremaa",    region: "Eysysla (Baltic)", x: 650, y: 148, kind: "ruin",
