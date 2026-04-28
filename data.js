@@ -690,7 +690,7 @@ window.SILKROAD_DATA = {
       role: "Tang assassin",
       region: "Wherever Lüèduó goes",
       image: "images/npcs/bilgin.png",
-      blurb: "A Tang killer dispatched after Lüèduó from across the world. He is who Hind tried to sell our serpent-blooded brother to in the Crimson Desert. He survived the assassins' attack on her household. He is somewhere in Bansi's family's palace now, recruited under a different roof, watching for a different opening.",
+      blurb: "A Tang killer dispatched after Lüèduó from across the world. She is who Hind tried to sell our serpent-blooded brother to in the Crimson Desert. She survived the assassins' attack on her household. She is somewhere in Bansi's family's palace now, recruited under a different roof, watching for a different opening.",
     },
     {
       id: "sophia",
