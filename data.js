@@ -237,7 +237,7 @@ window.SILKROAD_DATA = {
     { id: "bukhara",     name: "Bukhara",     region: "Transoxiana", x: 1233, y: 510, kind: "city",
       blurb: "The Dome of Islam in the East. Samanid emirs host theologians and smugglers alike. A shrine to an older power still stands where the minaret will one day rise.",
       image: "images/places/bukhara.png" },
-    { id: "kashgar",     name: "Kashgar",     region: "Tarim Basin", x: 1760, y: 560, kind: "city",
+    { id: "kashgar",     name: "Kashgar",     region: "Tarim Basin", x: 1442, y: 527, kind: "city",
       blurb: "Oasis gate between the Pamirs and the desert. Here the Southern and Northern Silk Roads braid together. The Sunday market has run uninterrupted, they say, since before the Flood.",
       image: "images/places/kashgar.png" },
     { id: "dunhuang",    name: "Dunhuang",    region: "Hexi Corridor", x: 1690, y: 483, kind: "city",
