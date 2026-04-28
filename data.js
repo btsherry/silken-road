@@ -328,7 +328,7 @@ window.SILKROAD_DATA = {
     { id: "sophia-tower", name: "Sophia's Island Tower", region: "Aegean Sea", x: 734, y: 493, kind: "ruin",
       blurb: "On an island in the Aegean, where hermits and scholars hide from the world, stood the Hermetic Order's tower. There we trapped a Hound from the angles of time within an iron sphere. We burned the creature alive, and its tower burned with it.",
       image: "images/places/sophia-tower.png" },
-    { id: "susa", name: "Sūsa", region: "Ifrīqiya (near Carthage)", x: 829, y: 609, kind: "city",
+    { id: "susa", name: "Susah", region: "Ifrīqiya (near Carthage)", x: 476, y: 585, kind: "city",
       blurb: "A fortified port of the Aghlabid emirs, its harbor crowded with corsairs and slave-ships. In the emir's palace, Sofia told us our curse could not be broken. Here too we saw Tabiri again, reborn as the pirate-queen Hennataui.",
       image: "images/places/susa.png" },
     { id: "shrine-of-storms", name: "Shrine of Storms", region: "Saharan deep desert", x: 1080, y: 620, kind: "ruin",
@@ -430,7 +430,7 @@ window.SILKROAD_DATA = {
     "constantinople", "sophia-tower", "constantinople", "aquileia",
     // Episodes XI–XII — San Floriano in the Slavic Marches and back to Aquileia.
     "san-floriano", "aquileia",
-    // Episodes XIII–XV — Susa, the desert Shrine of Storms, Tyre.
+    // Episodes XIII–XV — Susah, the desert Shrine of Storms, Tyre.
     "susa", "shrine-of-storms", "tyre",
     // Episode XVI — Aden and the Crimson Desert; Iram unsealed.
     "aden", "iram",
@@ -680,7 +680,7 @@ window.SILKROAD_DATA = {
       role: "Nubian guide, sworn to Sekhmet",
       region: "Aidhab, the Nubian desert, the Mediterranean coast",
       image: "images/npcs/tabiri.png",
-      blurb: "Hired in Aidhab to lead us upriver through the country of the Khem-Sethi, where the temples were built and forgotten before pharaohs were a thought. She kept us alive across the burning sands by the rules she learned from her grandmother, and shouted the warning that saved us from the giant scorpions of the deep desert. She rode south after Egypt to warn her people. She found us again at Susa with a corsair under her command, and bled with us in the heart of Iram before turning her ship back to lay a false trail for Bilgin.",
+      blurb: "Hired in Aidhab to lead us upriver through the country of the Khem-Sethi, where the temples were built and forgotten before pharaohs were a thought. She kept us alive across the burning sands by the rules she learned from her grandmother, and shouted the warning that saved us from the giant scorpions of the deep desert. She rode south after Egypt to warn her people. She found us again at Susah with a corsair under her command, and bled with us in the heart of Iram before turning her ship back to lay a false trail for Bilgin.",
     },
     {
       id: "matteos",
@@ -1242,7 +1242,7 @@ window.SILKROAD_DATA = {
       id: "ep12",
       name: "Episode XII: The Call of Karishkir",
       era: "San Floriano abbey, autumn 901 AD",
-      blurb: "The company assaults the corrupted abbey at San Floriano through a pagan crypt-tunnel, fighting through ghoul-monks and vampires. In the desecrated chapel, Sadia — possessed by Karishkir's spirit — confronts them, flanked by Tanenwald and the Magyar warlord Töhötöm. Battle is joined: Karishkir kills Martina with a clawed gesture; Brianna takes up the lute and sings a song of their journey, reaching the true Sadia beneath the possession; Giovanni performs the exorcism as the battle rages, finally casting Karishkir's essence out as a streaming green light. Zdebor falls to Töhötöm's flail; the party burns the abbey and returns to Aquileia, where Albereck grants them citizenship before they sail for Sūsa.",
+      blurb: "The company assaults the corrupted abbey at San Floriano through a pagan crypt-tunnel, fighting through ghoul-monks and vampires. In the desecrated chapel, Sadia — possessed by Karishkir's spirit — confronts them, flanked by Tanenwald and the Magyar warlord Töhötöm. Battle is joined: Karishkir kills Martina with a clawed gesture; Brianna takes up the lute and sings a song of their journey, reaching the true Sadia beneath the possession; Giovanni performs the exorcism as the battle rages, finally casting Karishkir's essence out as a streaming green light. Zdebor falls to Töhötöm's flail; the party burns the abbey and returns to Aquileia, where Albereck grants them citizenship before they sail for Susah.",
       beats: [
         "Infiltration via a pagan crypt-tunnel that bypasses the main defenses",
         "Battle Mass: ghoul-monks, vampire pair Tas/Kalara, the werewolf-abbess Bogomir, and Töhötöm",
@@ -1250,7 +1250,7 @@ window.SILKROAD_DATA = {
         "Brianna takes up her lute and sings a song of their journey; Sadia hesitates, a tear on her cheek",
         "Giovanni's exorcism casts Karishkir's essence out — green light streams through the chapel wall",
         "Zdebor dies under Töhötöm's flail; the party burns the abbey",
-        "Return to Aquileia; Albereck grants citizenship; the company sails for Sūsa",
+        "Return to Aquileia; Albereck grants citizenship; the company sails for Susah",
       ],
       quotes: [
         "\"My dear friends. Fr. Giovanni, won't you give me your blessing.\" — Sadia/Karishkir",
@@ -1260,8 +1260,8 @@ window.SILKROAD_DATA = {
     {
       id: "ep13",
       name: "Episode XIII: The Castle by the Sea",
-      era: "Sūsa, near the salted ruins of Carthage, winter 901–902 AD",
-      blurb: "At the palace of the Emir of Sūsa, Sophia tells the company that Sadia's curse cannot be healed by the Order of Hermes; the cure must be sought in India. Bansi recognizes the local pirate-queen 'Hennataui' as Tabiri of Shendi, long thought dead, who tells them of Tin Tulis, an Atlantean queen of storms whose tiara could banish Akivasha and the Feaster from Afar. Bansi finds a Bahn-Sa-Sahn-marked map to the Shrine of Storms in the Emir's library. Eskil reforges Töhötöm's flail and jagged blade — the flail into a masterwork sword for Giovanni, Ius Dei; the blade into a runed buckler for himself, Malum. An anonymous adept attacks Giovanni in his quarters; Sadia bites the assassin and the runesword's hilt drives him off.",
+      era: "Susah, near the salted ruins of Carthage, winter 901–902 AD",
+      blurb: "At the palace of the Emir of Susah, Sophia tells the company that Sadia's curse cannot be healed by the Order of Hermes; the cure must be sought in India. Bansi recognizes the local pirate-queen 'Hennataui' as Tabiri of Shendi, long thought dead, who tells them of Tin Tulis, an Atlantean queen of storms whose tiara could banish Akivasha and the Feaster from Afar. Bansi finds a Bahn-Sa-Sahn-marked map to the Shrine of Storms in the Emir's library. Eskil reforges Töhötöm's flail and jagged blade — the flail into a masterwork sword for Giovanni, Ius Dei; the blade into a runed buckler for himself, Malum. An anonymous adept attacks Giovanni in his quarters; Sadia bites the assassin and the runesword's hilt drives him off.",
       beats: [
         "Sophia: Sadia's curse can only be healed by masters in India or a future archon",
         "Bansi recognizes the corsair-queen 'Hennataui' as Tabiri of Shendi",
@@ -1277,7 +1277,7 @@ window.SILKROAD_DATA = {
     {
       id: "ep14",
       name: "Episode XIV: The Shrine of Storms",
-      era: "The Sahara south of Sūsa, 902 AD",
+      era: "The Sahara south of Susah, 902 AD",
       blurb: "Tabiri guides the company into the desert to the tomb of the Atlantean queen Tin Tulis. She refuses Sadia passage at the threshold, calling her 'covered in abomination'; Lucca cannot pass the tomb's magical ward and stays back. Inside the cliff-tomb, the party overcomes traps, a giant centipede, a cannibal troglodyte, and a guardian hyarmal — a hyena-ape-lion warrior bound from a man. They recover the Tiara of Tin Tulis; Bansi is burned donning it. On the plateau in a sandstorm a giant green-eyed undead cicada attacks; Bansi opens its underbelly head to tail. As they descend, Lüèduó turns Akivasha's scrying gaze back on her, briefly glimpsing her among the runed pillars in what Tabiri later identifies as Luxor.",
       beats: [
         "Tabiri refuses Sadia passage: 'She is covered in abomination'",
