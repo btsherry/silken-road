@@ -319,6 +319,9 @@ window.SILKROAD_DATA = {
     { id: "montegranaro", name: "Montegranaro", region: "Duchy of Spoleto", x: 550, y: 495, kind: "ruin",
       blurb: "A Lombard fortress-town clinging to its granary mountain. Here we found our contact Blanca transformed into a many-limbed horror. We purged the mutated village and its barred church with fire, leaving only ash.",
       image: "images/places/montegranaro.png" },
+    { id: "apennine-camp", name: "Anufrid's Quarry-Camp", region: "Apennines (inland from Montegranaro)", x: 528, y: 478, kind: "ruin",
+      blurb: "High in the Apennine mountains stood a square tower built into a broken quarry — Anufrid's redoubt, where the Bishop of Ravenna's lieutenant kept his sacrificial pit and his vampire twins. We took it in foul weather, ran Anufrid through with the runesword, and recovered the apprentice mage Lucca from the bottom of the pit.",
+      image: "images/places/apennine-camp.png" },
     { id: "san-floriano", name: "San Floriano", region: "Slavic Marches (NE of Aquileia)", x: 495, y: 415, kind: "ruin",
       blurb: "In the Slavic Marches, a land of new faith and old gods, we found an abbey fallen to a harvest cult. In the Gorska-Stvar cave above, we banished a messenger of Shub-Niggurath. We cleansed the abbey below it in a great Battle Mass, leaving it a smoking ruin.",
       image: "images/places/san-floriano.png" },
@@ -367,6 +370,9 @@ window.SILKROAD_DATA = {
     { id: "merv-kurgan", name: "The Kurgan above Merv", region: "Steppe east of Merv", x: 1480, y: 510, kind: "ruin",
       blurb: "The steppe is dotted with ancient burial mounds, which the Turks see as doors to other worlds. Above Merv, we found one ringed with flayed skins, its peak a portal to a hidden library. Beneath it lay the grave of a warrior-king, awaiting a dark summons.",
       image: "images/places/merv-kurgan.png" },
+    { id: "chapel-of-bones", name: "The Chapel of Bones (beneath Merv)", region: "Catacombs beneath Merv's great mosque", x: 1420, y: 570, kind: "ruin",
+      blurb: "Beneath the great mosque of Merv lies a cult chapel of bone — the walls and altars built from human ribs and skulls, inverted icons set into mortared flesh. We descended through Karishkir's portal and faced her, Drekhlo, and Nizack on the altar; Isaac's holy light tore the chamber open and Karishkir and Drekhlo escaped through Nizack's shadow-door. The chapel burned behind us. The cult rebuilt it later, larger and grander, on the Volga.",
+      image: "images/places/chapel-of-bones.png" },
     { id: "cathedral-of-bones", name: "The Cathedral of Bones (Nightwolf Stronghold)", region: "Forest north of Itil", x: 1320, y: 297, kind: "ruin",
       blurb: "Deep in the northern forests, we found the Nightwolf's stronghold, a fortress of mortared bone and skull-palisades. In the cathedral of ribs and pelvises, we faced Karishkir and his court. We beheaded the sorcerer and left his throne of bones to the fire.",
       image: "images/places/cathedral-of-bones.png" },
@@ -399,17 +405,41 @@ window.SILKROAD_DATA = {
   ],
 
   journey: [
-    // Book 1 (Episodes I–VII): party converges at Samarkand and rides west.
-    "samarkand", "iron-gates", "merv", "merv-kurgan", "merv",
-    "shiraz", "cairo", "aidhab", "ikhmindi", "constantinople",
-    "itil", "cathedral-of-bones",
-    // Continuation (Episodes 8–23): the wider arc through Italy, Africa,
-    // Yemen, India, Kashmir, the steppe, and back to Samarkand.
-    "montegranaro", "bari", "ravenna", "constantinople", "aquileia",
-    "san-floriano", "susa", "shrine-of-storms", "tyre", "aden",
-    "iram", "quilon", "satyavati-shrine", "jayashri-palace", "srinagar",
-    "talas", "taklamakan-home", "khotan", "gol-goroth-pillar", "issyk-kul",
-    "samarkand",
+    // Episode I — convergence at Samarkand; ride east to the Iron Gates and the
+    // ruined keep beyond.
+    "samarkand", "iron-gates",
+    // Episodes II–III — Merv, the kurgan, return through portal, descent into
+    // the Chapel of Bones beneath the mosque.
+    "merv", "merv-kurgan", "merv", "chapel-of-bones", "merv",
+    // Episode IV — Shiraz, brief Yemen stop on the dhow voyage.
+    "shiraz", "aden",
+    // Episode V — Aidhab and the Khem-Sethi temple at Ikhmindi.
+    "aidhab", "ikhmindi",
+    // Episode VI — Mediterranean crossing to Constantinople.
+    "constantinople",
+    // Episode VII — Volga round trip to the Cathedral of Bones; return to
+    // Constantinople before the Italian arc.
+    "itil", "cathedral-of-bones", "constantinople",
+    // Episode VIII — landfall at Montegranaro; into the Apennines to Anufrid's
+    // quarry-camp; back to Montegranaro for the Adawald/Blanca confrontation.
+    "montegranaro", "apennine-camp", "montegranaro",
+    // Episode IX — south to Bari; summons to Ravenna.
+    "bari", "ravenna",
+    // Episode X — Constantinople; Sophia's Aegean tower for the Hound trap;
+    // back to Constantinople; on to Aquileia.
+    "constantinople", "sophia-tower", "constantinople", "aquileia",
+    // Episodes XI–XII — San Floriano in the Slavic Marches and back to Aquileia.
+    "san-floriano", "aquileia",
+    // Episodes XIII–XV — Susa, the desert Shrine of Storms, Tyre.
+    "susa", "shrine-of-storms", "tyre",
+    // Episode XVI — Aden and the Crimson Desert; Iram unsealed.
+    "aden", "iram",
+    // Episodes XVII–XIX — Quilon, Satyavati's shrine, Jayashri's palace,
+    // Srinagar.
+    "quilon", "satyavati-shrine", "jayashri-palace", "srinagar",
+    // Episodes XXI–XXII — Taklamakan crossing, Khotan, the Pillar of Gol-Goroth,
+    // return to Khotan, flight to Samarkand.
+    "taklamakan-home", "khotan", "gol-goroth-pillar", "khotan", "samarkand",
   ],
 
   characters: [
