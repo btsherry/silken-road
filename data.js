@@ -658,11 +658,11 @@ window.SILKROAD_DATA = {
     },
     {
       id: "rahzalahn",
-      name: "Rahzalahn — called Brianna",
-      role: "Hind's oud-player turned warrior; now Brianna",
+      name: "Brianna (Rahzalahn)",
+      role: "Hind's oud-player turned warrior",
       region: "From Rey, west and east again",
       image: "images/npcs/rahzalahn.png",
-      blurb: "Persian — born to a Caspian fishing village that Norse-Rus raiders burned when she was a child. She hid in an overturned boat, walked south through the Alborz to Rey, and was taken there by slavers; she was bought and sold and bought again across the years before Hind bought her into the caravan as its oud-player. *Rahzalahn* was the name a master had given her. She raised an oud against Eskil over those same Varangians, and drove her silver hair-comb into Nizack's neck from behind in the bone chapel — though it was Lüèduó and Bansi who finished him. After Sadia's curse and Iram she shed the slave-name and gave her oud to Bansi for safekeeping. Eskil forged her *Vengeance* from Nightwolf shards that would not melt — a serrated short blade — and she rides now under the name Brianna with it on her hip, though in Samarkand she has begun to play again.",
+      blurb: "Persian — born to a Caspian fishing village that Norse-Rus raiders burned when she was a child. She hid in an overturned boat, walked south through the Alborz to Rey, and was taken by slavers; she was bought and sold and bought again across the years before Hind brought her into the caravan as its oud-player. *Rahzalahn* was the name a master had given her. She threatened Eskil over those same Varangians, and drove her silver hair-comb into Nizack's neck from behind in the bone chapel. After Sadia's curse and Iram she shed the slave-name and gave her oud to Bansi for safekeeping. Eskil forged her a serrated short sword named *Vengeance* from the shards of Revna's dagger that would not melt. Having reclaimed her birth name she practices both fighting and music.",
     },
     {
       id: "leif",
