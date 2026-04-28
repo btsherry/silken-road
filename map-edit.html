@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Map Pin Editor — Silk Road</title>
+  <style>
+    :root {
+      --bg: #1c1834;
+      --panel: rgba(0, 0, 0, 0.85);
+      --gold: #d4a652;
+      --pin: #c83232;
+      --pin-moved: #2cad4f;
+      --pin-active: #ffcd3a;
+      --text: #f0eedc;
+      --text-dim: #999;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font: 13px/1.4 system-ui, sans-serif; }
+    .toolbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--panel); padding: 10px 16px;
+      display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+      border-bottom: 1px solid var(--gold);
+    }
+    .toolbar h1 { font-size: 15px; margin: 0; color: var(--gold); font-weight: 600; }
+    .toolbar .hint { color: var(--text-dim); font-size: 12px; }
+    .selected {
+      flex: 1; min-width: 280px; padding: 6px 10px;
+      background: rgba(255,255,255,0.06); border-radius: 4px;
+      font-family: ui-monospace, monospace; font-size: 13px;
+    }
+    .selected .none { color: var(--text-dim); font-style: italic; font-family: system-ui; }
+    button {
+      padding: 6px 12px; background: var(--gold); color: #2a1a08; border: none;
+      border-radius: 3px; font-weight: 600; cursor: pointer; font-size: 12px;
+    }
+    button:hover { background: #e6bc62; }
+    button:disabled { background: #555; color: #999; cursor: default; }
+    button.secondary { background: rgba(255,255,255,0.12); color: var(--text); }
+    button.secondary:hover { background: rgba(255,255,255,0.2); }
+    .filter-input {
+      padding: 6px 8px; background: rgba(255,255,255,0.08); border: 1px solid #555;
+      color: var(--text); border-radius: 3px; font: 12px ui-monospace, monospace;
+      width: 160px;
+    }
+    .filter-input::placeholder { color: var(--text-dim); }
+    .map-wrap { padding-top: 60px; overflow: auto; height: 100vh; background: var(--bg); }
+    svg { display: block; user-select: none; cursor: default; }
+    .pin { cursor: grab; }
+    .pin.dragging { cursor: grabbing; }
+    .pin circle.dot {
+      fill: var(--pin); stroke: white; stroke-width: 2;
+      transition: r 0.1s ease, fill 0.15s ease;
+    }
+    .pin.moved circle.dot { fill: var(--pin-moved); }
+    .pin.active circle.dot { fill: var(--pin-active); r: 8; }
+    .pin .label {
+      fill: white; font-size: 12px; font-family: system-ui, sans-serif;
+      paint-order: stroke; stroke: rgba(0,0,0,0.7); stroke-width: 3px;
+      pointer-events: none;
+    }
+    .pin.moved .label { fill: #b8f5c5; }
+    .pin.dimmed { opacity: 0.25; }
+    .pin.dimmed .label { display: none; }
+    .moved-list {
+      position: fixed; right: 12px; top: 70px; bottom: 12px;
+      width: 280px; padding: 10px; overflow: auto;
+      background: var(--panel); border: 1px solid var(--gold); border-radius: 4px;
+      font-family: ui-monospace, monospace; font-size: 12px;
+    }
+    .moved-list h3 { margin: 0 0 8px; color: var(--gold); font: 13px system-ui; }
+    .moved-list ul { list-style: none; padding: 0; margin: 0; }
+    .moved-list li {
+      padding: 4px 6px; border-radius: 3px; margin-bottom: 3px;
+      background: rgba(255,255,255,0.05); display: flex; justify-content: space-between;
+    }
+    .moved-list li button {
+      padding: 2px 6px; font-size: 11px; background: rgba(255,255,255,0.15);
+      color: var(--text);
+    }
+    .copied-indicator {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      background: var(--pin-moved); color: white; padding: 8px 18px;
+      border-radius: 20px; font-weight: 600; font-size: 13px;
+      opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 200;
+    }
+    .copied-indicator.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <h1>Map Pin Editor</h1>
+    <span class="hint">Drag pins to reposition · 1:1 mouse</span>
+    <input id="filter" class="filter-input" placeholder="filter (id or name)…" />
+    <div class="selected" id="selected"><span class="none">No pin moved yet — drag one to begin.</span></div>
+    <button id="copy-last" disabled>Copy last</button>
+    <button id="copy-all" class="secondary" disabled>Copy all moved</button>
+    <button id="reset-all" class="secondary">Reset all</button>
+  </div>
+
+  <div class="map-wrap" id="map-wrap">
+    <svg id="map" width="2400" height="1200" viewBox="0 0 2400 1200"
+         xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+
+  <div class="moved-list" id="moved-list">
+    <h3>Moved pins (<span id="moved-count">0</span>)</h3>
+    <ul id="moved-ul"></ul>
+  </div>
+
+  <div class="copied-indicator" id="copied-indicator">Copied to clipboard</div>
+
+  <script src="data.js"></script>
+  <script>
+    (function () {
+      const data = window.SILKROAD_DATA;
+      const svg = document.getElementById('map');
+      const SVG_NS = 'http://www.w3.org/2000/svg';
+
+      // PNG covers viewBox y=85..1114. Position the painted map there.
+      const PNG_VB_TOP = 85;
+      const PNG_VB_HEIGHT = 1029;
+
+      const bg = document.createElementNS(SVG_NS, 'image');
+      bg.setAttribute('href', 'images/base-map-v2.png');
+      bg.setAttribute('x', 0);
+      bg.setAttribute('y', PNG_VB_TOP);
+      bg.setAttribute('width', 2400);
+      bg.setAttribute('height', PNG_VB_HEIGHT);
+      bg.setAttribute('preserveAspectRatio', 'none');
+      svg.appendChild(bg);
+
+      // Track pins: id -> { node, original, current, moved }
+      const pins = new Map();
+      const movedOrder = []; // ids in order of last-moved
+      let lastMoved = null;
+
+      // Helpers
+      function svgPointFromMouse(e) {
+        // 1:1 mapping: SVG width=2400 CSS px, viewBox=2400. Use getScreenCTM.
+        const ctm = svg.getScreenCTM();
+        if (!ctm) return { x: e.clientX, y: e.clientY };
+        const inv = ctm.inverse();
+        return { x: e.clientX * inv.a + e.clientY * inv.c + inv.e,
+                 y: e.clientX * inv.b + e.clientY * inv.d + inv.f };
+      }
+
+      function makePin(p) {
+        const g = document.createElementNS(SVG_NS, 'g');
+        g.setAttribute('class', 'pin');
+        g.setAttribute('transform', `translate(${p.x}, ${p.y})`);
+        g.dataset.id = p.id;
+
+        const dot = document.createElementNS(SVG_NS, 'circle');
+        dot.setAttribute('class', 'dot');
+        dot.setAttribute('r', 6);
+        dot.setAttribute('cx', 0);
+        dot.setAttribute('cy', 0);
+        g.appendChild(dot);
+
+        const label = document.createElementNS(SVG_NS, 'text');
+        label.setAttribute('class', 'label');
+        label.setAttribute('x', 10);
+        label.setAttribute('y', 5);
+        label.textContent = p.name;
+        g.appendChild(label);
+
+        return g;
+      }
+
+      data.places.forEach(p => {
+        const node = makePin(p);
+        const state = {
+          node,
+          id: p.id,
+          name: p.name,
+          original: { x: p.x, y: p.y },
+          current: { x: p.x, y: p.y },
+          moved: false,
+        };
+        pins.set(p.id, state);
+        svg.appendChild(node);
+
+        // Drag handling — capture mouse-start in viewBox coords, pin-start, recompute on move.
+        let dragStartSvg = null;
+        let pinStart = null;
+        let dragging = false;
+
+        function onPointerDown(e) {
+          if (e.button !== 0) return;
+          e.preventDefault();
+          e.stopPropagation();
+          dragStartSvg = svgPointFromMouse(e);
+          pinStart = { x: state.current.x, y: state.current.y };
+          dragging = true;
+          node.classList.add('dragging');
+          // mark this as the "active" pin (latest interaction)
+          document.querySelectorAll('.pin.active').forEach(n => n.classList.remove('active'));
+          node.classList.add('active');
+          window.addEventListener('mousemove', onPointerMove);
+          window.addEventListener('mouseup', onPointerUp, { once: true });
+        }
+        function onPointerMove(e) {
+          if (!dragging) return;
+          const cur = svgPointFromMouse(e);
+          const nx = pinStart.x + (cur.x - dragStartSvg.x);
+          const ny = pinStart.y + (cur.y - dragStartSvg.y);
+          state.current.x = nx;
+          state.current.y = ny;
+          node.setAttribute('transform', `translate(${nx}, ${ny})`);
+        }
+        function onPointerUp() {
+          if (!dragging) return;
+          dragging = false;
+          node.classList.remove('dragging');
+          window.removeEventListener('mousemove', onPointerMove);
+
+          const dx = state.current.x - state.original.x;
+          const dy = state.current.y - state.original.y;
+          if (Math.abs(dx) >= 1 || Math.abs(dy) >= 1) {
+            state.moved = true;
+            node.classList.add('moved');
+            const idx = movedOrder.indexOf(state.id);
+            if (idx >= 0) movedOrder.splice(idx, 1);
+            movedOrder.push(state.id);
+            lastMoved = state;
+          } else {
+            // tiny accidental drag — leave alone
+          }
+          updateUI();
+        }
+
+        node.addEventListener('mousedown', onPointerDown);
+      });
+
+      // UI elements
+      const selectedEl = document.getElementById('selected');
+      const copyLastBtn = document.getElementById('copy-last');
+      const copyAllBtn = document.getElementById('copy-all');
+      const resetAllBtn = document.getElementById('reset-all');
+      const movedCount = document.getElementById('moved-count');
+      const movedUl = document.getElementById('moved-ul');
+      const filterInput = document.getElementById('filter');
+
+      function fmt(state) {
+        return `${state.id}: x=${Math.round(state.current.x)}, y=${Math.round(state.current.y)}`;
+      }
+
+      function showCopied() {
+        const c = document.getElementById('copied-indicator');
+        c.classList.add('show');
+        setTimeout(() => c.classList.remove('show'), 1100);
+      }
+
+      function copyText(t) {
+        navigator.clipboard.writeText(t).then(showCopied).catch(() => {
+          // fallback
+          const ta = document.createElement('textarea');
+          ta.value = t; document.body.appendChild(ta); ta.select();
+          document.execCommand('copy'); document.body.removeChild(ta);
+          showCopied();
+        });
+      }
+
+      function updateUI() {
+        if (lastMoved) {
+          const orig = lastMoved.original;
+          selectedEl.innerHTML = `
+            <strong>${lastMoved.name}</strong>
+            <span style="color:#999"> (${lastMoved.id})</span><br/>
+            was: (${Math.round(orig.x)}, ${Math.round(orig.y)})
+            → now: <strong>(${Math.round(lastMoved.current.x)}, ${Math.round(lastMoved.current.y)})</strong>
+          `;
+          copyLastBtn.disabled = false;
+        } else {
+          selectedEl.innerHTML = '<span class="none">No pin moved yet — drag one to begin.</span>';
+          copyLastBtn.disabled = true;
+        }
+        const movedIds = movedOrder.slice();
+        movedCount.textContent = movedIds.length;
+        copyAllBtn.disabled = movedIds.length === 0;
+
+        movedUl.innerHTML = '';
+        movedIds.slice().reverse().forEach(id => {
+          const s = pins.get(id);
+          const li = document.createElement('li');
+          const span = document.createElement('span');
+          span.textContent = fmt(s);
+          li.appendChild(span);
+          const btn = document.createElement('button');
+          btn.textContent = 'reset';
+          btn.onclick = () => resetPin(id);
+          li.appendChild(btn);
+          movedUl.appendChild(li);
+        });
+      }
+
+      function resetPin(id) {
+        const s = pins.get(id);
+        if (!s) return;
+        s.current.x = s.original.x;
+        s.current.y = s.original.y;
+        s.moved = false;
+        s.node.setAttribute('transform', `translate(${s.original.x}, ${s.original.y})`);
+        s.node.classList.remove('moved');
+        const idx = movedOrder.indexOf(id);
+        if (idx >= 0) movedOrder.splice(idx, 1);
+        if (lastMoved && lastMoved.id === id) {
+          lastMoved = movedOrder.length ? pins.get(movedOrder[movedOrder.length - 1]) : null;
+        }
+        updateUI();
+      }
+
+      copyLastBtn.addEventListener('click', () => {
+        if (!lastMoved) return;
+        copyText(fmt(lastMoved));
+      });
+      copyAllBtn.addEventListener('click', () => {
+        const lines = movedOrder.map(id => fmt(pins.get(id)));
+        copyText(lines.join('\n'));
+      });
+      resetAllBtn.addEventListener('click', () => {
+        if (movedOrder.length === 0) return;
+        if (!confirm(`Reset ${movedOrder.length} moved pin(s) to original positions?`)) return;
+        movedOrder.slice().forEach(resetPin);
+      });
+
+      // Filter — dim non-matching pins (does not hide so coords stay reachable)
+      filterInput.addEventListener('input', () => {
+        const q = filterInput.value.trim().toLowerCase();
+        pins.forEach(s => {
+          if (!q) { s.node.classList.remove('dimmed'); return; }
+          const hit = s.id.toLowerCase().includes(q) || s.name.toLowerCase().includes(q);
+          s.node.classList.toggle('dimmed', !hit);
+        });
+      });
+
+      // Block default drag behavior on the SVG background
+      svg.addEventListener('dragstart', e => e.preventDefault());
+
+      console.log(`Map editor loaded: ${data.places.length} pins`);
+    })();
+  </script>
+</body>
+</html>
