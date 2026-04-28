@@ -243,7 +243,7 @@ window.SILKROAD_DATA = {
     { id: "dunhuang",    name: "Dunhuang",    region: "Hexi Corridor", x: 1690, y: 483, kind: "city",
       blurb: "The Blazing Beacon. Mogao's painted caves hide ten thousand buddhas — and one that is not a buddha at all. The monk Hongbian keeps a library sealed behind a false wall.",
       image: "images/places/dunhuang.png" },
-    { id: "khotan",      name: "Khotan",      region: "Tarim Basin", x: 1820, y: 620, kind: "city",
+    { id: "khotan",      name: "Khotan",      region: "Tarim Basin", x: 1593, y: 497, kind: "city",
       blurb: "City of white jade and sericulture. Buddhist kingdom claiming descent from Ashoka. Beware the jade-cutters' guild — they answer to older masters.",
       image: "images/places/khotan.png" },
     { id: "merv",        name: "Merv",        region: "Khorasan", x: 1420, y: 570, kind: "city",
