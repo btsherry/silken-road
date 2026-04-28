@@ -322,7 +322,7 @@ window.SILKROAD_DATA = {
     { id: "apennine-camp", name: "Anufrid's Quarry-Camp", region: "Apennines (inland from Montegranaro)", x: 528, y: 478, kind: "ruin",
       blurb: "High in the Apennine mountains stood a square tower built into a broken quarry — Anufrid's redoubt, where the Bishop of Ravenna's lieutenant kept his sacrificial pit and his vampire twins. We took it in foul weather, ran Anufrid through with the runesword, and recovered the apprentice mage Lucca from the bottom of the pit.",
       image: "images/places/apennine-camp.png" },
-    { id: "san-floriano", name: "San Floriano", region: "Slavic Marches (NE of Aquileia)", x: 495, y: 415, kind: "ruin",
+    { id: "san-floriano", name: "San Floriano", region: "Slavic Marches (NE of Aquileia)", x: 514, y: 390, kind: "ruin",
       blurb: "In the Slavic Marches, a land of new faith and old gods, we found an abbey fallen to a harvest cult. In the Gorska-Stvar cave above, we banished a messenger of Shub-Niggurath. We cleansed the abbey below it in a great Battle Mass, leaving it a smoking ruin.",
       image: "images/places/san-floriano.png" },
     { id: "sophia-tower", name: "Sophia's Island Tower", region: "Aegean Sea", x: 734, y: 493, kind: "ruin",
