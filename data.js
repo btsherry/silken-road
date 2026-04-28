@@ -234,7 +234,7 @@ window.SILKROAD_DATA = {
       image: "images/places/changan.png" },
 
     // Major cities
-    { id: "bukhara",     name: "Bukhara",     region: "Transoxiana", x: 1500, y: 540, kind: "city",
+    { id: "bukhara",     name: "Bukhara",     region: "Transoxiana", x: 1233, y: 510, kind: "city",
       blurb: "The Dome of Islam in the East. Samanid emirs host theologians and smugglers alike. A shrine to an older power still stands where the minaret will one day rise.",
       image: "images/places/bukhara.png" },
     { id: "kashgar",     name: "Kashgar",     region: "Tarim Basin", x: 1760, y: 560, kind: "city",
