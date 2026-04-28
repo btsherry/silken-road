@@ -273,7 +273,7 @@ window.SILKROAD_DATA = {
     { id: "aden",        name: "Aden",        region: "Yemen", x: 1115, y: 875, kind: "city",
       blurb: "The port on the Arabian Sea where the caravan-queen Hind received and betrayed us. It is the gate between the Red Sea and the Indian Ocean, and its markets thrive on the exchange.",
       image: "images/places/aden.png"  },
-    { id: "kyiv",        name: "Kyiv",        region: "Rus'", x: 1120, y: 360, kind: "city",
+    { id: "kyiv",        name: "Kyiv",        region: "Rus'", x: 768, y: 312, kind: "city",
       blurb: "Oleg's seat above the Dnieper. Rus' longships reach Miklagard; their pagan kings trade furs, wax and slaves for Byzantine gold.",
       image: "images/places/kyiv.png" },
     { id: "itil",        name: "Itil",        region: "Khazars", x: 1017, y: 385, kind: "city",
