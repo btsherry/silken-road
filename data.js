@@ -255,7 +255,7 @@ window.SILKROAD_DATA = {
     { id: "nishapur",    name: "Nishapur",    region: "Khorasan", x: 1173, y: 569, kind: "city",
       blurb: "A great Khorasanian city of libraries under Sāmānid rule. We found it a necessary stop on the road east, its turquoise domes a welcome sight after the steppe.",
       image: "images/places/nishapur.png"  },
-    { id: "rey",         name: "Rey",         region: "Jibāl", x: 1320, y: 580, kind: "city",
+    { id: "rey",         name: "Rey",         region: "Jibāl", x: 1037, y: 580, kind: "city",
       blurb: "One of the great frontier cities between empires, known for its theologians and coppersmiths. It stands as a bulwark and a crossroads, ever watchful.",
       image: "images/places/rey.png"  },
     { id: "shiraz",      name: "Shiraz",      region: "Fārs", x: 1089, y: 678, kind: "city",
