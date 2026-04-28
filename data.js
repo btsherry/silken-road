@@ -276,7 +276,7 @@ window.SILKROAD_DATA = {
     { id: "kyiv",        name: "Kyiv",        region: "Rus'", x: 1120, y: 360, kind: "city",
       blurb: "Oleg's seat above the Dnieper. Rus' longships reach Miklagard; their pagan kings trade furs, wax and slaves for Byzantine gold.",
       image: "images/places/kyiv.png" },
-    { id: "itil",        name: "Itil",        region: "Khazars", x: 1030, y: 385, kind: "city",
+    { id: "itil",        name: "Itil",        region: "Khazars", x: 1017, y: 385, kind: "city",
       blurb: "The capital of the Khazars at the Volga's mouth, a city of many gods and one ruler. Here we felt the stirrings of outer hunters, and Giovanni met an assassin from Alexandria praying in one of its churches.",
       image: "images/places/itil.png"  },
     { id: "talas",       name: "Talas",       region: "Türgesh", x: 1680, y: 500, kind: "ruin",
