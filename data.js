@@ -385,7 +385,7 @@ window.SILKROAD_DATA = {
     { id: "gol-goroth-pillar", name: "The Pillar of Gol-Goroth", region: "Taklamakan north of Gooma", x: 1800, y: 590, kind: "ruin",
       blurb: "Among the ruins of an old Tibetan fort, half-buried in the dunes, stands a great stone pillar. A toad-thing of a thousand mouths sat atop it, which we slew and bound into the Book. At the pillar's base, we found four chests of Atlantean make.",
       image: "images/places/gol-goroth-pillar.png" },
-    { id: "issyk-kul", name: "Issyk Kul (Khan's Ordu)", region: "Tian Shan steppe", x: 1780, y: 505, kind: "tribal",
+    { id: "issyk-kul", name: "Issyk Kul (Khan's Ordu)", region: "Tian Shan steppe", x: 1460, y: 455, kind: "tribal",
       blurb: "By the shores of the high, wind-haunted lake called Issyk Kul, the Khan of the Nine Skulls gathered his tribe. It was here we first saw him, armored in some unholy metal. The blades of assassins had no effect upon him.",
       image: "images/places/issyk-kul.png" },
 
