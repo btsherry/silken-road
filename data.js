@@ -316,7 +316,7 @@ window.SILKROAD_DATA = {
     { id: "bari", name: "Bari", region: "Apulia (Byzantine themes)", x: 564, y: 487, kind: "city",
       blurb: "We found refuge in this Byzantine port, capital of their Italian themes. In a governor's villa, we healed our wounds under the eye of Bishop Andronicos. On its beaches, Brianna learned the arts of Vengeance.",
       image: "images/places/bari.png" },
-    { id: "montegranaro", name: "Montegranaro", region: "Duchy of Spoleto", x: 550, y: 495, kind: "ruin",
+    { id: "montegranaro", name: "Montegranaro", region: "Duchy of Spoleto", x: 610, y: 453, kind: "ruin",
       blurb: "A Lombard fortress-town clinging to its granary mountain. Here we found our contact Blanca transformed into a many-limbed horror. We purged the mutated village and its barred church with fire, leaving only ash.",
       image: "images/places/montegranaro.png" },
     { id: "apennine-camp", name: "Anufrid's Quarry-Camp", region: "Apennines (inland from Montegranaro)", x: 528, y: 478, kind: "ruin",
