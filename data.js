@@ -355,7 +355,7 @@ window.SILKROAD_DATA = {
     { id: "quilon", name: "Quilon", region: "Malabar coast", x: 1430, y: 960, kind: "city",
       blurb: "A great port of the Malabar coast, where merchants of all faiths trade their wares. In an unmarked shrine to Kali, an old tantrika stripped every name and face from Bansi, who died and was reborn. The scars on her hands and the cold mark on her brow are from that place.",
       image: "images/places/quilon.png" },
-    { id: "hormuz", name: "Hormuz", region: "Persian Gulf", x: 1330, y: 720, kind: "city",
+    { id: "hormuz", name: "Hormuz", region: "Persian Gulf", x: 1150, y: 714, kind: "city",
       blurb: "A mainland port at the mouth of the Gulf, trafficking in pearls, spices, and men. Here Bansi slew two slavers and burned their bone debt-chits. She sailed south from this place on a Yemeni dhow, having bought a man his freedom with blood.",
       image: "images/places/hormuz.png" },
     { id: "jayashri-palace", name: "Jayashri's Enchanted Palace", region: "Rāṣṭrakūṭa lands (north of Ellora)", x: 1450, y: 850, kind: "ruin",
