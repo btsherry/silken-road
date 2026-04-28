@@ -487,13 +487,13 @@ window.SilkRoadMap = function SilkRoadMap({
 
       {/* Ruler portrait illuminations. Positions hand-tuned via the
           (now-retired) ?edit=stamps drag editor on 2026-04-27. */}
-      <RulerPortrait x={1139} y={732} label="CALIPH"   src="images/ruler-caliph.png"/>
-      <RulerPortrait x={2045} y={303} label="EMPEROR"  src="images/ruler-emperor.png"/>
-      <RulerPortrait x={523}  y={383} label="BASILEUS" src="images/ruler-basileus.png" small/>
-      <RulerPortrait x={1573} y={196} label="QAGHAN"   src="images/ruler-qaghan.png"  small/>
+      <RulerPortrait x={960}  y={726} label="CALIPH"   src="images/ruler-caliph.png"/>
+      <RulerPortrait x={1927} y={445} label="EMPEROR"  src="images/ruler-emperor.png"/>
+      <RulerPortrait x={568}  y={321} label="BASILEUS" src="images/ruler-basileus.png" small/>
+      <RulerPortrait x={1276} y={202} label="QAGHAN"   src="images/ruler-qaghan.png"  small/>
 
       {/* Sea monsters / naturalist insets. Same hand-tune session. */}
-      <SeaMonster x={1245} y={970}  w={90}  src="images/sea-monster-drake.png"      rotate={-8}/>
+      <SeaMonster x={1250} y={991}  w={90}  src="images/sea-monster-drake.png"      rotate={-8}/>
       <SeaMonster x={2244} y={756}  w={100} src="images/sea-monster-whale.png"      rotate={5}/>
       <SeaMonster x={174}  y={173}  w={85}  src="images/sea-monster-hyperborean.png" rotate={-3}/>
 

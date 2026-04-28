@@ -62,6 +62,16 @@
     .pin.moved .label { fill: #b8f5c5; }
     .pin.dimmed { opacity: 0.25; }
     .pin.dimmed .label { display: none; }
+    .stamp { cursor: grab; }
+    .stamp.dragging { cursor: grabbing; }
+    .stamp .stamp-outline {
+      fill: none; stroke: var(--pin); stroke-width: 2;
+      stroke-dasharray: 4 3; pointer-events: none;
+      transition: stroke 0.15s ease;
+    }
+    .stamp.moved .stamp-outline { stroke: var(--pin-moved); }
+    .stamp.active .stamp-outline { stroke: var(--pin-active); stroke-width: 3; }
+    .stamp.dimmed { opacity: 0.25; }
     .moved-list {
       position: fixed; right: 12px; top: 70px; bottom: 12px;
       width: 280px; padding: 10px; overflow: auto;
@@ -89,10 +99,10 @@
 </head>
 <body>
   <div class="toolbar">
-    <h1>Map Pin Editor</h1>
-    <span class="hint">Drag pins to reposition · 1:1 mouse</span>
+    <h1>Map Editor</h1>
+    <span class="hint">Drag pins or stamps to reposition · 1:1 mouse</span>
     <input id="filter" class="filter-input" placeholder="filter (id or name)…" />
-    <div class="selected" id="selected"><span class="none">No pin moved yet — drag one to begin.</span></div>
+    <div class="selected" id="selected"><span class="none">No item moved yet — drag one to begin.</span></div>
     <button id="copy-last" disabled>Copy last</button>
     <button id="copy-all" class="secondary" disabled>Copy all moved</button>
     <button id="reset-all" class="secondary">Reset all</button>
@@ -104,7 +114,7 @@
   </div>
 
   <div class="moved-list" id="moved-list">
-    <h3>Moved pins (<span id="moved-count">0</span>)</h3>
+    <h3>Moved items (<span id="moved-count">0</span>)</h3>
     <ul id="moved-ul"></ul>
   </div>
 
@@ -116,6 +126,18 @@
       const data = window.SILKROAD_DATA;
       const svg = document.getElementById('map');
       const SVG_NS = 'http://www.w3.org/2000/svg';
+
+      // Stamps — kept in sync with map.jsx (RulerPortrait + SeaMonster lines).
+      // (x, y) is the center of the stamp; w is the icon width.
+      const STAMPS = [
+        { id: 'caliph',      name: 'CALIPH',      kind: 'ruler', x: 960,  y: 726, w: 100, src: 'images/ruler-caliph.png' },
+        { id: 'emperor',     name: 'EMPEROR',     kind: 'ruler', x: 1927, y: 445, w: 100, src: 'images/ruler-emperor.png' },
+        { id: 'basileus',    name: 'BASILEUS',    kind: 'ruler', x: 568,  y: 321, w: 75,  src: 'images/ruler-basileus.png',    small: true },
+        { id: 'qaghan',      name: 'QAGHAN',      kind: 'ruler', x: 1276, y: 202, w: 75,  src: 'images/ruler-qaghan.png',      small: true },
+        { id: 'drake',       name: 'Sea drake',   kind: 'sea',   x: 1250, y: 991, w: 90,  src: 'images/sea-monster-drake.png',      rotate: -8 },
+        { id: 'whale',       name: 'Sea whale',   kind: 'sea',   x: 2244, y: 756, w: 100, src: 'images/sea-monster-whale.png',      rotate: 5 },
+        { id: 'hyperborean', name: 'Hyperborean', kind: 'sea',   x: 174,  y: 173, w: 85,  src: 'images/sea-monster-hyperborean.png', rotate: -3 },
+      ];
 
       // PNG covers viewBox y=85..1114. Position the painted map there.
       const PNG_VB_TOP = 85;
@@ -130,7 +152,7 @@
       bg.setAttribute('preserveAspectRatio', 'none');
       svg.appendChild(bg);
 
-      // Track pins: id -> { node, original, current, moved }
+      // Track items (pins + stamps): id -> { node, original, current, moved, kind, name }
       const pins = new Map();
       const movedOrder = []; // ids in order of last-moved
       let lastMoved = null;
@@ -168,34 +190,101 @@
         return g;
       }
 
-      data.places.forEach(p => {
-        const node = makePin(p);
-        const state = {
-          node,
-          id: p.id,
-          name: p.name,
-          original: { x: p.x, y: p.y },
-          current: { x: p.x, y: p.y },
-          moved: false,
-        };
-        pins.set(p.id, state);
-        svg.appendChild(node);
+      function makeStamp(s) {
+        // Outer group uses translate(x,y) so drag math is identical to pins.
+        const g = document.createElementNS(SVG_NS, 'g');
+        g.setAttribute('class', 'stamp');
+        g.setAttribute('transform', `translate(${s.x}, ${s.y})`);
+        g.dataset.id = s.id;
 
-        // Drag handling — capture mouse-start in viewBox coords, pin-start, recompute on move.
+        if (s.kind === 'ruler') {
+          // Ruler portrait — parchment back + image + label, anchored on center.
+          const w = s.w, h = s.w;
+          const totalH = h + 26;
+          const back = document.createElementNS(SVG_NS, 'rect');
+          back.setAttribute('x', -w/2);
+          back.setAttribute('y', -h/2);
+          back.setAttribute('width', w);
+          back.setAttribute('height', totalH);
+          back.setAttribute('fill', 'oklch(0.88 0.06 72)');
+          back.setAttribute('opacity', '0.9');
+          g.appendChild(back);
+
+          const img = document.createElementNS(SVG_NS, 'image');
+          img.setAttribute('href', s.src);
+          img.setAttribute('x', -w/2 + 4);
+          img.setAttribute('y', -h/2 + 4);
+          img.setAttribute('width', w - 8);
+          img.setAttribute('height', h - 8);
+          img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+          img.setAttribute('opacity', '0.9');
+          g.appendChild(img);
+
+          const text = document.createElementNS(SVG_NS, 'text');
+          text.setAttribute('x', 0);
+          text.setAttribute('y', -h/2 + h + 18);
+          text.setAttribute('text-anchor', 'middle');
+          text.setAttribute('fill', 'oklch(0.28 0.07 35)');
+          text.setAttribute('font-family', 'Cormorant Garamond');
+          text.setAttribute('font-size', s.small ? 13 : 16);
+          text.setAttribute('font-weight', '700');
+          text.setAttribute('letter-spacing', '0.18em');
+          text.textContent = s.name;
+          g.appendChild(text);
+
+          // Selection outline — full bounding box including caption strip
+          const outline = document.createElementNS(SVG_NS, 'rect');
+          outline.setAttribute('class', 'stamp-outline');
+          outline.setAttribute('x', -w/2 - 2);
+          outline.setAttribute('y', -h/2 - 2);
+          outline.setAttribute('width', w + 4);
+          outline.setAttribute('height', totalH + 4);
+          g.appendChild(outline);
+        } else {
+          // Sea monster — image with rotation on an inner group.
+          const w = s.w;
+          const inner = document.createElementNS(SVG_NS, 'g');
+          inner.setAttribute('transform', `rotate(${s.rotate || 0})`);
+          const img = document.createElementNS(SVG_NS, 'image');
+          img.setAttribute('href', s.src);
+          img.setAttribute('x', -w/2);
+          img.setAttribute('y', -w/2);
+          img.setAttribute('width', w);
+          img.setAttribute('height', w);
+          img.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+          img.setAttribute('opacity', '0.9');
+          inner.appendChild(img);
+          g.appendChild(inner);
+
+          const outline = document.createElementNS(SVG_NS, 'rect');
+          outline.setAttribute('class', 'stamp-outline');
+          outline.setAttribute('x', -w/2 - 2);
+          outline.setAttribute('y', -w/2 - 2);
+          outline.setAttribute('width', w + 4);
+          outline.setAttribute('height', w + 4);
+          g.appendChild(outline);
+        }
+
+        return g;
+      }
+
+      // Generic drag wiring — works for any item whose root <g> uses translate(x,y).
+      function attachDrag(state) {
+        const node = state.node;
         let dragStartSvg = null;
-        let pinStart = null;
+        let itemStart = null;
         let dragging = false;
+        const activeClass = state.kind === 'pin' ? '.pin.active' : '.stamp.active';
 
         function onPointerDown(e) {
           if (e.button !== 0) return;
           e.preventDefault();
           e.stopPropagation();
           dragStartSvg = svgPointFromMouse(e);
-          pinStart = { x: state.current.x, y: state.current.y };
+          itemStart = { x: state.current.x, y: state.current.y };
           dragging = true;
           node.classList.add('dragging');
-          // mark this as the "active" pin (latest interaction)
-          document.querySelectorAll('.pin.active').forEach(n => n.classList.remove('active'));
+          document.querySelectorAll(activeClass).forEach(n => n.classList.remove('active'));
           node.classList.add('active');
           window.addEventListener('mousemove', onPointerMove);
           window.addEventListener('mouseup', onPointerUp, { once: true });
@@ -203,8 +292,8 @@
         function onPointerMove(e) {
           if (!dragging) return;
           const cur = svgPointFromMouse(e);
-          const nx = pinStart.x + (cur.x - dragStartSvg.x);
-          const ny = pinStart.y + (cur.y - dragStartSvg.y);
+          const nx = itemStart.x + (cur.x - dragStartSvg.x);
+          const ny = itemStart.y + (cur.y - dragStartSvg.y);
           state.current.x = nx;
           state.current.y = ny;
           node.setAttribute('transform', `translate(${nx}, ${ny})`);
@@ -224,13 +313,41 @@
             if (idx >= 0) movedOrder.splice(idx, 1);
             movedOrder.push(state.id);
             lastMoved = state;
-          } else {
-            // tiny accidental drag — leave alone
           }
           updateUI();
         }
 
         node.addEventListener('mousedown', onPointerDown);
+      }
+
+      data.places.forEach(p => {
+        const node = makePin(p);
+        const state = {
+          node, kind: 'pin',
+          id: p.id, name: p.name,
+          original: { x: p.x, y: p.y },
+          current: { x: p.x, y: p.y },
+          moved: false,
+        };
+        pins.set(p.id, state);
+        svg.appendChild(node);
+        attachDrag(state);
+      });
+
+      // Render stamps AFTER pins so they sit on top in the editor (matches the
+      // live map's z-order: stamps are decorative overlays).
+      STAMPS.forEach(s => {
+        const node = makeStamp(s);
+        const state = {
+          node, kind: 'stamp',
+          id: s.id, name: s.name,
+          original: { x: s.x, y: s.y },
+          current: { x: s.x, y: s.y },
+          moved: false,
+        };
+        pins.set(s.id, state);
+        svg.appendChild(node);
+        attachDrag(state);
       });
 
       // UI elements
@@ -338,7 +455,7 @@
       // Block default drag behavior on the SVG background
       svg.addEventListener('dragstart', e => e.preventDefault());
 
-      console.log(`Map editor loaded: ${data.places.length} pins`);
+      console.log(`Map editor loaded: ${data.places.length} pins, ${STAMPS.length} stamps`);
     })();
   </script>
 </body>
