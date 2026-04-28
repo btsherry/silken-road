@@ -343,7 +343,7 @@ window.SILKROAD_DATA = {
     { id: "ikhmindi", name: "Ikhmindi & the Khem-Sethi Temple", region: "Nubia, west bank Nile", x: 678, y: 858, kind: "ruin",
       blurb: "A fortified town of the Nubian Christians, near the great cataracts. Beneath it lay a temple older than Egypt, where Akivasha slept in crystal and the Feaster from Afar was chained. Isaac perished there, but we fled with the Book of Eibon.",
       image: "images/places/ikhmindi.png" },
-    { id: "iram", name: "Iram, the City of Pillars", region: "Crimson Desert (Rub' al-Khālī)", x: 1150, y: 800, kind: "ruin",
+    { id: "iram", name: "Iram, the City of Pillars", region: "Crimson Desert (Rub' al-Khālī)", x: 1028, y: 849, kind: "ruin",
       blurb: "A buried city of pillars, spoken of by desert-prophets, that we could not see until an incantation was spoken. At its heart, Bansi took Akivasha's head from her shoulders in a burning throne-room. But our misuse of the Book released another, unnamed thing into the world.",
       image: "images/places/iram.png" },
     { id: "hind-fortress", name: "Hind's Desert Fortress", region: "Yemen interior", x: 1017, y: 911, kind: "ruin",
