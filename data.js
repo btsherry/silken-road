@@ -264,7 +264,7 @@ window.SILKROAD_DATA = {
     { id: "damascus",    name: "Damascus",    region: "al-Shām", x: 844, y: 619, kind: "city",
       blurb: "The old capital of the Umayyad caliphs, still a great city of the empire. It is the gateway between Egypt and Mesopotamia, its markets filled with the wealth of both.",
       image: "images/places/damascus.png"  },
-    { id: "alexandria",  name: "Alexandria",  region: "Egypt", x: 1060, y: 620, kind: "city",
+    { id: "alexandria",  name: "Alexandria",  region: "Egypt", x: 749, y: 659, kind: "city",
       blurb: "The great lighthouse of Pharos still stands, but the famous library is a ghost. It is a key Egyptian port, ruled by the Tūlūnid emirs.",
       image: "images/places/alexandria.png"  },
     { id: "cairo",       name: "Fusṭāṭ",      region: "Egypt", x: 1080, y: 660, kind: "city",
