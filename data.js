@@ -331,7 +331,7 @@ window.SILKROAD_DATA = {
     { id: "susa", name: "Susah", region: "Ifrīqiya (near Carthage)", x: 476, y: 585, kind: "city",
       blurb: "A fortified port of the Aghlabid emirs, its harbor crowded with corsairs and slave-ships. In the emir's palace, Sofia told us our curse could not be broken. Here too we saw Tabiri again, reborn as the pirate-queen Hennataui.",
       image: "images/places/susa.png" },
-    { id: "shrine-of-storms", name: "Shrine of Storms", region: "Saharan deep desert", x: 1080, y: 620, kind: "ruin",
+    { id: "shrine-of-storms", name: "Shrine of Storms", region: "Saharan deep desert", x: 427, y: 724, kind: "ruin",
       blurb: "In the deep desert stand tombs older than the Pharaohs. We sought one such place, a cliff-shrine to an Atlantean queen, past wards and guardians of inhuman shape. From her sarcophagus we took the storm-tiara that could banish the Feaster from Afar.",
       image: "images/places/shrine-of-storms.png" },
     { id: "tyre", name: "Tyre", region: "Phoenician coast", x: 833, y: 628, kind: "city",
