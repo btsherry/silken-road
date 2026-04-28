@@ -364,7 +364,7 @@ window.SILKROAD_DATA = {
     { id: "satyavati-shrine", name: "Satyavati's Mountain Shrine", region: "South India (Karnataka jungle)", x: 1460, y: 920, kind: "tribal",
       blurb: "High in the jungle mountains, past lizard-men and a demon-lord's watch, we sought a Kali-shrine. There, a mystic of the skull-bearing Kapalika sect cured Sadia of her wolf-curse. The price was the storm-tiara we had taken from the desert.",
       image: "images/places/satyavati-shrine.png" },
-    { id: "iron-gates", name: "The Iron Gates (cursed castle)", region: "3 days east of Samarkand", x: 1332, y: 500, kind: "ruin",
+    { id: "iron-gates", name: "The Iron Gates (cursed castle)", region: "3 days east of Samarkand", x: 1328, y: 485, kind: "ruin",
       blurb: "East of Samarkand, beyond the strategic pass they call the Iron Gates, stands a ruined keep. Its village choked its own well with corpses, and ghouls climbed the walls at dusk. Beneath, in a chamber of alien statues, we were betrayed.",
       image: "images/places/iron-gates.png" },
     { id: "merv-kurgan", name: "The Kurgan above Merv", region: "Steppe east of Merv", x: 1165, y: 494, kind: "ruin",
