@@ -650,7 +650,7 @@ window.SILKROAD_DATA = {
       role: "Nubian guide",
       region: "Aidhab, the Nubian desert, the Nile",
       image: "images/npcs/tabiri.png",
-      blurb: "Hired in Aidhab to lead us upriver through the country of the Khem-Sethi, where the temples were built and forgotten before pharaohs were a thought. He kept us alive across the burning sands by the rules he learned from his grandmother. He stayed at the lip of Akivasha's chasm when we ran, and we have not heard from him since.",
+      blurb: "Hired in Aidhab to lead us upriver through the country of the Khem-Sethi, where the temples were built and forgotten before pharaohs were a thought. She kept us alive across the burning sands by the rules she learned from her grandmother. She stayed at the lip of Akivasha's chasm when we ran, and we have not heard from her since.",
     },
     {
       id: "matteos",
