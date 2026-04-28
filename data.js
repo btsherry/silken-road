@@ -261,7 +261,7 @@ window.SILKROAD_DATA = {
     { id: "shiraz",      name: "Shiraz",      region: "Fārs", x: 1089, y: 678, kind: "city",
       blurb: "Famed for its poets and gardens, a paradise city of the Buyid emirs. We sought rest here after Merv, but found our own purposes: a master's scimitar for Bansi, and a dark cult purged by Eskil. Even so, the vampire Paul found Giovanni's throat in a silent house of old things.",
       image: "images/places/shiraz.png"  },
-    { id: "damascus",    name: "Damascus",    region: "al-Shām", x: 1150, y: 580, kind: "city",
+    { id: "damascus",    name: "Damascus",    region: "al-Shām", x: 844, y: 619, kind: "city",
       blurb: "The old capital of the Umayyad caliphs, still a great city of the empire. It is the gateway between Egypt and Mesopotamia, its markets filled with the wealth of both.",
       image: "images/places/damascus.png"  },
     { id: "alexandria",  name: "Alexandria",  region: "Egypt", x: 1060, y: 620, kind: "city",
