@@ -660,9 +660,9 @@ window.SILKROAD_DATA = {
       id: "rahzalahn",
       name: "Rahzalahn — called Brianna",
       role: "Hind's oud-player turned warrior; now Brianna",
-      region: "From a coastal village burned by raiders, west and east again",
+      region: "From Rey, west and east again",
       image: "images/npcs/rahzalahn.png",
-      blurb: "Hind's oud-player, bound to her caravan since girlhood. She raised an oud against Eskil over the raiders who burned her village, and drove her silver hair-comb into Nizack's neck from behind in the bone chapel — though it was Lüèduó and Bansi who finished him. After Sadia's curse and Iram, she renounced her slave-name, gave her oud to Bansi for safekeeping, and rides now under the name Brianna with a sword on her hip — though in Samarkand she has begun to play again.",
+      blurb: "Persian, of Rey — taken from her burning home as a child when Norse-Rus raiders came inland from the Caspian, and bound to Hind's caravan ever since. She raised an oud against Eskil over the same Varangians who burned her village, and drove her silver hair-comb into Nizack's neck from behind in the bone chapel — though it was Lüèduó and Bansi who finished him. After Sadia's curse and Iram, she renounced her slave-name, gave her oud to Bansi for safekeeping, and rides now under the name Brianna with the silver-twined scimitar *Vengeance* on her hip — though in Samarkand she has begun to play again.",
     },
     {
       id: "leif",
