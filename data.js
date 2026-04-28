@@ -319,7 +319,7 @@ window.SILKROAD_DATA = {
     { id: "montegranaro", name: "Montegranaro", region: "Duchy of Spoleto", x: 503, y: 440, kind: "ruin",
       blurb: "A Lombard fortress-town clinging to its granary mountain. Here we found our contact Blanca transformed into a many-limbed horror. We purged the mutated village and its barred church with fire, leaving only ash.",
       image: "images/places/montegranaro.png" },
-    { id: "apennine-camp", name: "Anufrid's Quarry-Camp", region: "Apennines (inland from Montegranaro)", x: 528, y: 478, kind: "ruin",
+    { id: "apennine-camp", name: "Anufrid's Quarry-Camp", region: "Apennines (inland from Montegranaro)", x: 538, y: 477, kind: "ruin",
       blurb: "High in the Apennine mountains stood a square tower built into a broken quarry — Anufrid's redoubt, where the Bishop of Ravenna's lieutenant kept his sacrificial pit and his vampire twins. We took it in foul weather, ran Anufrid through with the runesword, and recovered the apprentice mage Lucca from the bottom of the pit.",
       image: "images/places/apennine-camp.png" },
     { id: "san-floriano", name: "San Floriano", region: "Slavic Marches (NE of Aquileia)", x: 514, y: 390, kind: "ruin",
