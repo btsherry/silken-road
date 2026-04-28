@@ -325,7 +325,7 @@ window.SILKROAD_DATA = {
     { id: "san-floriano", name: "San Floriano", region: "Slavic Marches (NE of Aquileia)", x: 495, y: 415, kind: "ruin",
       blurb: "In the Slavic Marches, a land of new faith and old gods, we found an abbey fallen to a harvest cult. In the Gorska-Stvar cave above, we banished a messenger of Shub-Niggurath. We cleansed the abbey below it in a great Battle Mass, leaving it a smoking ruin.",
       image: "images/places/san-floriano.png" },
-    { id: "sophia-tower", name: "Sophia's Island Tower", region: "Aegean Sea", x: 1010, y: 510, kind: "ruin",
+    { id: "sophia-tower", name: "Sophia's Island Tower", region: "Aegean Sea", x: 734, y: 493, kind: "ruin",
       blurb: "On an island in the Aegean, where hermits and scholars hide from the world, stood the Hermetic Order's tower. There we trapped a Hound from the angles of time within an iron sphere. We burned the creature alive, and its tower burned with it.",
       image: "images/places/sophia-tower.png" },
     { id: "susa", name: "Sūsa", region: "Ifrīqiya (near Carthage)", x: 829, y: 609, kind: "city",
