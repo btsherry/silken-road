@@ -346,7 +346,7 @@ window.SILKROAD_DATA = {
     { id: "iram", name: "Iram, the City of Pillars", region: "Crimson Desert (Rub' al-Khālī)", x: 1150, y: 800, kind: "ruin",
       blurb: "A buried city of pillars, spoken of by desert-prophets, that we could not see until an incantation was spoken. At its heart, Bansi took Akivasha's head from her shoulders in a burning throne-room. But our misuse of the Book released another, unnamed thing into the world.",
       image: "images/places/iram.png" },
-    { id: "hind-fortress", name: "Hind's Desert Fortress", region: "Yemen interior", x: 1130, y: 850, kind: "ruin",
+    { id: "hind-fortress", name: "Hind's Desert Fortress", region: "Yemen interior", x: 1017, y: 911, kind: "ruin",
       blurb: "Inland Yemen is a land of stone fortresses, built to guard against raids. In one such place, the caravan-queen Hind gave us shelter, only for her court to be slaughtered by assassins. We left her humbled in her bloody halls and rode on.",
       image: "images/places/hind-fortress.png" },
     { id: "multan", name: "Multan", region: "Sindh / Punjab", x: 1358, y: 665, kind: "city",
