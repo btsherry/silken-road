@@ -895,24 +895,6 @@ window.SILKROAD_DATA = {
       image: "images/lore/akivasha-bloodline.png",
       blurb: "Akivasha was a Priestess-Queen of the Stygian temples, sealed for ten thousand years in a crystal sarcophagus at Ikhmindi until our amulet locked into its lid. The trace of her power did not die with her sealing. We have met it in Tyre, where the yellow-veiled Emir kept his court above the fish-demon, and at Iram itself, where the throne-room was hers. She is whole again now, and the strain of her blood that survives in others bends them toward her without their knowing. Eskil's blood bears it. That is why she tried to draw him into her pool by his name.",
     },
-    {
-      id: "battle-talas",
-      name: "The Battle of Talas (751)",
-      era: "A generation past",
-      blurb: "Arab and Tang armies clashed at the Talas River. The Abbasids won. Paper came west; something older came east. The full cost of that trade has not yet been paid.",
-    },
-    {
-      id: "house-wisdom",
-      name: "The House of Wisdom",
-      era: "Present",
-      blurb: "Baghdad's Bayt al-Hikma gathers Greek, Syriac, Persian and Indian learning under one roof. Not all of its translators are mortal, and not all of its books should be opened.",
-    },
-    {
-      id: "silk-secret",
-      name: "The Secret of Silk",
-      era: "Long past",
-      blurb: "Sericulture escaped China in smuggled cane-staves; Khotan and then Byzantium learned the trick. But the original strain — the worm that makes the gold-threaded silk — is still, officially, unique to the Middle Kingdom.",
-    },
   ],
 
   journal: [
