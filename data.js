@@ -382,7 +382,7 @@ window.SILKROAD_DATA = {
     { id: "penjikent", name: "Penjikent", region: "Sogdian foothills", x: 1326, y: 506, kind: "city",
       blurb: "In the Sogdian foothills stand the painted ruins of Penjikent, a memory of a great merchant-kingdom. In a village nearby, Lüèduó found the giant Eskil at a forge, mending a plow. They took each other's measure and rode for Samarkand at dawn.",
       image: "images/places/penjikent.png" },
-    { id: "gol-goroth-pillar", name: "The Pillar of Gol-Goroth", region: "Taklamakan north of Gooma", x: 1800, y: 590, kind: "ruin",
+    { id: "gol-goroth-pillar", name: "The Pillar of Gol-Goroth", region: "Taklamakan north of Gooma", x: 1507, y: 532, kind: "ruin",
       blurb: "Among the ruins of an old Tibetan fort, half-buried in the dunes, stands a great stone pillar. A toad-thing of a thousand mouths sat atop it, which we slew and bound into the Book. At the pillar's base, we found four chests of Atlantean make.",
       image: "images/places/gol-goroth-pillar.png" },
     { id: "issyk-kul", name: "Issyk Kul (Khan's Ordu)", region: "Tian Shan steppe", x: 1460, y: 455, kind: "tribal",
