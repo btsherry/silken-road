@@ -670,7 +670,7 @@ window.SILKROAD_DATA = {
       role: "Eskil's brother; voice in the iron skull",
       region: "Saaremaa, then everywhere Eskil rides",
       image: "images/npcs/leif.png",
-      blurb: "Eskil's rune-casting brother, who read the omens against the priestesses of the Black Goat. At the bog Eskil scratched a transmogrifying rune in the dirt and his protective wards swapped their places, exchanging his life for his brother's. A fragment of him rides now in an iron skull at Eskil's belt and keeps his counsel, or perhaps Eskil just hears voices.",
+      blurb: "Eskil's rune-casting brother, who read the omens against the priestesses of the Black Goat. At the bog Eskil scratched a transmogrifying rune in the dirt and his protective wards swapped their places, exchanging his brother's life for his. A fragment of him rides now in an iron skull at Eskil's belt and keeps his counsel, or perhaps Eskil just hears voices.",
     },
     {
       id: "nagini",
