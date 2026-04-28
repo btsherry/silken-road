@@ -525,7 +525,7 @@ window.SILKROAD_DATA = {
 
     {
       id: "eskil",
-      name: "Eskil of Eysýsla",
+      name: "Eskil Silverhelm",
       role: "Varangian rune-warrior, Guild Executioner",
       origin: "Saaremaa (Eysýsla), the Baltic",
       languages: ["Arabic", "Slavic", "Old Norse"],
@@ -565,7 +565,7 @@ window.SILKROAD_DATA = {
 
     {
       id: "lueduo",
-      name: "Lüèduó",
+      name: "Lüèduó (Raven)",
       role: "Uyghur dancer-spy, Naga-touched agent",
       origin: "Turkic Uyghurs of the Taklamakan Desert",
       languages: ["Arabic", "Uyghur", "Chinese", "Agentcraft", "Sanskrit"],
