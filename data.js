@@ -313,7 +313,7 @@ window.SILKROAD_DATA = {
     { id: "ravenna", name: "Ravenna", region: "Romagna", x: 520, y: 470, kind: "city",
       blurb: "Once the seat of western emperors, now of the diabolist Bishop Carol. In his palace of mosaics, we refused his offer to master the Outer Beings and fought our way past his creatures. We left his halls to the flames.",
       image: "images/places/ravenna.png" },
-    { id: "bari", name: "Bari", region: "Apulia (Byzantine themes)", x: 565, y: 520, kind: "city",
+    { id: "bari", name: "Bari", region: "Apulia (Byzantine themes)", x: 564, y: 487, kind: "city",
       blurb: "We found refuge in this Byzantine port, capital of their Italian themes. In a governor's villa, we healed our wounds under the eye of Bishop Andronicos. On its beaches, Brianna learned the arts of Vengeance.",
       image: "images/places/bari.png" },
     { id: "montegranaro", name: "Montegranaro", region: "Duchy of Spoleto", x: 550, y: 495, kind: "ruin",
