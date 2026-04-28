@@ -589,6 +589,7 @@ window.SILKROAD_DATA = {
       placeIds: ["altai-home", "samarkand"],
       portraits: [
         { src: "images/portraits/gan.png", caption: "Naiman beastmaster, on the road from the Altai" },
+        { src: "images/portraits/lueduo-dog-attack.png", caption: "Night in the Naiman camp — with Lüèduó" },
       ],
       quote: null,
     },
