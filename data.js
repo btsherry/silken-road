@@ -240,7 +240,7 @@ window.SILKROAD_DATA = {
     { id: "kashgar",     name: "Kashgar",     region: "Tarim Basin", x: 1760, y: 560, kind: "city",
       blurb: "Oasis gate between the Pamirs and the desert. Here the Southern and Northern Silk Roads braid together. The Sunday market has run uninterrupted, they say, since before the Flood.",
       image: "images/places/kashgar.png" },
-    { id: "dunhuang",    name: "Dunhuang",    region: "Hexi Corridor", x: 2020, y: 580, kind: "city",
+    { id: "dunhuang",    name: "Dunhuang",    region: "Hexi Corridor", x: 1690, y: 483, kind: "city",
       blurb: "The Blazing Beacon. Mogao's painted caves hide ten thousand buddhas — and one that is not a buddha at all. The monk Hongbian keeps a library sealed behind a false wall.",
       image: "images/places/dunhuang.png" },
     { id: "khotan",      name: "Khotan",      region: "Tarim Basin", x: 1820, y: 620, kind: "city",
