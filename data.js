@@ -349,7 +349,7 @@ window.SILKROAD_DATA = {
     { id: "hind-fortress", name: "Hind's Desert Fortress", region: "Yemen interior", x: 1130, y: 850, kind: "ruin",
       blurb: "Inland Yemen is a land of stone fortresses, built to guard against raids. In one such place, the caravan-queen Hind gave us shelter, only for her court to be slaughtered by assassins. We left her humbled in her bloody halls and rode on.",
       image: "images/places/hind-fortress.png" },
-    { id: "multan", name: "Multan", region: "Sindh / Punjab", x: 1620, y: 740, kind: "city",
+    { id: "multan", name: "Multan", region: "Sindh / Punjab", x: 1358, y: 665, kind: "city",
       blurb: "The great city of the Sun Temple, a wealthy pilgrimage site on the Indus. Here Bansi spent two years with a guild of thieves and healers. They taught her to read locks as a language and gave her the lye-burned tattoo she bears.",
       image: "images/places/multan.png" },
     { id: "quilon", name: "Quilon", region: "Malabar coast", x: 1430, y: 960, kind: "city",
