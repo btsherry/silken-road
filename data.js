@@ -267,7 +267,7 @@ window.SILKROAD_DATA = {
     { id: "alexandria",  name: "Alexandria",  region: "Egypt", x: 749, y: 659, kind: "city",
       blurb: "The great lighthouse of Pharos still stands, but the famous library is a ghost. It is a key Egyptian port, ruled by the Tūlūnid emirs.",
       image: "images/places/alexandria.png"  },
-    { id: "cairo",       name: "Fusṭāṭ",      region: "Egypt", x: 1080, y: 660, kind: "city",
+    { id: "cairo",       name: "Fusṭāṭ",      region: "Egypt", x: 770, y: 692, kind: "city",
       blurb: "This is Fusṭāṭ, the garrison-city built by the first conquerors on the Nile. It is the capital of Egypt, a sprawling city of soldiers, governors, and merchants.",
       image: "images/places/cairo.png"  },
     { id: "aden",        name: "Aden",        region: "Yemen", x: 1115, y: 875, kind: "city",
