@@ -228,7 +228,7 @@ window.SILKROAD_DATA = {
       kind: "great-city",
       blurb: "Jewel of the Sogdian plain. Its bazaars ring with forty tongues. Papermakers guard secrets worth kingdoms. A caravanserai here conceals the Silent Door. Our party began here, fighting a blade in the market and running from the guard.",
       image: "images/places/samarkand.png" },
-    { id: "changan", name: "Chang'an", region: "Tang Dynasty", x: 2180, y: 620,
+    { id: "changan", name: "Chang'an", region: "Tang Dynasty", x: 1886, y: 593,
       kind: "great-city",
       blurb: "End of the Road. The Tang capital is in late decline — eunuch factions, provincial warlords, poets drinking to forget. The Emperor's grandson collects foreign demons in a garden of iron.",
       image: "images/places/changan.png" },
