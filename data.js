@@ -367,7 +367,7 @@ window.SILKROAD_DATA = {
     { id: "iron-gates", name: "The Iron Gates (cursed castle)", region: "3 days east of Samarkand", x: 1620, y: 550, kind: "ruin",
       blurb: "East of Samarkand, beyond the strategic pass they call the Iron Gates, stands a ruined keep. Its village choked its own well with corpses, and ghouls climbed the walls at dusk. Beneath, in a chamber of alien statues, we were betrayed.",
       image: "images/places/iron-gates.png" },
-    { id: "merv-kurgan", name: "The Kurgan above Merv", region: "Steppe east of Merv", x: 1480, y: 510, kind: "ruin",
+    { id: "merv-kurgan", name: "The Kurgan above Merv", region: "Steppe east of Merv", x: 1165, y: 494, kind: "ruin",
       blurb: "The steppe is dotted with ancient burial mounds, which the Turks see as doors to other worlds. Above Merv, we found one ringed with flayed skins, its peak a portal to a hidden library. Beneath it lay the grave of a warrior-king, awaiting a dark summons.",
       image: "images/places/merv-kurgan.png" },
     { id: "chapel-of-bones", name: "The Chapel of Bones (beneath Merv)", region: "Catacombs beneath Merv's great mosque", x: 1215, y: 583, kind: "ruin",
