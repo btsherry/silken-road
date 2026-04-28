@@ -224,7 +224,7 @@ window.SILKROAD_DATA = {
       kind: "great-city",
       blurb: "The Round City of Peace, seat of the Abbasid Caliphate. The House of Wisdom glows through the night with astronomers, poets, and translators.",
       image: "images/places/baghdad.png" },
-    { id: "samarkand", name: "Samarkand", region: "Transoxiana (Ghuzz frontier)", x: 1540, y: 560,
+    { id: "samarkand", name: "Samarkand", region: "Transoxiana (Ghuzz frontier)", x: 1302, y: 507,
       kind: "great-city",
       blurb: "Jewel of the Sogdian plain. Its bazaars ring with forty tongues. Papermakers guard secrets worth kingdoms. A caravanserai here conceals the Silent Door. Our party began here, fighting a blade in the market and running from the guard.",
       image: "images/places/samarkand.png" },
