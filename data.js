@@ -270,7 +270,7 @@ window.SILKROAD_DATA = {
     { id: "cairo",       name: "Fusṭāṭ",      region: "Egypt", x: 770, y: 692, kind: "city",
       blurb: "This is Fusṭāṭ, the garrison-city built by the first conquerors on the Nile. It is the capital of Egypt, a sprawling city of soldiers, governors, and merchants.",
       image: "images/places/cairo.png"  },
-    { id: "aden",        name: "Aden",        region: "Yemen", x: 1115, y: 875, kind: "city",
+    { id: "aden",        name: "Aden",        region: "Yemen", x: 984, y: 930, kind: "city",
       blurb: "The port on the Arabian Sea where the caravan-queen Hind received and betrayed us. It is the gate between the Red Sea and the Indian Ocean, and its markets thrive on the exchange.",
       image: "images/places/aden.png"  },
     { id: "kyiv",        name: "Kyiv",        region: "Rus'", x: 768, y: 312, kind: "city",
