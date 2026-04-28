@@ -340,7 +340,7 @@ window.SILKROAD_DATA = {
     { id: "aidhab", name: "Aidhab", region: "Red Sea (Sudanese coast)", x: 851, y: 797, kind: "city",
       blurb: "The Red Sea port where pilgrims and merchants cross to Arabia. Here we landed on Soleman's ships and saw the Emperor's agent Fashian put his hooks into Lüèduó. It was in Aidhab that we hired Tabiri of Shendi as our guide into the desert.",
       image: "images/places/aidhab.png" },
-    { id: "ikhmindi", name: "Ikhmindi & the Khem-Sethi Temple", region: "Nubia, west bank Nile", x: 1071, y: 793, kind: "ruin",
+    { id: "ikhmindi", name: "Ikhmindi & the Khem-Sethi Temple", region: "Nubia, west bank Nile", x: 678, y: 858, kind: "ruin",
       blurb: "A fortified town of the Nubian Christians, near the great cataracts. Beneath it lay a temple older than Egypt, where Akivasha slept in crystal and the Feaster from Afar was chained. Isaac perished there, but we fled with the Book of Eibon.",
       image: "images/places/ikhmindi.png" },
     { id: "iram", name: "Iram, the City of Pillars", region: "Crimson Desert (Rub' al-Khālī)", x: 1150, y: 800, kind: "ruin",
