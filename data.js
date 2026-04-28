@@ -379,7 +379,7 @@ window.SILKROAD_DATA = {
     { id: "serpents-rest", name: "The Serpent's Rest", region: "Deep Taklamakan", x: 1533, y: 512, kind: "ruin",
       blurb: "The desert of death hides cities swallowed by sand. One such place, of pre-human design, called to the serpent in Lüèduó's blood. Beneath its impossible architecture, the Nagini claimed him and set her mark upon his wrist.",
       image: "images/places/serpents-rest.png" },
-    { id: "penjikent", name: "Penjikent", region: "Sogdian foothills", x: 1525, y: 560, kind: "city",
+    { id: "penjikent", name: "Penjikent", region: "Sogdian foothills", x: 1326, y: 506, kind: "city",
       blurb: "In the Sogdian foothills stand the painted ruins of Penjikent, a memory of a great merchant-kingdom. In a village nearby, Lüèduó found the giant Eskil at a forge, mending a plow. They took each other's measure and rode for Samarkand at dawn.",
       image: "images/places/penjikent.png" },
     { id: "gol-goroth-pillar", name: "The Pillar of Gol-Goroth", region: "Taklamakan north of Gooma", x: 1800, y: 590, kind: "ruin",
