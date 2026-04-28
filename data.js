@@ -700,14 +700,6 @@ window.SILKROAD_DATA = {
       image: "images/npcs/remigius.png",
       blurb: "The priest who took Giovanni in when he came to the seminary and asked, honestly, to be ordained out of ambition. He taught him the Office and never pretended that was an answer to the question. He warned him, before he left for Constantinople, that he was becoming Bishop Paulus's instrument rather than God's. We do not know whether he is still alive.",
     },
-    {
-      id: "akerke",
-      name: "Akerke",
-      role: "Sorceress of the Khan of the Nine Skulls",
-      region: "The steppe and Bansi's Kashmir",
-      image: "images/npcs/akerke.png",
-      blurb: "A Kazakh sorceress who fought Bansi's siege at the Palace of Sonapura with a sentient giggling staff and lost. She left the staff behind in her retreat and Eskil reforged it into a mace. We thought we had broken her. Then a hired team of thieves captured her in the Taklamakan, and the Khan of the Nine Skulls came in person to take her back.",
-    },
   ],
 
   villains: [
@@ -726,6 +718,9 @@ window.SILKROAD_DATA = {
     { id: "nizack", name: "Nizack", faction: "Kveld-Ulf",
       image: "images/villains/nizack.png",
       blurb: "The first of Karishkir's three lovers — sorcerer, gate-opener, hired by Hind in Samarkand under a smile, contracted to retrieve a cursed amulet from a ruined keep beyond the Iron Gates. He betrayed us at the buried-chamber altar; Eskil took his hand and it turned to smoke; he opened a shadow-door and was gone. We met him again at the Chapel of Bones beneath Merv, where Rahzalahn's silver hair-comb went into his throat from behind and three silver daggers into his heart. He disintegrated. Some debts close cleanly." },
+    { id: "akerke", name: "Akerke", faction: "Kveld-Ulf",
+      image: "images/villains/akerke.png",
+      blurb: "A Kazakh sorceress riding for the Khan of the Nine Skulls, sworn into the Kveld-Ulf cult through old steppe blood-pacts. She fought Bansi's siege at the Palace of Sonapura with a sentient giggling staff and lost; she left the staff behind in her retreat, and Eskil reforged it into a mace. We thought we had broken her. Then a hired team of thieves captured her in the Taklamakan, and the Khan came in person to take her back." },
     { id: "khan-nine-skulls", name: "The Khan of the Nine Skulls", faction: "Steppe; raised dead",
       image: "images/villains/khan-nine-skulls.png",
       blurb: "A warlord raised by Karishkir from his kurgan; he sits at her fire casting only one shadow. Gan brought us the news from a one-eyed steppe-shaman beyond Shiraz. He gathered at Itil with the cult's coalition before the cathedral; he was not in the cathedral when it fell. He is somewhere else now. His banner has been seen from the Volga to the Yellow River in the same season." },
