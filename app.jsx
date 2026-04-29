@@ -4,10 +4,10 @@ const { useState, useEffect, useRef, useCallback, useMemo } = React;
 
 const SECTION_DEFS = [
   { id: "characters", label: "Characters",        icon: "☥", key: "characters", pointable: false },
-  { id: "places",     label: "Places & Regions",  icon: "⌘", key: "places",     pointable: true },
   { id: "npcs",       label: "Notables",          icon: "✦", key: "npcs",       pointable: false },
   { id: "villains",   label: "Villains & Factions", icon: "☠", key: "villains", pointable: false },
   { id: "items",      label: "Items & Artifacts", icon: "❖", key: "items",      pointable: false },
+  { id: "places",     label: "Places & Regions",  icon: "⌘", key: "places",     pointable: true },
   { id: "lore",       label: "Lore & History",    icon: "§", key: "lore",       pointable: false },
   { id: "journal",    label: "Campaign Journal",  icon: "✎", key: "journal",    pointable: false },
 ];
