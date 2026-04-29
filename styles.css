@@ -161,9 +161,18 @@ html, body {
 
 .nav-heading-icon {
   width: 14px; height: 14px;
+  font-size: 14px;
+  line-height: 14px;
   color: var(--gold);
   opacity: 0.7;
   flex-shrink: 0;
+  /* Force text presentation; otherwise platforms (esp. iOS/Android)
+     render code-points like U+2620 ☠ and U+2625 ☥ as oversized
+     color emoji that don't honor width/height. The U+FE0E variation
+     selectors in the icon strings reinforce this. */
+  font-variant-emoji: text;
+  text-align: center;
+  display: inline-block;
 }
 
 .nav-heading-label {
