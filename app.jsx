@@ -6,6 +6,7 @@ const SECTION_DEFS = [
   { id: "characters", label: "Characters",        icon: "☥︎", key: "characters", pointable: false },
   { id: "npcs",       label: "Notables",          icon: "✦", key: "npcs",       pointable: false },
   { id: "villains",   label: "Villains & Factions", icon: "☠︎", key: "villains", pointable: false },
+  { id: "monsters",   label: "Monsters",          icon: "✺", key: "monsters",   pointable: true },
   { id: "items",      label: "Items & Artifacts", icon: "❖", key: "items",      pointable: false },
   { id: "places",     label: "Places & Regions",  icon: "⌘", key: "places",     pointable: true },
   { id: "lore",       label: "Lore & History",    icon: "§", key: "lore",       pointable: false },
@@ -163,9 +164,10 @@ function App() {
     const secDef = SECTION_DEFS.find(s => s.key === section);
     if (secDef) setOpenSection(secDef.id);
     // If it's a place, center it on the map
-    if (section === "places") {
-      const p = data.places.find(pp => pp.id === id);
-      if (p && viewportRef.current) {
+    if (section === "places" || section === "monsters") {
+      const coll = data[section] || [];
+      const p = coll.find(pp => pp.id === id);
+      if (p && p.x !== undefined && p.y !== undefined && viewportRef.current) {
         const rect = viewportRef.current.getBoundingClientRect();
         const canvasW = 2880, canvasH = 1440;
         setPan({
@@ -183,6 +185,7 @@ function App() {
   };
 
   const onPointClick = (p) => open("places", p.id);
+  const onMonsterClick = (m) => open("monsters", m.id);
 
   const onPointHover = (p, evt) => {
     setHovered(p);
@@ -339,15 +342,20 @@ function App() {
               showRoutes={showRoutes}
               showBorders={showBorders}
               showJourney={showJourney}
+              showMonsters={showCharacters}
               journeyProgress={journeyProgress}
               onPointClick={onPointClick}
               onPointHover={(p) => setHovered(p)}
               onPointLeave={() => setHovered(null)}
+              onMonsterClick={onMonsterClick}
+              onMonsterHover={(m) => setHovered(m)}
+              onMonsterLeave={() => setHovered(null)}
               onPolityHover={(p) => setHoveredPolity(p)}
               onPolityLeave={() => setHoveredPolity(null)}
               hoveredId={hovered && hovered.id}
               hoveredPolityId={hoveredPolity && hoveredPolity.id}
               activeId={selected && selected.section === "places" ? selected.id : null}
+              activeMonsterId={selected && selected.section === "monsters" ? selected.id : null}
             />
           </div>
 
@@ -435,7 +443,7 @@ function App() {
           {[
             { key: "showRoutes", label: "Trade Routes", on: showRoutes, set: setShowRoutes, sw: "var(--crimson)" },
             { key: "showBorders", label: "Political Borders", on: showBorders, set: setShowBorders, sw: "oklch(0.35 0.05 55)" },
-            { key: "showCharacters", label: "Monsters & Edges", on: showCharacters, set: setShowCharacters, sw: "var(--gold)" },
+            { key: "showCharacters", label: "Monster pins", on: showCharacters, set: setShowCharacters, sw: "oklch(0.50 0.22 25)" },
             { key: "showJourney", label: "Our Journey", on: showJourney, set: setShowJourney, sw: "var(--crimson)" },
           ].map(row => (
             <div className="tweak-row" key={row.key}>

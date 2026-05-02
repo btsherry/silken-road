@@ -607,6 +607,7 @@ html, body {
 .map-point-dot-great { fill: var(--crimson); stroke: var(--gold); stroke-width: 1.2; }
 .map-point-dot-ruin { fill: var(--ink-soft); stroke: var(--parchment-shadow); stroke-width: 1; stroke-dasharray: 2 1.5; }
 .map-point-dot-monster { fill: var(--indigo); stroke: var(--gold); stroke-width: 1; }
+.map-point-dot-monster-pin { fill: oklch(0.50 0.22 25); stroke: oklch(0.95 0.02 70); stroke-width: 1.2; }
 
 .map-label {
   font-family: 'Cormorant Garamond', serif;

@@ -7,15 +7,20 @@ window.SilkRoadMap = function SilkRoadMap({
   showRoutes = true,
   showBorders = true,
   showJourney = false,
+  showMonsters = false,
   journeyProgress = 1,
   onPointClick,
   onPointHover,
   onPointLeave,
+  onMonsterClick,
+  onMonsterHover,
+  onMonsterLeave,
   onPolityHover,
   onPolityLeave,
   onPolityClick,
   hoveredId,
   activeId,
+  activeMonsterId,
   hoveredPolityId,
 }) {
   const data = window.SILKROAD_DATA || {};
@@ -27,6 +32,7 @@ window.SilkRoadMap = function SilkRoadMap({
   data.rivers = data.rivers || [];
   data.routes = data.routes || [];
   data.places = data.places || [];
+  data.monsters = data.monsters || [];
   data.journey = data.journey || [];
 
   const placesById = Object.fromEntries(data.places.map(p => [p.id, p]));
@@ -559,6 +565,31 @@ window.SilkRoadMap = function SilkRoadMap({
           );
         })}
       </g>
+
+      {/* Monster pins — first-appearance markers, toggleable via showMonsters */}
+      {showMonsters && (
+        <g>
+          {data.monsters.map(m => {
+            const isActive = activeMonsterId === m.id;
+            const isHovered = hoveredId === m.id;
+            return (
+              <g
+                key={m.id}
+                className="map-point"
+                transform={`translate(${m.x}, ${m.y})`}
+                onClick={(e) => { e.stopPropagation(); onMonsterClick && onMonsterClick(m); }}
+                onMouseEnter={() => onMonsterHover && onMonsterHover(m)}
+                onMouseLeave={() => onMonsterLeave && onMonsterLeave(m)}
+              >
+                {(isHovered || isActive) && (
+                  <circle r={11} fill="none" stroke="var(--crimson)" strokeWidth="1.6" opacity="0.9"/>
+                )}
+                <circle r={5.5} className="map-point-dot-monster-pin"/>
+              </g>
+            );
+          })}
+        </g>
+      )}
 
       {/* Top title cartouche */}
       <g transform="translate(1200, 100)">
