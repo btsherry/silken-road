@@ -566,7 +566,11 @@ window.SilkRoadMap = function SilkRoadMap({
         })}
       </g>
 
-      {/* Monster pins — first-appearance markers, toggleable via showMonsters */}
+      {/* Monster pins — first-appearance markers, toggleable via showMonsters.
+          Drawn AFTER city pins so SVG hit-test order prefers them. The
+          invisible r=12 hit-zone gives the monster pin a larger reach
+          than the underlying city pin so hover/click consistently
+          resolve to the monster when one is stacked atop a city. */}
       {showMonsters && (
         <g>
           {data.monsters.map(m => {
@@ -581,10 +585,11 @@ window.SilkRoadMap = function SilkRoadMap({
                 onMouseEnter={() => onMonsterHover && onMonsterHover(m)}
                 onMouseLeave={() => onMonsterLeave && onMonsterLeave(m)}
               >
+                <circle r={12} fill="transparent" pointerEvents="all"/>
                 {(isHovered || isActive) && (
                   <circle r={11} fill="none" stroke="var(--crimson)" strokeWidth="1.6" opacity="0.9"/>
                 )}
-                <circle r={5.5} className="map-point-dot-monster-pin"/>
+                <circle r={5.5} className="map-point-dot-monster-pin" pointerEvents="none"/>
               </g>
             );
           })}
