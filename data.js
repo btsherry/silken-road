@@ -597,7 +597,7 @@ window.SILKROAD_DATA = {
 
     {
       id: "gan",
-      name: "Gan, the bold one",
+      name: "Gan",
       role: "Naiman beastmaster-shaman, last of their tribe",
       origin: "Naiman Mongolian tribe of the Altai Mountains",
       languages: ["Arabic", "Altai", "Mongolic"],
