@@ -301,7 +301,7 @@ window.SILKROAD_DATA = {
       image: "images/places/srinagar.png" },
     { id: "nagalokaguha", name: "Nagalokaguha", region: "Himalayan heights", x: 1430, y: 580, kind: "shrine",
       blurb: "In the Himalayan heights beyond Sonapura, past a foot-bridge over a howling crevasse, lies a ruined temple whose carvings echo the older shrines below. We chanted the mantra Princess Jayashri taught us; the back of the cave opened, and a sanskrit warning ran along its walls — *the passage to the lower worlds is full of dangers*. We hazarded life and spirit, and went down.",
-      image: "images/places/nagalokaguha.png" },},
+      image: "images/places/nagalokaguha.png" },
     { id: "taklamakan-home", name: "Taklamakan Tribe", region: "Tian Shan foothills", x: 1460, y: 491, kind: "nomadic",
       blurb: "Black tents of the Uyghur horse-clans, where the desert met the foothills. The boy Quzghun danced his people's histories around the fires and was apprenticed to a shaman. When a Tang officer demanded hostages from the chiefs, Quzghun stood and was sent east in a wagon — toward the Dragon Throne and the new name they would give him.",
       image: "images/places/taklamakan-home.png" },
