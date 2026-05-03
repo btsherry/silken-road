@@ -814,6 +814,12 @@ window.SILKROAD_DATA = {
       firstPlaceId: "aidhab", x: 851, y: 797,
       blurb: "Two arachnids the size of merchant's wagons that burst from the dunes south of Aidhab on the road to the buried temple. Obsidian-gleaming carapaces, pincers large enough to crush a horse, mandibles working in patterns no earthly scorpion should possess; greenish ichor hissed from their wounds. Eskil cleaved one nearly in two; Sadia rode the other and drove her sword through its body. Bansi harvested their venom, and it served us again at the Cathedral of Bones.",
       image: "images/monsters/giant-scorpions.png" },
+    { id: "gugs", name: "The Gugs", kind: "Dreamlands giant (vertical-mouthed cavern-dweller)",
+      blurb: "Towering black-furred giants of the deep dream-caverns, walking on four limbs that are also four arms — hands that are also feet, knuckles that drag the cavern floors. Their faces split vertically from crown to chest into a single great mouth, lined with row upon row of needle teeth. They feed on what wanders down from the upper world. The desert prophets say the dust beneath Iram's pillars is the upper reach of their hunting grounds.",
+      image: "images/monsters/gugs.png" },
+    { id: "men-of-leng", name: "The Men of Leng", kind: "Dreamlands satyr-kin (Plateau of Leng inhabitants)",
+      blurb: "The half-satyr inhabitants of the Plateau of Leng, that cursed land where waking and dream touch. They wear turbans wrapped tight to hide small curling horns, walk on cloven hooves they conceal in fitted boots, and trade in opium, slaves, and older bargains. Caravans that drift too far north of the Tarim oases sometimes return short of men, with strange goods in their packs and no clear memory of the road they took.",
+      image: "images/monsters/men-of-leng.png" },
   ],
 
   items: [

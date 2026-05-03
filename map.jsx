@@ -570,10 +570,12 @@ window.SilkRoadMap = function SilkRoadMap({
           Drawn AFTER city pins so SVG hit-test order prefers them. The
           invisible r=12 hit-zone gives the monster pin a larger reach
           than the underlying city pin so hover/click consistently
-          resolve to the monster when one is stacked atop a city. */}
+          resolve to the monster when one is stacked atop a city.
+          Monsters without x/y (e.g. dream-realm creatures with no
+          first-appearance pin yet) are skipped from the map. */}
       {showMonsters && (
         <g>
-          {data.monsters.map(m => {
+          {data.monsters.filter(m => m.x !== undefined && m.y !== undefined).map(m => {
             const isActive = activeMonsterId === m.id;
             const isHovered = hoveredId === m.id;
             return (
