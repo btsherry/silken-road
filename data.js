@@ -701,7 +701,7 @@ window.SILKROAD_DATA = {
     },
     {
       id: "lucca",
-      name: "Lucca",
+      name: "Lucca, Order of Hermes",
       role: "Apprentice mage, recovered from a sacrificial pit",
       region: "From Spoleto to Iram",
       image: "images/npcs/lucca.png",
@@ -709,7 +709,7 @@ window.SILKROAD_DATA = {
     },
     {
       id: "isaac",
-      name: "Isaac of the Order of Hermes",
+      name: "Isaac, Order of Hermes",
       role: "Hermetic magician, who fell to the Feaster from Afar",
       region: "Merv to a buried chamber beneath Ikhmindi",
       image: "images/npcs/isaac.png",
@@ -717,7 +717,7 @@ window.SILKROAD_DATA = {
     },
     {
       id: "sophia",
-      name: "Sophia of the Tower",
+      name: "Sophia, Order of Hermes",
       role: "Hermetic mage of Constantinople",
       region: "Constantinople",
       image: "images/npcs/sophia.png",
