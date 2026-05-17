@@ -1513,7 +1513,7 @@ window.SILKROAD_DATA = {
       role: "Srinagar to Multan, late 9th c.",
       duration: 5580,
       audio: "https://pub-3817c96b5c1d43989262bf6cfa2783a6.r2.dev/origin-2-bansi.mp3",
-      image: "images/portraits/bansi-hooded.png",
+      image: "images/portraits/bansi-alley.png",
       blurb: "A raja's daughter walks out of the palace disguised as a servant boy, takes a flute-name on the western road, and is trained in Multan by the Bahn-Sa-Sahn — the wine-shop guild that is not a wine-shop — as thief, fixer, and finisher.",
     },
     {
