@@ -11,6 +11,7 @@ const SECTION_DEFS = [
   { id: "places",     label: "Places & Regions",  icon: "⌘", key: "places",     pointable: true },
   { id: "lore",       label: "Lore & History",    icon: "§", key: "lore",       pointable: false },
   { id: "journal",    label: "Campaign Journal",  icon: "✎", key: "journal",    pointable: false },
+  { id: "narration",  label: "Narration",         icon: "♪", key: "narration",  pointable: false },
 ];
 
 function App() {
@@ -424,17 +425,25 @@ function App() {
 
         {/* Scroll detail panel — or the richer CharacterPanel for characters */}
         {selectedEntity && selectedEntity.item && (
-          selectedEntity.section === "characters" && window.CharacterPanel
-            ? <window.CharacterPanel
+          selectedEntity.section === "narration" && window.NarrationPanel
+            ? <window.NarrationPanel
                 key={selectedEntity.section + ':' + selectedEntity.item.id}
                 entity={selectedEntity}
+                allNarrations={data.narration || []}
                 onClose={closeScroll}
+                onNavigate={(newId) => open("narration", newId)}
               />
-            : <ScrollPanel
-                key={selectedEntity.section + ':' + selectedEntity.item.id}
-                entity={selectedEntity}
-                onClose={closeScroll}
-              />
+            : selectedEntity.section === "characters" && window.CharacterPanel
+              ? <window.CharacterPanel
+                  key={selectedEntity.section + ':' + selectedEntity.item.id}
+                  entity={selectedEntity}
+                  onClose={closeScroll}
+                />
+              : <ScrollPanel
+                  key={selectedEntity.section + ':' + selectedEntity.item.id}
+                  entity={selectedEntity}
+                  onClose={closeScroll}
+                />
         )}
 
         {/* Tweaks */}

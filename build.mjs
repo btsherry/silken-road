@@ -16,6 +16,7 @@ const SOURCES = [
   'map.jsx',
   'globe.jsx',
   'character-panel.jsx',
+  'narration-panel.jsx',
   'app.jsx',
   'main.jsx',
 ];

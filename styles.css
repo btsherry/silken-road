@@ -1786,3 +1786,124 @@ html, body {
   }
   .char-main { padding: 32px 26px; max-height: none; }
 }
+
+/* ——— Narration panel transport ———————————————————————————— */
+
+.narration-transport {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid oklch(0.55 0.08 60 / 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.narration-scrubber-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.narration-time {
+  font-family: "Caudex", "Cormorant Garamond", serif;
+  font-size: 13px;
+  color: oklch(0.45 0.05 60);
+  min-width: 56px;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.narration-time-cur { text-align: right; }
+.narration-time-tot { text-align: left; }
+
+.narration-scrubber {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.narration-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: oklch(0.6 0.18 60);
+  border: 2px solid oklch(0.85 0.05 65);
+  box-shadow: 0 1px 3px oklch(0.2 0.05 30 / 0.4);
+  cursor: grab;
+}
+
+.narration-scrubber::-webkit-slider-thumb:active { cursor: grabbing; }
+
+.narration-scrubber::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: oklch(0.6 0.18 60);
+  border: 2px solid oklch(0.85 0.05 65);
+  box-shadow: 0 1px 3px oklch(0.2 0.05 30 / 0.4);
+  cursor: grab;
+}
+
+.narration-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+}
+
+.narration-btn {
+  font-family: "Caudex", "Cormorant Garamond", serif;
+  background: oklch(0.96 0.02 85);
+  border: 1px solid oklch(0.55 0.08 60 / 0.6);
+  color: oklch(0.3 0.06 55);
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.narration-btn:hover:not(:disabled) {
+  background: oklch(0.92 0.04 75);
+  border-color: var(--crimson);
+  color: var(--crimson);
+}
+
+.narration-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.narration-btn-play {
+  width: 64px;
+  height: 44px;
+  font-size: 20px;
+  background: var(--crimson);
+  color: oklch(0.97 0.02 85);
+  border-color: var(--crimson);
+}
+
+.narration-btn-play:hover:not(:disabled) {
+  background: oklch(0.45 0.18 25);
+  border-color: oklch(0.45 0.18 25);
+  color: oklch(0.97 0.02 85);
+}
+
+.narration-btn-nav { padding: 8px 12px; font-size: 16px; }
+.narration-btn-skip { padding: 8px 12px; font-size: 13px; }
+
+.narration-hint {
+  text-align: center;
+  font-family: "Homemade Apple", cursive;
+  font-size: 10px;
+  color: oklch(0.55 0.05 65 / 0.75);
+  letter-spacing: 0.03em;
+}
