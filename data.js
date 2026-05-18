@@ -1543,5 +1543,14 @@ window.SILKROAD_DATA = {
       image: "images/places/samarkand.png",
       blurb: "The four meet in the market when an assassin's blade misses Giovanni. Pulled into Hind's caravan, sent three days east up the Iron Gates road to a depopulated village and the bronze doors beneath the keep. The Nagini holds the soul-drinking idol back long enough for them to take the amulet.",
     },
+    {
+      id: "episode-2",
+      name: "Episode II — The Moon over Merv",
+      role: "Merv and the steppe, 900 AD",
+      duration: 1543,
+      audio: "https://pub-3817c96b5c1d43989262bf6cfa2783a6.r2.dev/episode-2.mp3",
+      image: "images/places/merv.png",
+      blurb: "Hind's caravan reaches the oasis of Merv. The Nagini pulls Lüèduó from a dancer's tent into a hissing tent-vision: he owes her, and what is coming still hunts them. A Turkic girl named Earmack rides in bloody from the steppe with news of Karishkir — three centuries old, with three lovers and an army of walking wolves preparing a ritual at the kurgan. A werewolf attacks Giovanni and Eskil in the night markets and dies with the queen's name on its lips. The company rides east. At the ravine her voice reaches into their minds: \"Flay them, my darlings.\"",
+    },
   ],
 };
