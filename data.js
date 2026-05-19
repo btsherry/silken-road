@@ -1552,5 +1552,14 @@ window.SILKROAD_DATA = {
       image: "images/places/merv.png",
       blurb: "Hind's caravan reaches the oasis of Merv. The Nagini pulls Lüèduó from a dancer's tent into a hissing tent-vision: he owes her, and what is coming still hunts them. A Turkic girl named Earmack rides in bloody from the steppe with news of Karishkir — three centuries old, with three lovers and an army of walking wolves preparing a ritual at the kurgan. A werewolf attacks Giovanni and Eskil in the night markets and dies with the queen's name on its lips. The company rides east. At the ravine her voice reaches into their minds: \"Flay them, my darlings.\"",
     },
+    {
+      id: "episode-3",
+      name: "Episode III — To the Kurgan",
+      role: "The kurgan and the Chapel of Bones, 900 AD",
+      duration: 1842,
+      audio: "https://pub-3817c96b5c1d43989262bf6cfa2783a6.r2.dev/episode-3.mp3",
+      image: "images/places/merv-kurgan.png",
+      blurb: "The company crests the ravine and steps through a torn portal into Karishkir's chamber. Eskil's dead brother Leif whispers a warning from the iron skull. Combat: Drekhlo cleaves at Eskil in a Slavic snarl; Nizack drives a dagger at Lüèduó; Karishkir reaches into Eskil's mind with the seductive offer of everything he desires, and he refuses with the only line he has left — his soul is already promised. Earmack dies in Gan's arms; Sadia dips her blade in the blood. Karishkir escapes through a portal. They return through the rift to Merv and descend into the Chapel of Bones beneath the great mosque to finish what's left.",
+    },
   ],
 };
