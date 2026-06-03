@@ -1570,5 +1570,14 @@ window.SILKROAD_DATA = {
       image: "images/places/shiraz.png",
       blurb: "Hind's caravan makes Shiraz. Bansi finds her master's scimitar in a poet's quarter; Eskil rescues a broken cult-survivor named Lod from the slave-market and brings him to the forge. At the collector Kerdir's library a beautiful vampire opens Giovanni's throat at the merchant's own feast — only Father Giovanni's prayer over his own wound, and Lüèduó's serpent-bond, keep him from dying on the carpets. Hind ships the company south on Soleman's vessels. The Red Sea takes Sadia's friend Tarek in a storm, and shows Bansi what waits beneath the water. At Aidhab they make landfall, and Karishkir's dream-voice finds Eskil on the deck: \"In the end, we will have you all.\"",
     },
+    {
+      id: "episode-5",
+      name: "Episode V — Under the Accursed Sands",
+      role: "From Aidhab to the Khem-Sethi Temple at Ikhmindi, 900 AD",
+      duration: 4948,
+      audio: "https://pub-3817c96b5c1d43989262bf6cfa2783a6.r2.dev/episode-5.mp3",
+      image: "images/places/ikhmindi.png",
+      blurb: "At Aidhab the Tang court agent Fashian finds Lüèduó and presses his Imperial commission. The company hires Tabiri of Shendi, devotee of Sekhmet, to guide them inland to the Nile. A scorpion attack on the caravan; Giovanni calls down a battlefield prayer that steadies the line. In a Nubian market a boy whispers of thieves who came back from the temple raving, and Tabiri names the place — Khem-Sethi, older than Egypt, in a tongue lost to most. Past a trapped scarab-tomb the party descends to the Temple Beneath Time. Lüèduó speaks to the cultist in the voice of serpents. The sarcophagus opens, and Akivasha — the Stygian Priestess-Queen — rises. Her voice does not travel through air: \"Come. Lay it down. The hunger will end. The voices will stop.\" Giovanni breaks the spell with his name; Lüèduó turns the compulsion back on her. Isaac the Hermetic magician does not come out.",
+    },
   ],
 };
