@@ -1561,5 +1561,14 @@ window.SILKROAD_DATA = {
       image: "images/places/merv-kurgan.png",
       blurb: "The company crests the ravine and steps through a torn portal into Karishkir's chamber. Eskil's dead brother Leif whispers a warning from the iron skull. Combat: Drekhlo cleaves at Eskil in a Slavic snarl; Nizack drives a dagger at Lüèduó; Karishkir reaches into Eskil's mind with the seductive offer of everything he desires, and he refuses with the only line he has left — his soul is already promised. Earmack dies in Gan's arms; Sadia dips her blade in the blood. Karishkir escapes through a portal. They return through the rift to Merv and descend into the Chapel of Bones beneath the great mosque to finish what's left.",
     },
+    {
+      id: "episode-4",
+      name: "Episode IV — Shiraz and the Sea",
+      role: "Shiraz and the Red Sea, 900 AD",
+      duration: 3187,
+      audio: "https://pub-3817c96b5c1d43989262bf6cfa2783a6.r2.dev/episode-4.mp3",
+      image: "images/places/shiraz.png",
+      blurb: "Hind's caravan makes Shiraz. Bansi finds her master's scimitar in a poet's quarter; Eskil rescues a broken cult-survivor named Lod from the slave-market and brings him to the forge. At the collector Kerdir's library a beautiful vampire opens Giovanni's throat at the merchant's own feast — only Father Giovanni's prayer over his own wound, and Lüèduó's serpent-bond, keep him from dying on the carpets. Hind ships the company south on Soleman's vessels. The Red Sea takes Sadia's friend Tarek in a storm, and shows Bansi what waits beneath the water. At Aidhab they make landfall, and Karishkir's dream-voice finds Eskil on the deck: \"In the end, we will have you all.\"",
+    },
   ],
 };
