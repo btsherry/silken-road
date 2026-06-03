@@ -1588,5 +1588,14 @@ window.SILKROAD_DATA = {
       image: "images/places/constantinople.png",
       blurb: "The company carries the weight of Isaac's death out of Egypt and into Constantinople. Gan takes Dog and leaves for the Taklamakan to find her people; Bansi presses a stolen pouch into her hand. Sophia of the Hermetic Order receives them in a villa above the harbor and tells them the city is being hunted by Akivasha's instruments — the vampire twins Michael and Helena, and the werewolf Gorm. A tavern brawl turns when Gorm transforms; Eskil's runed blade through the chest and Rahzalahn's silver hair-comb in the face finish him. At Sophia's villa the company surrenders the Book of Eibon and keeps the Stygian ruby. Rahzalahn claims Revna's Nightwolf dagger. At the gangway Abu-Rayhan asks Eskil not to let the darkness take him. \"Of course,\" Eskil lies. \"Of course.\" Distant and dreaming, Akivasha laughs.",
     },
+    {
+      id: "episode-7",
+      name: "Episode VII — The Night Wolves",
+      role: "The Volga to the Cathedral of Bones, 901 AD",
+      duration: 5057,
+      audio: "https://pub-3817c96b5c1d43989262bf6cfa2783a6.r2.dev/episode-7.mp3",
+      image: "images/places/cathedral-of-bones.png",
+      blurb: "Imperial ships carry the company up the Volga to Itil. Bansi makes contact with Marta the spy-slave: there is a Tang bounty on Lüèduó. \"He is under my protection. I will defend him with my life.\" Giovanni meets the Alexandrian assassin praying at a shrine and tells him the truth about who is closer to the source. Bogdan's riverboat carries the party north through a forest that watches. A tree-fused leech-horror nearly takes Rahzalahn before Matteos's Greek fire takes it. Karishkir reaches into every mind at once — and uses the seconds her visions buy to lift Sadia bodily from the column. The party finds her at the Cathedral of Bones, bound and yellow-eyed. Lüèduó draws the curse from her with tenderness. Bansi cuts the scimitar across Karishkir's body. Drekhlo's runed greatsword finds Giovanni's hand and speaks to him in a voice older than Karishkir's. Matteos breaks the hold with a burning cinder pressed to Giovanni's forehead. Revna's blade is broken on the stones. The greatsword cannot be broken. Bansi asks who carries it. \"I will,\" Giovanni says. \"It nearly consumed you.\" \"Yes. And that is why it must be me.\" \"That is not a plan,\" Bansi says. \"That is penance.\" \"Yes. It is.\"",
+    },
   ],
 };
