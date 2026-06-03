@@ -1579,5 +1579,14 @@ window.SILKROAD_DATA = {
       image: "images/places/ikhmindi.png",
       blurb: "At Aidhab the Tang court agent Fashian finds Lüèduó and presses his Imperial commission. The company hires Tabiri of Shendi, devotee of Sekhmet, to guide them inland to the Nile. A scorpion attack on the caravan; Giovanni calls down a battlefield prayer that steadies the line. In a Nubian market a boy whispers of thieves who came back from the temple raving, and Tabiri names the place — Khem-Sethi, older than Egypt, in a tongue lost to most. Past a trapped scarab-tomb the party descends to the Temple Beneath Time. Lüèduó speaks to the cultist in the voice of serpents. The sarcophagus opens, and Akivasha — the Stygian Priestess-Queen — rises. Her voice does not travel through air: \"Come. Lay it down. The hunger will end. The voices will stop.\" Giovanni breaks the spell with his name; Lüèduó turns the compulsion back on her. Isaac the Hermetic magician does not come out.",
     },
+    {
+      id: "episode-6",
+      name: "Episode VI — Unspeakable Cults",
+      role: "Constantinople, 900 AD",
+      duration: 2594,
+      audio: "https://pub-3817c96b5c1d43989262bf6cfa2783a6.r2.dev/episode-6.mp3",
+      image: "images/places/constantinople.png",
+      blurb: "The company carries the weight of Isaac's death out of Egypt and into Constantinople. Gan takes Dog and leaves for the Taklamakan to find her people; Bansi presses a stolen pouch into her hand. Sophia of the Hermetic Order receives them in a villa above the harbor and tells them the city is being hunted by Akivasha's instruments — the vampire twins Michael and Helena, and the werewolf Gorm. A tavern brawl turns when Gorm transforms; Eskil's runed blade through the chest and Rahzalahn's silver hair-comb in the face finish him. At Sophia's villa the company surrenders the Book of Eibon and keeps the Stygian ruby. Rahzalahn claims Revna's Nightwolf dagger. At the gangway Abu-Rayhan asks Eskil not to let the darkness take him. \"Of course,\" Eskil lies. \"Of course.\" Distant and dreaming, Akivasha laughs.",
+    },
   ],
 };
